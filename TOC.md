@@ -2197,7 +2197,7 @@ for core AI functionality.
 SecurityContext.kt: This class currently uses simulated data for system metrics. It needs to be
 updated to retrieve actual system data from Android APIs.
 NeuralWhisper.kt: This class has several placeholder implementations for audio capture, emotion
-detection, transcription, and spelhook generation that need to be completed. The
+detection, transcription, and spelHook generation that need to be completed. The
 shouldShareWithKai() heuristic also needs to be refined for more robust command routing.
 KaiController.kt: Manages the Kai assistant in the notch bar and coordinates communication with
 NeuralWhisper. Needs further refinement in interaction logic and error handling.
