@@ -1,9 +1,10 @@
 package com.example.app.di
 
 import android.content.Context
-// import androidx.datastore.core.DataStore // Actual DataStore type
-// import androidx.datastore.preferences.core.Preferences // For Preferences DataStore
-// import androidx.datastore.preferences.preferencesDataStoreFile // To create Preferences DataStore
+import androidx.datastore.core.DataStore // Added import
+import androidx.datastore.preferences.core.Preferences // Added import
+// import androidx.datastore.preferences.preferencesDataStoreFile // For actual implementation
+// import androidx.datastore.preferences.core.PreferenceDataStoreFactory // For actual implementation
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -36,13 +37,10 @@ object DataStoreModule {
      */
     @Provides
     @Singleton
-    fun provideDataStore(@ApplicationContext _context: Context): Any { // Using Any as DataStore<Preferences> placeholder
+    fun provideDataStore(@ApplicationContext _context: Context): DataStore<Preferences>? { // Return type changed
         // TODO: Parameter _context reported as unused (Hilt will provide it as @ApplicationContext).
-        // Example for Preferences DataStore:
-        // return androidx.datastore.preferences.core.PreferenceDataStoreFactory.create(
-        //     produceFile = { _context.preferencesDataStoreFile("app_settings") }
-        // )
-        // For now, returning a simple Any() object as a placeholder.
-        return Any() // Placeholder
+        // TODO: Implement actual DataStore creation. Requires 'androidx.datastore:datastore-preferences:1.0.0' (or newer) dependency.
+        // Example: return androidx.datastore.preferences.core.PreferenceDataStoreFactory.create { _context.preferencesDataStoreFile("aura_settings") }
+        return null // Placeholder, actual implementation needed
     }
 }

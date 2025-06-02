@@ -5,26 +5,20 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.MaterialTheme // Import MaterialTheme
+// import androidx.compose.material3.MaterialTheme // No longer directly used here
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-// Assuming Theme.App is a Composable Theme, potentially defined in a Theme.kt file
-// For now, we'll call it directly. If it's XML only, this would need a Composable wrapper.
-// import com.example.app.ui.theme.Theme.App // Example import if Theme.App is a Composable
+import com.example.app.ui.theme.AuraFrameFXTheme // Added import
 
 class MainActivity : ComponentActivity() { // Changed parent
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         // Removed TODO about unused entry point, as it's now used for Compose content.
         setContent {
-            // Using MaterialTheme directly for now for robustness.
-            // A custom Composable Theme.App wrapper would typically be defined in a ui.theme package
-            // and would use the colors from colors.xml (converted to Compose Colors)
-            // and typography from a Typography.kt file.
-            MaterialTheme {
+            AuraFrameFXTheme { // Using the new custom theme
                 Greeting("Welcome to AuraFrameFX!")
             }
         }
@@ -50,8 +44,7 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 @Preview(showBackground = true)
 @Composable
 fun GreetingPreview() {
-    // Similar to above, use MaterialTheme for preview robustness
-    MaterialTheme {
+    AuraFrameFXTheme { // Using the new custom theme for preview
         Greeting("AuraFrameFX Preview")
     }
 }

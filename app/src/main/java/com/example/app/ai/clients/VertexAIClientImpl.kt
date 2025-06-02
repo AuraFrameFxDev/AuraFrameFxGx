@@ -36,7 +36,7 @@ class VertexAIClientImpl @Inject constructor(
             println("VertexAIClientImpl: GenerativeModel is null, cannot generate content.")
             return "Error: Model not available for prompt: $prompt"
         }
-
+        
         println("VertexAIClientImpl.generateContent called with prompt: $prompt using model: ${_generativeModel}")
         try {
             // val response = _generativeModel.generateContent(prompt)

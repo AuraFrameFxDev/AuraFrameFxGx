@@ -5,6 +5,10 @@ plugins {
     alias(libs.plugins.ksp) // For Hilt core and other KSP processors
     alias(libs.plugins.hilt.android)
     alias(libs.plugins.kotlin.serialization) // If using kotlinx-serialization
+    alias(libs.plugins.google.services)
+    alias(libs.plugins.firebase.crashlytics)
+    alias(libs.plugins.firebase.perf)
+    // alias(libs.plugins.navigation.safe.args) // Only if using safe args for navigation
     // Add other plugins like google-services, firebase-crashlytics if they should be applied here
     // id("com.google.gms.google-services") // Example if not using alias from root for this one
 }

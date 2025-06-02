@@ -52,8 +52,8 @@ class UserPreferences(context: Context) {
     // Properties and methods based on error report (unused declarations)
 
     // TODO: Reported as unused. Implement storage and retrieval if needed.
-    var apiKey: String? = null
-
+    var apiKey: String? = null 
+    
     // TODO: Reported as unused. Implement if needed.
     fun setApiKey(_key: String?) {
         this.apiKey = _key
@@ -97,6 +97,6 @@ class UserPreferences(context: Context) {
         // TODO: Implement actual data retrieval logic.
         // This might involve fetching from DataStore, SharedPreferences, or a database.
         // Example: return UserData(id = userId, name = userName, email = userEmail, apiKey = apiKey)
-        return null
+        return null 
     }
 }

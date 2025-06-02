@@ -61,7 +61,7 @@ fun AurakaiEcoSysScreenPreview() {
         // For a simple preview, you might pass a mocked/stubbed ViewModel instance
         // or use a simpler Composable that doesn't rely on the ViewModel for basic layout checks.
         // AurakaiEcoSysScreen() // This will error in preview if hiltViewModel() is directly called
-
+        
         // Simple preview of the text part:
         Column(horizontalAlignment = Alignment.CenterHorizontally) {
             Text(text = "Aurakai Ecosystem Screen (Placeholder)")

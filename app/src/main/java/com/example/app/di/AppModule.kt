@@ -41,23 +41,23 @@ object AppModule {
      */
     @Provides
     @Singleton
-    fun provideSharedPreferences(_context: Context): SharedPreferences? {
-        // TODO: Parameter _context reported as unused (Hilt will provide it).
-        // Example: return _context.getSharedPreferences("app_prefs", Context.MODE_PRIVATE)
-        return null // Placeholder
+    fun provideSharedPreferences(@ApplicationContext context: Context): SharedPreferences { 
+        // TODO: Parameter context was reported as _context and unused (Hilt will provide it).
+        // Renamed to context from _context for clarity in usage.
+        return context.getSharedPreferences("AuraFrameFX_prefs", Context.MODE_PRIVATE)
     }
 
     /**
      * Provides SecurePreferences.
-     * @param _context Application context.
+     * @param context Application context.
      * TODO: Method reported as unused. Implement if SecurePreferences is used.
      */
     @Provides
     @Singleton
-    fun provideSecurePreferences(_context: Context): SecurePreferences? {
-        // TODO: Parameter _context reported as unused (Hilt will provide it).
-        // Example: return SecurePreferences(_context)
-        return null // Placeholder
+    fun provideSecurePreferences(@ApplicationContext context: Context): SecurePreferences {
+        // TODO: Parameter context was reported as _context and unused (Hilt will provide it).
+        // Renamed to context from _context for clarity in usage.
+        return SecurePreferences(context)
     }
 
     /**
@@ -66,11 +66,15 @@ object AppModule {
      */
     @Provides
     @Singleton
-    fun provideAIConfig(): AIConfig? {
-        // Example: return AIConfig(apiKey = "your_api_key", modelName = "default_model")
-        return null // Placeholder
+    fun provideAIConfig(): AIConfig {
+        // TODO: Load actual config values from a secure source or build config.
+        return AIConfig(
+            modelName = "gemini-pro", 
+            apiKey = "TODO_load_api_key", 
+            projectId = "TODO_load_project_id"
+        )
     }
-
+    
     /**
      * Placeholder for AIConfigFactory - Name taken from error report list for AppModule.
      * TODO: Method reported as unused. Define AIConfigFactory and implement.

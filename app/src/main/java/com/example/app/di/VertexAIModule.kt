@@ -25,10 +25,14 @@ object VertexAIModule {
      */
     @Provides
     @Singleton
-    fun provideVertexAIConfig(): VertexAIConfig? {
-        // TODO: Load from secure storage or build configuration
-        // Example: return VertexAIConfig(projectId = "your-project", apiKey = "your-key")
-        return VertexAIConfig() // Returns placeholder with defaults
+    fun provideVertexAIConfig(): VertexAIConfig { // Return type changed to non-null
+        // TODO: Load actual config values from a secure source or build config.
+        return VertexAIConfig(
+            endpoint = "generativelanguage.googleapis.com", // Example endpoint
+            projectId = "TODO_load_project_id", 
+            apiKey = "TODO_load_api_key",
+            modelName = "gemini-pro" // Example model
+        )
     }
 
     /**
@@ -60,7 +64,7 @@ object VertexAIModule {
         // return GenerativeModel(modelName = _config.modelName, apiKey = _config.apiKey) // Simplified
         return null // Placeholder
     }
-
+    
     /**
      * Placeholder for VertexAIManager - Name taken from error report list for this Module.
      * TODO: Method reported as unused. Define VertexAIManager and implement.
