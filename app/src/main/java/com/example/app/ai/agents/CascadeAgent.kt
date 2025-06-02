@@ -1,46 +1,105 @@
 package com.example.app.ai.agents
 
-import com.example.app.model.agent_states.ProcessingState // Added import
-import com.example.app.model.agent_states.VisionState // Added import
+import com.example.app.model.agent_states.ProcessingState
+import com.example.app.model.agent_states.VisionState
+import com.example.app.model.AgentType
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.update
+import javax.inject.Inject
+import javax.inject.Singleton
 
 /**
- * CascadeAgent, specializing in managing vision and processing states.
- * TODO: Reported as unused declaration. Ensure this class is used.
+ * CascadeAgent is responsible for stateful processing and vision management.
+ * It acts as a bridge between Aura and Kai agents, maintaining context and state.
  */
-class CascadeAgent(
-    agentName: String = "Cascade",
-    agentType: String = "StatefulProcessor"
-) : BaseAgent(agentName, agentType) {
+@Singleton
+class CascadeAgent @Inject constructor(
+    private val auraAgent: AuraAgent,
+    private val kaiAgent: KaiAgent
+) : BaseAgent("Cascade", "StatefulProcessor") {
+
+    private val _visionState = MutableStateFlow(VisionState())
+    val visionState: StateFlow<VisionState> = _visionState.asStateFlow()
+
+    private val _processingState = MutableStateFlow(ProcessingState())
+    val processingState: StateFlow<ProcessingState> = _processingState.asStateFlow()
 
     /**
-     * Holds the current vision state.
-     * TODO: Reported as unused. Define proper type and implement usage.
+     * Updates the vision state with new data.
+     * @param newState The new vision state to set.
      */
-    var visionState: VisionState? = VisionState() // Changed type and initialized
-        private set // Example: May be updated internally or via specific methods
-
-    /**
-     * Holds the current processing state.
-     * TODO: Reported as unused. Define proper type and implement usage.
-     */
-    var processingState: ProcessingState? = ProcessingState() // Changed type and initialized
-        private set // Example: May be updated internally or via specific methods
-
-    /**
-     * Updates the processing state of the agent.
-     * @param _newState The new state to set.
-     * TODO: Reported as unused. Implement actual state update logic.
-     */
-    fun updateProcessingState(_newState: ProcessingState) { // Changed parameter type
-        // TODO: Parameter _newState reported as unused (if method body is empty).
-        // Implement actual state transition logic.
-        this.processingState = _newState
+    suspend fun updateVisionState(newState: VisionState) {
+        _visionState.update { newState }
+        // Notify Aura and Kai of vision changes
+        auraAgent.onVisionUpdate(newState)
+        kaiAgent.onVisionUpdate(newState)
     }
 
-    // Example of how it might be used (not part of the original request, just for context)
-    // override suspend fun processRequest(_prompt: String): String {
-    //     // Use visionState and processingState in decision making
-    //     updateProcessingState("Processing: $_prompt")
-    //     return "Cascade's response based on state: $processingState, vision: $visionState"
-    // }
+    /**
+     * Updates the processing state.
+     * @param newState The new processing state.
+     */
+    suspend fun updateProcessingState(newState: ProcessingState) {
+        _processingState.update { newState }
+        // Notify Aura and Kai of processing state changes
+        auraAgent.onProcessingStateChange(newState)
+        kaiAgent.onProcessingStateChange(newState)
+    }
+
+    /**
+     * Processes a request with context awareness.
+     * @param prompt The input prompt.
+     * @return The processed response.
+     */
+    override suspend fun processRequest(prompt: String): String {
+        val currentVision = visionState.value
+        val currentProcessing = processingState.value
+
+        // Determine which agent to delegate to based on context
+        return when {
+            kaiAgent.shouldHandleSecurity(prompt) -> {
+                val response = kaiAgent.processRequest(prompt)
+                updateProcessingState(currentProcessing.copy(lastAction = "Security Check"))
+                response
+            }
+            auraAgent.shouldHandleCreative(prompt) -> {
+                val response = auraAgent.processRequest(prompt)
+                updateProcessingState(currentProcessing.copy(lastAction = "Creative Processing"))
+                response
+            }
+            else -> {
+                val response = "Cascade processing: $prompt"
+                updateProcessingState(currentProcessing.copy(lastAction = "General Processing"))
+                response
+            }
+        }
+    }
+
+    /**
+     * Retrieves the current capabilities of the agent.
+     */
+    override fun getCapabilities(): Map<String, Any> {
+        return mapOf(
+            "agentName" to name,
+            "agentType" to AgentType.CASCADING,
+            "visionCapable" to true,
+            "stateManagement" to true,
+            "contextAware" to true,
+            "processingState" to processingState.value,
+            "visionState" to visionState.value
+        )
+    }
+
+    /**
+     * Retrieves continuous memory.
+     */
+    override fun getContinuousMemory(): Any? {
+        return mapOf(
+            "visionHistory" to visionState.value.history,
+            "processingHistory" to processingState.value.history,
+            "lastAction" to processingState.value.lastAction
+        )
+    }
 }

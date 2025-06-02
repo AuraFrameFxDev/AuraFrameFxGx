@@ -2,6 +2,9 @@ package com.example.app.ui.theme
 
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.darkColorScheme
 import androidx.compose.material3.dynamicDarkColorScheme
@@ -9,96 +12,136 @@ import androidx.compose.material3.dynamicLightColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.graphics.Brush
+import androidx.compose.ui.graphics.Color
 
-// Dark Color Scheme using the new "Retro Neon Cyberpunk" palette
+// Dark Color Scheme - Cyberpunk Neon Noir
 private val AuraDarkColorScheme = darkColorScheme(
+    // Primary Colors
     primary = NeonTeal,
-    onPrimary = OnPrimary, // Black text on NeonTeal buttons/primary elements
-    primaryContainer = NeonBlue, // As per user's themes.xml
-    onPrimaryContainer = OnPrimary, // As per user's themes.xml
+    onPrimary = OnPrimary,
+    primaryContainer = NeonBlue,
+    onPrimaryContainer = OnPrimary,
 
+    // Secondary Colors
     secondary = NeonPurple,
-    onSecondary = OnSurface, // White text on NeonPurple (assuming OnSurface is white/light)
-    secondaryContainer = NeonPurple, // As per user's themes.xml
-    onSecondaryContainer = OnSurface, // As per user's themes.xml
+    onSecondary = OnSurface,
+    secondaryContainer = NeonPurple,
+    onSecondaryContainer = OnSurface,
 
+    // Tertiary Colors
     tertiary = NeonBlue,
-    onTertiary = OnSurface, // White text on NeonBlue
-    tertiaryContainer = NeonBlue, // As per user's themes.xml
-    onTertiaryContainer = OnSurface, // As per user's themes.xml
+    onTertiary = OnSurface,
+    tertiaryContainer = NeonBlue,
+    onTertiaryContainer = OnSurface,
 
+    // Background Colors
     background = DarkBackground,
-    onBackground = OnSurface, // Main text color for dark theme (e.g., White or light neon)
+    onBackground = OnSurface,
 
+    // Surface Colors
     surface = Surface,
-    onSurface = OnSurface, // Text on surfaces
-
+    onSurface = OnSurface,
     surfaceVariant = SurfaceVariant,
     onSurfaceVariant = OnSurfaceVariant,
 
-    outline = NeonPurple, // Example for outlines, can be tuned
+    // Outline and Borders
+    outline = NeonPurple,
 
-    error = ErrorColor, // from Color.kt, based on colors.xml
-    onError = OnPrimary, // Black text on error color, assuming error color is light enough
-    errorContainer = ErrorColor, // Consistent with themes.xml
-    onErrorContainer = OnPrimary // Consistent with themes.xml
+    // System Colors
+    error = ErrorColor,
+    onError = OnPrimary,
+    errorContainer = ErrorColor,
+    onErrorContainer = OnPrimary,
+    
+    // Additional Colors
+    inversePrimary = NeonTeal,
+    inverseOnPrimary = OnPrimary,
+    inverseSurface = Surface
 )
 
-// Light Color Scheme (fallback, can be refined)
+// Light Color Scheme - Enhanced for Cyberpunk
 private val AuraLightColorScheme = lightColorScheme(
+    // Primary Colors
     primary = LightPrimary,
     onPrimary = LightOnPrimary,
-    primaryContainer = LightPrimary, // Or a lighter variant
+    primaryContainer = LightPrimary,
     onPrimaryContainer = LightOnPrimary,
 
+    // Secondary Colors
     secondary = LightSecondary,
     onSecondary = LightOnSecondary,
     secondaryContainer = LightSecondary,
     onSecondaryContainer = LightOnSecondary,
 
+    // Tertiary Colors
     tertiary = LightTertiary,
     onTertiary = LightOnTertiary,
     tertiaryContainer = LightTertiary,
     onTertiaryContainer = LightOnTertiary,
 
+    // Background Colors
     background = LightBackground,
     onBackground = LightOnBackground,
 
+    // Surface Colors
     surface = LightSurface,
     onSurface = LightOnSurface,
+    surfaceVariant = LightSurface,
+    onSurfaceVariant = LightOnBackground,
 
-    surfaceVariant = LightSurface, // Or a slightly different light gray
-    onSurfaceVariant = LightOnBackground, // Text on surface variant
+    // Outline and Borders
+    outline = LightSecondary,
 
-    outline = LightSecondary, // Example
-
+    // System Colors
     error = LightError,
     onError = LightOnError,
-    errorContainer = LightError, // Adjust if needed
-    onErrorContainer = LightOnError // Adjust if needed
+    errorContainer = LightError,
+    onErrorContainer = LightOnError,
+    
+    // Additional Colors
+    inversePrimary = LightPrimary,
+    inverseOnPrimary = LightOnPrimary,
+    inverseSurface = LightSurface
 )
 
 @Composable
 fun AuraFrameFXTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
-    // Dynamic coloring is disabled by default to enforce the cyberpunk theme.
-    // Set to true to allow Material You dynamic colors on Android S+ if desired.
-    dynamicColor: Boolean = false, 
+    dynamicColor: Boolean = false,
     content: @Composable () -> Unit
 ) {
     val colorScheme = when {
-        // Always use AuraDarkColorScheme if darkTheme is true, regardless of dynamicColor setting,
-        // to strongly enforce the cyberpunk aesthetic for dark mode.
         darkTheme -> AuraDarkColorScheme
-        // If dynamicColor is enabled and on Android S+, use dynamic light colors.
         dynamicColor && Build.VERSION.SDK_INT >= Build.VERSION_CODES.S -> {
             val context = LocalContext.current
-            dynamicLightColorScheme(context) 
+            dynamicLightColorScheme(context)
         }
-        // Otherwise, use the predefined AuraLightColorScheme.
         else -> AuraLightColorScheme
     }
 
+    val backgroundBrush = Brush.verticalGradient(
+        colors = listOf(
+            DarkBackground,
+            Surface,
+            SurfaceVariant
+        )
+    )
+
+    MaterialTheme(
+        colorScheme = colorScheme,
+        typography = Typography,
+        content = {
+            Box(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .background(brush = backgroundBrush)
+            ) {
+                content()
+            }
+        }
+    )
+}
     MaterialTheme(
         colorScheme = colorScheme,
         typography = AppTypography, // From Typography.kt

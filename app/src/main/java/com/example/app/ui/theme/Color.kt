@@ -2,44 +2,53 @@ package com.example.app.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
-// Primary Colors from user's colors.xml
-val NeonTeal = Color(0xFF00FFCC)
-val NeonPurple = Color(0xFFFF00FF)
-val NeonBlue = Color(0xFF00FFFF)
+// Primary Colors - Enhanced Neon Palette
+val NeonTeal = Color(0xFF00FFCC) // Brighter teal for accents
+val NeonPurple = Color(0xFFE000FF) // Slightly softer purple for readability
+val NeonBlue = Color(0xFF00FFFF) // Bright cyan for highlights
+val NeonPink = Color(0xFFFF00FF) // Bright pink for secondary accents
 
-// Background Colors
-val DarkBackground = Color(0xFF1A1A2E) // dark_background
-val Surface = Color(0xFF2D2D3E)       // surface
-val SurfaceVariant = Color(0xFF3A3A52) // surface_variant
+// Background Colors - Deep Cyberpunk Noir
+val DarkBackground = Color(0xFF000000) // Pure black for depth
+val Surface = Color(0xFF1A1A1A) // Very dark grey for surfaces
+val SurfaceVariant = Color(0xFF2D2D2D) // Slightly lighter for variants
+val CardBackground = Color(0xFF333333) // Card background color
 
-// Text Colors
-val OnSurface = Color(0xFFFFFFFF)       // on_surface
-val OnSurfaceVariant = Color(0xFFD0D0D0) // on_surface_variant
-val OnPrimary = Color(0xFF000000)         // on_primary (for text on NeonTeal button)
+// Text Colors - Neon Glow
+val OnSurface = Color(0xFF00FFCC) // Neon teal for main text
+val OnSurfaceVariant = Color(0xFF00FFFF) // Neon cyan for variant text
+val OnPrimary = Color(0xFF000000) // Black for text on neon backgrounds
+val OnSecondary = Color(0xFF1A1A1A) // Dark grey for secondary text
 
-// Error and other colors from XML
-val ErrorColor = Color(0xFFFF3B30) // error
-val WarningColor = Color(0xFFFF9500) // warning
-val SuccessColor = Color(0xFF34C759) // success
+// Accent Colors - Glowing Effects
+val Accent1 = Color(0xFF00FFCC) // Primary teal glow
+val Accent2 = Color(0xFFE000FF) // Secondary purple glow
+val Accent3 = Color(0xFF00FFFF) // Tertiary cyan glow
+val Accent4 = Color(0xFFFF00FF) // Pink glow for special elements
 
-// Define a light palette as well, even if the theme is primarily dark.
-// These can be adjusted later but provide a fallback.
-val LightPrimary = Color(0xFF007A6E) // Darker Teal for light theme primary
-val LightOnPrimary = Color(0xFFFFFFFF)
-val LightSecondary = Color(0xFF7A007A) // Darker Purple
-val LightOnSecondary = Color(0xFFFFFFFF)
-val LightTertiary = Color(0xFF007A7A) // Darker Cyan/Blue
-val LightOnTertiary = Color(0xFFFFFFFF)
+// System Colors - Enhanced for Cyberpunk
+val ErrorColor = Color(0xFFFF0000) // Bright red for errors
+val WarningColor = Color(0xFFFFA500) // Orange for warnings
+val SuccessColor = Color(0xFF00FF00) // Bright green for success
 
-val LightBackground = Color(0xFFF0F0F8) // A light background (e.g., off-white/light lavender)
-val LightOnBackground = Color(0xFF1C1B1F) // Standard dark text for light backgrounds
-val LightSurface = Color(0xFFF8F8FC) // Slightly different from background for cards, etc.
-val LightOnSurface = Color(0xFF1C1B1F)
+// Light Theme Colors - For fallback
+val LightPrimary = Color(0xFF00FFCC) // Neon teal
+val LightOnPrimary = Color(0xFF000000) // Black for text
+val LightSecondary = Color(0xFFE000FF) // Neon purple
+val LightOnSecondary = Color(0xFF000000) // Black for text
+val LightTertiary = Color(0xFF00FFFF) // Neon cyan
+val LightOnTertiary = Color(0xFF000000) // Black for text
 
-val LightError = Color(0xFFB00020) // Standard Material error for light themes
-val LightOnError = Color(0xFFFFFFFF)
+val LightBackground = Color(0xFF1A1A1A) // Dark grey for light theme
+val LightOnBackground = Color(0xFF00FFCC) // Neon teal for text
+val LightSurface = Color(0xFF2D2D2D) // Slightly lighter for cards
+val LightOnSurface = Color(0xFF00FFCC) // Neon teal for text
 
-// Other colors from XML that might be useful in Compose
-val Accent1 = NeonTeal
-val Accent2 = NeonPurple
-val Accent3 = NeonBlue
+val LightError = Color(0xFFFF0000) // Red for errors
+val LightOnError = Color(0xFF000000) // Black for text on error
+
+// Special Effects Colors
+val GlowOverlay = Color(0x1A00FFCC) // Semi-transparent teal glow
+val PulseOverlay = Color(0x1AE000FF) // Semi-transparent purple pulse
+val HoverOverlay = Color(0x1A00FFFF) // Semi-transparent cyan hover
+val PressOverlay = Color(0x1AFF00FF) // Semi-transparent pink press

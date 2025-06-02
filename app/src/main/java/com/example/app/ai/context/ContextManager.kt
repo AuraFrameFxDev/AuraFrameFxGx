@@ -1,68 +1,123 @@
 package com.example.app.ai.context
 
-import com.example.app.ai.clients.VertexAIClient // Added import
-import com.google.ai.client.generativeai.GenerativeModel // Added import
-import javax.inject.Inject // Added import
-import javax.inject.Singleton // Added import
+import com.example.app.ai.memory.MemoryManager
+import com.example.app.ai.pipeline.AIPipelineConfig
+import com.example.app.model.AgentType
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.update
+import kotlinx.datetime.Clock
+import kotlinx.datetime.Instant
+import javax.inject.Inject
+import javax.inject.Singleton
 
-// import com.example.app.ai.VertexAIConfig // Example, if VertexAI type is VertexAIConfig or similar
-
-/**
- * Manages contextual information for AI interactions.
- * TODO: Class reported as unused. Verify usage or remove if truly obsolete.
- */
-@Singleton // Added annotation
-class ContextManager @Inject constructor( // Added annotations
-    // TODO: Parameter reported as unused. Utilize or remove if not needed by actual implementation.
-    private val _vertexAIClient: VertexAIClient? // Changed from _vertexAI: GenerativeModel?
+@Singleton
+class ContextManager @Inject constructor(
+    private val memoryManager: MemoryManager,
+    private val config: AIPipelineConfig
 ) {
+    private val _activeContexts = MutableStateFlow(mapOf<String, ContextChain>())
+    val activeContexts: StateFlow<Map<String, ContextChain>> = _activeContexts
 
-    private val currentContext: MutableMap<String, AIContext> = mutableMapOf() // Value type changed to AIContext
+    private val _contextStats = MutableStateFlow(ContextStats())
+    val contextStats: StateFlow<ContextStats> = _contextStats
 
-    init {
-        // TODO: Initialize context, perhaps load from persistence or set defaults.
-        // _vertexAI might be used here for initial context setup based on AI capabilities.
-    }
+    fun createContextChain(
+        rootContext: String,
+        initialContext: String,
+        agent: AgentType,
+        metadata: Map<String, Any> = emptyMap()
+    ): String {
+        val chain = ContextChain(
+            rootContext = rootContext,
+            currentContext = initialContext,
+            contextHistory = listOf(
+                ContextNode(
+                    id = "ctx_${Clock.System.now().toEpochMilliseconds()}_0",
+                    content = initialContext,
+                    agent = agent,
+                    metadata = metadata
+                )
+            ),
+            agentContext = mapOf(agent to initialContext),
+            metadata = metadata
+        )
 
-    /**
-     * Retrieves the current context or specific parts of it.
-     * @param key Optional key to retrieve a specific piece of context.
-     * @return The context data.
-     * TODO: Reported as unused. Implement or remove if not needed.
-     */
-    fun getContext(key: String? = null): AIContext? { // Return type changed to AIContext?
-        // TODO: Reported as unused. Implement actual context retrieval logic.
-        val context = if (key == null) {
-            // If key is null, perhaps return a default/aggregated context or a new empty one
-            AIContext(currentPrompt = "last_user_prompt_placeholder", history = listOf("history_item_1")) // TODO: Return actual default/aggregated context
-        } else {
-            currentContext[key]
+        _activeContexts.update { current ->
+            current + (chain.id to chain)
         }
-        return context ?: AIContext(currentPrompt = "default_prompt", history = emptyList()) // Return a default if null
+        updateStats()
+        return chain.id
     }
 
-    /**
-     * Updates the current context with new information.
-     * @param key The key for the context item.
-     * @param value The value of the context item.
-     */
-    fun updateContext(key: String, value: AIContext) { // Value type changed to AIContext
-        currentContext[key] = value
-        // TODO: Potentially persist context or notify listeners of change.
-    }
+    fun updateContextChain(
+        chainId: String,
+        newContext: String,
+        agent: AgentType,
+        metadata: Map<String, Any> = emptyMap()
+    ): ContextChain {
+        val chain = _activeContexts.value[chainId] ?: throw IllegalStateException("Context chain not found")
 
-    /**
-     * Clears the current context or parts of it.
-     * @param key Optional key to clear a specific piece of context. If null, clears all.
-     * TODO: Reported as unused. Implement or remove if not needed.
-     */
-    fun clearContext(key: String? = null) {
-        // TODO: Reported as unused. Implement actual context clearing logic.
-        if (key == null) {
-            currentContext.clear()
-        } else {
-            currentContext.remove(key)
+        val updatedChain = chain.copy(
+            currentContext = newContext,
+            contextHistory = chain.contextHistory + ContextNode(
+                id = "ctx_${Clock.System.now().toEpochMilliseconds()}_${chain.contextHistory.size}",
+                content = newContext,
+                agent = agent,
+                metadata = metadata
+            ),
+            agentContext = chain.agentContext + (agent to newContext),
+            lastUpdated = Clock.System.now()
+        )
+
+        _activeContexts.update { current ->
+            current - chainId + (chainId to updatedChain)
         }
-        // TODO: Potentially persist context changes or notify listeners.
+        updateStats()
+        return updatedChain
+    }
+
+    fun getContextChain(chainId: String): ContextChain? {
+        return _activeContexts.value[chainId]
+    }
+
+    fun queryContext(query: ContextQuery): ContextChainResult {
+        val chains = _activeContexts.value.values
+            .filter { chain ->
+                query.agentFilter.isEmpty() || query.agentFilter.contains(chain.agentContext.keys.first())
+            }
+            .sortedByDescending { it.lastUpdated }
+            .take(config.contextChainingConfig.maxChainLength)
+
+        val relatedChains = chains
+            .filter { chain ->
+                chain.relevanceScore >= query.minRelevance
+            }
+            .take(query.maxChainLength)
+
+        return ContextChainResult(
+            chain = chains.firstOrNull() ?: ContextChain(rootContext = query.query),
+            relatedChains = relatedChains,
+            query = query
+        )
+    }
+
+    private fun updateStats() {
+        val chains = _activeContexts.value.values
+        _contextStats.update { current ->
+            current.copy(
+                totalChains = chains.size,
+                activeChains = chains.count { it.lastUpdated > Clock.System.now().minus(config.contextChainingConfig.maxChainLength) },
+                longestChain = chains.maxOfOrNull { it.contextHistory.size } ?: 0,
+                lastUpdated = Clock.System.now()
+            )
+        }
     }
 }
+
+data class ContextStats(
+    val totalChains: Int = 0,
+    val activeChains: Int = 0,
+    val longestChain: Int = 0,
+    val lastUpdated: Instant = Clock.System.now()
+)
