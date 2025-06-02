@@ -1,6 +1,9 @@
 package com.example.app.ai.agents
 
 import android.content.Context
+import com.example.app.model.agent_states.GenKitUiState // Added import
+// Assuming other agent classes (GenesisAgent, AuraAgent, KaiAgent) are in this package or imported correctly
+// For this example, direct reference if they are in the same 'agents' package is fine.
 
 /**
  * GenKitMasterAgent, orchestrates other agents or core functionalities.
@@ -11,19 +14,20 @@ import android.content.Context
  */
 class GenKitMasterAgent(
     _context: Context, // TODO: Parameter _context reported as unused. Utilize or remove.
-    _genesisAgent: Any, // TODO: Replace Any with actual GenesisAgent type. Param reported as unused.
-    _auraAgent: Any,    // TODO: Replace Any with actual AuraAgent type. Param reported as unused.
-    _kaiAgent: Any      // TODO: Replace Any with actual KaiAgent type. Param reported as unused.
+    private val _genesisAgent: GenesisAgent?, // Changed type from Any, made private val for example
+    private val _auraAgent: AuraAgent?,    // Changed type from Any, made private val for example
+    private val _kaiAgent: KaiAgent?       // Changed type from Any, made private val for example
+    // TODO: Parameters _genesisAgent, _auraAgent, _kaiAgent reported as unused. Utilize or remove.
 ) {
 
     /**
-     * Represents the UI state related to this master agent. Type 'Any?' is a placeholder.
+     * Represents the UI state related to this master agent.
      * TODO: Reported as unused. Define proper type (e.g., a StateFlow) and implement usage.
      */
-    val uiState: Any? = null
+    val uiState: GenKitUiState? = GenKitUiState() // Changed type and initialized
 
     init {
-        // TODO: Initialize GenKitMasterAgent, set up child agents, etc.
+        // TODO: Initialize GenKitMasterAgent, set up child agents like _genesisAgent, _auraAgent, _kaiAgent.
     }
 
     /**

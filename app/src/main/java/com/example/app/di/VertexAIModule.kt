@@ -1,6 +1,8 @@
 package com.example.app.di
 
 import com.example.app.ai.VertexAIConfig // Assuming path from previous creation
+import com.example.app.ai.clients.VertexAIClient // Added import
+import com.example.app.ai.clients.VertexAIClientImpl // Added import
 import com.google.ai.client.generativeai.GenerativeModel // Added import
 // import com.google.cloud.vertexai.VertexAI // Example if using official Vertex AI SDK
 import dagger.Module
@@ -36,12 +38,11 @@ object VertexAIModule {
      */
     @Provides
     @Singleton
-    fun provideVertexAIClient(_config: VertexAIConfig?): Any? { // Using Any as VertexAI client type placeholder
-        // TODO: Parameter _config reported as unused (Hilt will provide it).
-        // Example using official SDK:
-        // if (_config == null) return null
-        // return VertexAI(_config.projectId, _config.region, Credentials.fromApiKey(_config.apiKey))
-        return null // Placeholder
+    fun provideVertexAIClient(impl: VertexAIClientImpl): VertexAIClient {
+        // TODO: Method reported as unused. Verify necessity.
+        // Hilt will provide VertexAIClientImpl due to its @Inject constructor
+        // and its own dependencies (_config, _generativeModel) being provided in this module.
+        return impl
     }
 
     /**

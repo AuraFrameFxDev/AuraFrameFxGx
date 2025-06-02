@@ -123,8 +123,9 @@ class NeuralWhisper(
         return null
     }
 
-    fun startAudioRecording() {
+    fun startAudioRecording(): Boolean { // Changed to return Boolean
         // TODO: Reported as unused. Implement or remove.
+        return true // Placeholder
     }
 
     fun processAudioToFile(_fileUri: String): Boolean { // Param _fileUri reported as unused.

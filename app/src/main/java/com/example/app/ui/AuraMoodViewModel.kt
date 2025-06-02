@@ -1,30 +1,38 @@
 package com.example.app.ui
 
+// import android.app.Application // Add if injecting Application
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
+import androidx.lifecycle.viewModelScope // Already present, but good to confirm
+import com.example.app.model.Emotion
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.launch
-import com.example.app.model.Emotion // Added import
+import kotlinx.coroutines.launch // Already present, but good to confirm
+import javax.inject.Inject
 
 // Example Mood data class - REMOVED
 // data class MoodData(val description: String = "Neutral", val color: Long = 0xFFFFFFFF)
 
-class AuraMoodViewModel : ViewModel() {
+// TODO: Class reported as unused. Verify usage or remove if truly obsolete.
+@HiltViewModel
+class AuraMoodViewModel @Inject constructor(
+    // private val _application: Application // Example: if Application context is needed
+) : ViewModel() {
 
     // Private MutableStateFlow that can be updated from this ViewModel
-    private val _moodState = MutableStateFlow<Emotion>(Emotion.NEUTRAL) // Changed to Emotion
+    private val _moodState = MutableStateFlow<Emotion>(Emotion.NEUTRAL) // Default value
     // Public StateFlow that is read-only from the UI
-    // TODO: Reported as unused. Implement or remove.
-    val moodState: StateFlow<Emotion> = _moodState // Changed to Emotion
+    // TODO: Property moodState reported as unused. Implement or remove.
+    val moodState: StateFlow<Emotion> = _moodState
 
     // Example function to handle user input
-    fun onUserInput(input: String) {
-        // TODO: Reported as unused. Implement or remove.
+    fun onUserInput(_input: String) { // Parameter _input marked as unused as per template
+        // TODO: Method reported as unused. Implement or remove.
+        // TODO: Parameter _input reported as unused.
         viewModelScope.launch {
             // TODO: Implement actual logic based on user input
-            // For example, update moodState based on sentiment analysis of input
-            if (input.contains("happy", ignoreCase = true)) {
+            // Example logic:
+            if (_input.contains("happy", ignoreCase = true)) {
                 _moodState.value = Emotion.HAPPY
             } else if (input.contains("sad", ignoreCase = true)) {
                 _moodState.value = Emotion.SAD

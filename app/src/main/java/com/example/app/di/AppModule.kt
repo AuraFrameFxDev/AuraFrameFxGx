@@ -4,6 +4,7 @@ import android.app.Application
 import android.content.Context
 import android.content.SharedPreferences
 import com.example.app.ai.AuraAIService // Assuming path from previous creation
+import com.example.app.ai.AuraAIServiceImpl // Added import
 import com.example.app.ai.config.AIConfig // Assuming path from previous creation
 import com.example.app.data.SecurePreferences // Assuming path from previous creation
 import com.google.ai.client.generativeai.GenerativeModel // Added import
@@ -87,11 +88,12 @@ object AppModule {
      * TODO: Method reported as unused. Implement if AuraAIService is used.
      */
     @Provides
-    @Singleton
-    fun provideAuraAIService(_config: AIConfig?): AuraAIService? {
-        // TODO: Parameter _config reported as unused (Hilt will provide it if AIConfig is provided).
-        // Example: return YourAuraAIServiceImpl(_config)
-        return null // Placeholder
+    @Singleton // Ensure singleton scope if AuraAIServiceImpl is @Singleton
+    fun provideAuraAIService(impl: AuraAIServiceImpl): AuraAIService {
+        // TODO: Method reported as unused. Verify necessity.
+        // Hilt will provide AuraAIServiceImpl due to its @Inject constructor.
+        // This method binds the implementation to the interface.
+        return impl
     }
 
     /**

@@ -1,7 +1,10 @@
 package com.example.app
 
 import android.app.Application
+import androidx.work.Configuration // Added import for Configuration
+import dagger.hilt.android.HiltAndroidApp
 
+@HiltAndroidApp // Added annotation
 // TODO: Class AuraFrameApplication reported as unused. Verify usage or remove if truly obsolete.
 class AuraFrameApplication : Application() { // Potentially also implements androidx.work.Configuration.Provider
     override fun onCreate() {
@@ -19,9 +22,9 @@ class AuraFrameApplication : Application() { // Potentially also implements andr
     //         .build()
     // }
     // For now, adding as a simple method as per instruction, not tied to interface yet.
-    fun getWorkManagerConfiguration(): androidx.work.Configuration {
+    fun getWorkManagerConfiguration(): Configuration { // Used Configuration import
         // TODO: Reported as unused. Implement if this app provides custom WorkManager config.
         // This might be part of implementing androidx.work.Configuration.Provider
-        return androidx.work.Configuration.Builder().build()
+        return Configuration.Builder().build()
     }
 }

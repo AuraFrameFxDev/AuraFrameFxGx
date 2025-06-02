@@ -1,15 +1,20 @@
 package com.example.app.ai.context
 
+import com.example.app.ai.clients.VertexAIClient // Added import
 import com.google.ai.client.generativeai.GenerativeModel // Added import
+import javax.inject.Inject // Added import
+import javax.inject.Singleton // Added import
+
 // import com.example.app.ai.VertexAIConfig // Example, if VertexAI type is VertexAIConfig or similar
 
 /**
  * Manages contextual information for AI interactions.
  * TODO: Class reported as unused. Verify usage or remove if truly obsolete.
  */
-class ContextManager(
-    // TODO: Replace 'Any' with the actual VertexAI client/service type. Reported as unused.
-    private val _vertexAI: GenerativeModel? // Changed from Any to GenerativeModel?
+@Singleton // Added annotation
+class ContextManager @Inject constructor( // Added annotations
+    // TODO: Parameter reported as unused. Utilize or remove if not needed by actual implementation.
+    private val _vertexAIClient: VertexAIClient? // Changed from _vertexAI: GenerativeModel?
 ) {
 
     private val currentContext: MutableMap<String, AIContext> = mutableMapOf() // Value type changed to AIContext
@@ -27,9 +32,13 @@ class ContextManager(
      */
     fun getContext(key: String? = null): AIContext? { // Return type changed to AIContext?
         // TODO: Reported as unused. Implement actual context retrieval logic.
-        // If key is null, this would imply returning a default or aggregated context,
-        // which needs clarification. For now, returning a specific key's context or null.
-        return if (key == null) null else currentContext[key] // Simplified for now
+        val context = if (key == null) {
+            // If key is null, perhaps return a default/aggregated context or a new empty one
+            AIContext(currentPrompt = "last_user_prompt_placeholder", history = listOf("history_item_1")) // TODO: Return actual default/aggregated context
+        } else {
+            currentContext[key]
+        }
+        return context ?: AIContext(currentPrompt = "default_prompt", history = emptyList()) // Return a default if null
     }
 
     /**
