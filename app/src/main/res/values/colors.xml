@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#FF6200EE</color>
+    <color name="colorPrimaryVariant">#FF3700B3</color>
+    <color name="colorOnPrimary">#FFFFFFFF</color>
+    <color name="colorSecondary">#FF03DAC6</color>
+    <color name="colorSecondaryVariant">#FF018786</color>
+    <color name="colorOnSecondary">#FF000000</color>
+    <color name="colorError">#FFB00020</color>
+    <color name="colorOnError">#FFFFFFFF</color>
+    <color name="colorBackground">#FFFFFFFF</color>
+    <color name="colorOnBackground">#FF000000</color>
+    <color name="colorSurface">#FFFFFFFF</color>
+    <color name="colorOnSurface">#FF000000</color>
+    <color name="colorTertiary">#FF03DAC5</color> <!-- Adding Tertiary as it's in the list -->
+    <color name="colorOnTertiary">#FF000000</color> <!-- Adding OnTertiary -->
+    <color name="colorSurfaceVariant">#FFE0E0E0</color> <!-- Adding SurfaceVariant -->
+    <color name="colorOnSurfaceVariant">#FF000000</color> <!-- Adding OnSurfaceVariant -->
+    <color name="colorOutline">#FF757575</color> <!-- Adding Outline -->
+    <color name="colorPrimaryInverse">#FF000000</color> <!-- Adding PrimaryInverse -->
+    <color name="colorSurfaceInverse">#FF000000</color> <!-- Adding SurfaceInverse -->
+    <color name="colorOnSurfaceInverse">#FFFFFFFF</color> <!-- Adding OnSurfaceInverse -->
+    <color name="colorSurfaceTint">#FF6200EE</color> <!-- Adding SurfaceTint (can be same as primary) -->
+    <color name="colorErrorContainer">#FFB00020</color> <!-- Example, adjust -->
+    <color name="colorOnErrorContainer">#FFFFFFFF</color> <!-- Example, adjust -->
+</resources>

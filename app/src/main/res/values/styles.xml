@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Base application theme -->
+    <style name="Theme.App" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryVariant">@color/colorPrimaryVariant</item>
+        <item name="colorOnPrimary">@color/colorOnPrimary</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/colorSecondary</item>
+        <item name="colorSecondaryVariant">@color/colorSecondaryVariant</item>
+        <item name="colorOnSecondary">@color/colorOnSecondary</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+        <item name="android:navigationBarColor">?attr/colorPrimaryVariant</item>
+        <item name="android:windowLightStatusBar">true</item> <!-- Example, adjust as needed -->
+        <item name="android:windowLightNavigationBar">true</item> <!-- Example, adjust as needed -->
+
+        <!-- Backgrounds and Surfaces -->
+        <item name="android:colorBackground">@color/colorBackground</item>
+        <item name="colorSurface">@color/colorSurface</item>
+        <item name="colorError">@color/colorError</item>
+
+        <!-- Text Colors -->
+        <item name="android:textColor">@color/colorOnBackground</item>
+
+        <!-- Splash screen attributes are typically in the splash theme,
+             but postSplashScreenTheme in splash_screen.xml will point here (or a derivative).
+             Ensure this theme is a suitable main theme. -->
+
+        <!-- Attributes like backgroundTint, cornerRadius, cardBackgroundColor,
+             cardElevation, cardCornerRadius are often defined in specific widget styles
+             or applied directly. Having a solid base theme is the first step. -->
+    </style>
+
+    <!-- Example of a CardView style if needed to resolve card-specific attributes -->
+    <style name="Widget.App.CardView" parent="Widget.MaterialComponents.CardView">
+        <item name="cardCornerRadius">8dp</item> <!-- Example value -->
+        <item name="cardElevation">4dp</item> <!-- Example value -->
+        <item name="cardBackgroundColor">@color/colorSurface</item>
+    </style>
+
+</resources>
