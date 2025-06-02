@@ -1,18 +1,5 @@
 // AuraFrameFxBeta/build.gradle.kts
-// This section MUST be at the very top of your build.gradle.kts file.
 
-// Top-level val definitions (accessible everywhere AFTER they are defined, but not in buildscript)
-val kotlinVersion = libs.versions.kotlin.get()
-val agpVersion = libs.versions.agp.get()
-val googleServicesVersion = libs.versions.googleServices.get()
-val firebaseCrashlyticsVersion = libs.versions.firebaseCrashlytics.get()
-val firebasePerformanceVersion = libs.versions.firebasePerformance.get()
-val hiltVersion = libs.versions.hilt.get()
-val kspVersion = libs.versions.ksp.get()
-val navigationVersion = libs.versions.navigation.get()
-val dokkaVersion = libs.versions.dokka.get()
-
-// --- START OF CRITICAL CORRECTION ---
 // This 'buildscript' block MUST appear before the root 'plugins { ... }' block.
 buildscript {
     repositories {
@@ -35,7 +22,12 @@ buildscript {
         classpath("org.jetbrains.dokka:dokka-gradle-plugin:1.9.20")
     }
 }
+// This section MUST be at the very top of your build.gradle.kts file.
+// --- START OF CRITICAL CORRECTION --- has been moved to the top
 // --- END OF CRITICAL CORRECTION ---
+
+// Top-level val definitions (accessible everywhere AFTER they are defined, but not in buildscript)
+// Removed unused val declarations
 
 // This 'plugins' block applies plugins to your *project*. It comes AFTER 'buildscript'.
 plugins {
