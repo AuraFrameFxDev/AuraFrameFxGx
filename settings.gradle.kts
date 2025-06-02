@@ -16,7 +16,7 @@ pluginManagement {
                 requested.id.id == "org.jetbrains.kotlin.kapt" ||
                 requested.id.id == "org.jetbrains.kotlin.plugin.serialization"
             ) {
-                // Configuration if needed
+                // No specific configuration needed here for now
             }
         }
     }
