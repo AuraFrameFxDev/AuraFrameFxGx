@@ -11,7 +11,7 @@ import android.content.Context
 class SecurePreferences(
     // _context parameter reported as unused in the original analysis for Companion.initialize,
     // but an instance would likely need context. Marking it as potentially unused for now.
-    private val _context: Context
+    private val _context: Context 
 ) {
 
     // Placeholder for the delegate that would handle the actual MasterKey retrieval.

@@ -18,7 +18,7 @@ class KaiController(
 
     // Placeholder for the listener based on error report
     // TODO: Define proper listener type (e.g., an interface) and usage. Reported as unused.
-    private var _kaiInteractionListener: (() -> Unit)? = null
+    private var _kaiInteractionListener: (() -> Unit)? = null 
 
     init {
         // TODO: Initialize KaiController, set up listeners, etc.

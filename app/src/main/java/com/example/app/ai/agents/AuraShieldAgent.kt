@@ -1,6 +1,9 @@
 package com.example.app.ai.agents
 
 import android.content.Context
+import com.example.app.model.agent_states.ActiveThreat // Added import
+import com.example.app.model.agent_states.ScanEvent // Added import
+import com.example.app.model.agent_states.SecurityContextState // Added import
 
 /**
  * AuraShieldAgent, responsible for security analysis and threat detection.
@@ -12,30 +15,30 @@ class AuraShieldAgent(
 ) {
 
     /**
-     * Holds the current security context or configuration. Type 'Any' is a placeholder.
+     * Holds the current security context or configuration.
      * TODO: Reported as unused. Define proper type and implement usage.
      */
-    val securityContext: Any? = null
+    val securityContext: SecurityContextState? = SecurityContextState() // Changed type and initialized
 
     /**
-     * List of currently active or identified threats. Type 'Any' is a placeholder.
+     * List of currently active or identified threats.
      * TODO: Reported as unused. Define proper type and implement usage.
      */
-    val activeThreats: List<Any> = emptyList()
+    val activeThreats: List<ActiveThreat> = emptyList() // Changed type
 
     /**
-     * History of security scans or events. Type 'String' is a placeholder.
+     * History of security scans or events.
      * TODO: Reported as unused. Define proper type and implement usage.
      */
-    val scanHistory: List<String> = emptyList()
+    val scanHistory: List<ScanEvent> = emptyList() // Changed type
 
     /**
      * Analyzes threats based on the given context.
-     * @param _context The context for threat analysis. Parameter reported as unused.
+     * @param _securityContext The security context for threat analysis. Parameter reported as unused.
      * TODO: Reported as unused. Implement threat analysis logic.
      */
-    fun analyzeThreats(_context: Any?) {
-        // TODO: Parameter _context reported as unused. Utilize if needed.
+    fun analyzeThreats(_securityContext: SecurityContextState?) { // Changed parameter type
+        // TODO: Parameter _securityContext reported as unused. Utilize if needed.
         // Implement threat analysis logic here.
     }
 

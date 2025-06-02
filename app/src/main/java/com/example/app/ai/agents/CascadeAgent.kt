@@ -1,5 +1,8 @@
 package com.example.app.ai.agents
 
+import com.example.app.model.agent_states.ProcessingState // Added import
+import com.example.app.model.agent_states.VisionState // Added import
+
 /**
  * CascadeAgent, specializing in managing vision and processing states.
  * TODO: Reported as unused declaration. Ensure this class is used.
@@ -10,17 +13,17 @@ class CascadeAgent(
 ) : BaseAgent(agentName, agentType) {
 
     /**
-     * Holds the current vision state. Type 'Any?' is a placeholder.
+     * Holds the current vision state.
      * TODO: Reported as unused. Define proper type and implement usage.
      */
-    var visionState: Any? = null
+    var visionState: VisionState? = VisionState() // Changed type and initialized
         private set // Example: May be updated internally or via specific methods
 
     /**
-     * Holds the current processing state. Type 'Any?' is a placeholder.
+     * Holds the current processing state.
      * TODO: Reported as unused. Define proper type and implement usage.
      */
-    var processingState: Any? = null
+    var processingState: ProcessingState? = ProcessingState() // Changed type and initialized
         private set // Example: May be updated internally or via specific methods
 
     /**
@@ -28,7 +31,7 @@ class CascadeAgent(
      * @param _newState The new state to set.
      * TODO: Reported as unused. Implement actual state update logic.
      */
-    fun updateProcessingState(_newState: Any) {
+    fun updateProcessingState(_newState: ProcessingState) { // Changed parameter type
         // TODO: Parameter _newState reported as unused (if method body is empty).
         // Implement actual state transition logic.
         this.processingState = _newState

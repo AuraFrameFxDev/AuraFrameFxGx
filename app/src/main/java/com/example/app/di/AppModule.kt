@@ -4,6 +4,7 @@ import android.app.Application
 import android.content.Context
 import android.content.SharedPreferences
 import com.example.app.ai.AuraAIService // Assuming path from previous creation
+import com.example.app.ai.AuraAIServiceImpl // Added import
 import com.example.app.ai.config.AIConfig // Assuming path from previous creation
 import com.example.app.data.SecurePreferences // Assuming path from previous creation
 import com.google.ai.client.generativeai.GenerativeModel // Added import
@@ -40,23 +41,23 @@ object AppModule {
      */
     @Provides
     @Singleton
-    fun provideSharedPreferences(_context: Context): SharedPreferences? {
-        // TODO: Parameter _context reported as unused (Hilt will provide it).
-        // Example: return _context.getSharedPreferences("app_prefs", Context.MODE_PRIVATE)
-        return null // Placeholder
+    fun provideSharedPreferences(@ApplicationContext context: Context): SharedPreferences { 
+        // TODO: Parameter context was reported as _context and unused (Hilt will provide it).
+        // Renamed to context from _context for clarity in usage.
+        return context.getSharedPreferences("AuraFrameFX_prefs", Context.MODE_PRIVATE)
     }
 
     /**
      * Provides SecurePreferences.
-     * @param _context Application context.
+     * @param context Application context.
      * TODO: Method reported as unused. Implement if SecurePreferences is used.
      */
     @Provides
     @Singleton
-    fun provideSecurePreferences(_context: Context): SecurePreferences? {
-        // TODO: Parameter _context reported as unused (Hilt will provide it).
-        // Example: return SecurePreferences(_context)
-        return null // Placeholder
+    fun provideSecurePreferences(@ApplicationContext context: Context): SecurePreferences {
+        // TODO: Parameter context was reported as _context and unused (Hilt will provide it).
+        // Renamed to context from _context for clarity in usage.
+        return SecurePreferences(context)
     }
 
     /**
@@ -65,11 +66,15 @@ object AppModule {
      */
     @Provides
     @Singleton
-    fun provideAIConfig(): AIConfig? {
-        // Example: return AIConfig(apiKey = "your_api_key", modelName = "default_model")
-        return null // Placeholder
+    fun provideAIConfig(): AIConfig {
+        // TODO: Load actual config values from a secure source or build config.
+        return AIConfig(
+            modelName = "gemini-pro", 
+            apiKey = "TODO_load_api_key", 
+            projectId = "TODO_load_project_id"
+        )
     }
-
+    
     /**
      * Placeholder for AIConfigFactory - Name taken from error report list for AppModule.
      * TODO: Method reported as unused. Define AIConfigFactory and implement.
@@ -87,11 +92,12 @@ object AppModule {
      * TODO: Method reported as unused. Implement if AuraAIService is used.
      */
     @Provides
-    @Singleton
-    fun provideAuraAIService(_config: AIConfig?): AuraAIService? {
-        // TODO: Parameter _config reported as unused (Hilt will provide it if AIConfig is provided).
-        // Example: return YourAuraAIServiceImpl(_config)
-        return null // Placeholder
+    @Singleton // Ensure singleton scope if AuraAIServiceImpl is @Singleton
+    fun provideAuraAIService(impl: AuraAIServiceImpl): AuraAIService {
+        // TODO: Method reported as unused. Verify necessity.
+        // Hilt will provide AuraAIServiceImpl due to its @Inject constructor.
+        // This method binds the implementation to the interface.
+        return impl
     }
 
     /**

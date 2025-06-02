@@ -58,7 +58,7 @@ class NeuralWhisper(
     companion object {
         // TODO: Add any companion object members if needed
     }
-
+    
     // TODO: Reported as unused class. Implement or remove.
     data class UserPreferenceModel(
         val id: String? = null // TODO: Reported as unused.
@@ -108,9 +108,12 @@ class NeuralWhisper(
         // TODO: Reported as unused. Implement or remove.
     }
 
-    fun shareContextWithKai(_share: Boolean) { // Param _share reported as unused.
+    fun shareContextWithKai(context: String) { // Signature changed, param _share removed
         // TODO: Reported as unused. Implement or remove.
-        this.contextSharedWithKai = _share
+        // this.contextSharedWithKai = _share // Old logic removed
+        _conversationStateFlow.value = ConversationState.Processing("Sharing: $context")
+        println("NeuralWhisper: Sharing context with Kai: $context")
+        // TODO: Actually interact with _kaiController once its type is defined and injected.
     }
 
     fun generateSpelHook(_params: Map<String, Any>): String { // Param _params reported as unused. // spelhook -> spelHook
@@ -122,16 +125,17 @@ class NeuralWhisper(
         // TODO: Reported as unused. Implement or remove.
         return null
     }
-
-    fun startAudioRecording() {
+    
+    fun startAudioRecording(): Boolean { // Changed to return Boolean
         // TODO: Reported as unused. Implement or remove.
+        return true // Placeholder
     }
 
     fun processAudioToFile(_fileUri: String): Boolean { // Param _fileUri reported as unused.
         // TODO: Reported as unused. Implement or remove.
         return false
     }
-
+    
     fun prepareAudioForAI(_audioData: ShortArray) { // Param _audioData reported as unused.
         // TODO: Reported as unused. Implement or remove.
     }

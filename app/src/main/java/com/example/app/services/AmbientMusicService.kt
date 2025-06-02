@@ -3,8 +3,12 @@ package com.example.app.services
 import android.app.Service
 import android.content.Intent
 import android.os.IBinder
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
-class AmbientMusicService : Service() {
+@AndroidEntryPoint
+class AmbientMusicService @Inject constructor() : Service() {
+    // TODO: If this service has dependencies to be injected, add them to the constructor.
 
     override fun onBind(_intent: Intent?): IBinder? { // intent -> _intent
         // TODO: Implement binding if needed, otherwise this service cannot be bound.

@@ -3,8 +3,12 @@ package com.example.app.services
 import android.util.Log
 import com.google.firebase.messaging.FirebaseMessagingService
 import com.google.firebase.messaging.RemoteMessage
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
-class MyFirebaseMessagingService : FirebaseMessagingService() {
+@AndroidEntryPoint
+class MyFirebaseMessagingService @Inject constructor() : FirebaseMessagingService() {
+    // TODO: If this service has dependencies to be injected, add them to the constructor.
 
     private val tag = "MyFirebaseMsgService"
 
