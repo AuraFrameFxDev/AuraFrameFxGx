@@ -39,6 +39,7 @@ junit = "4.13.2"
 androidxTestExtJunit = "1.1.5"
 androidxEspressoCore = "3.5.1"
 mockk = "1.13.10"
+googleAiGenerativeai = "0.3.0" # Version for Google AI client library
 
 [libraries]
 # AndroidX Core
@@ -102,6 +103,8 @@ androidx-compose-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-te
 mockk-android = { group = "io.mockk", name = "mockk-android", version.ref = "mockk" }
 mockk-agent = { group = "io.mockk", name = "mockk-agent", version.ref = "mockk" }
 
+# Google AI Generative AI
+google-ai-generativeai = { group = "com.google.ai.client.generativeai", name = "generativeai", version.ref = "googleAiGenerativeai" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

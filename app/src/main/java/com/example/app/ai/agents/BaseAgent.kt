@@ -1,5 +1,7 @@
 package com.example.app.ai.agents
 
+import com.example.app.model.AgentType // Added import
+
 /**
  * Base implementation of the [Agent] interface.
  * TODO: Reported as unused declaration. Ensure this class is subclassed or used.
@@ -15,14 +17,19 @@ open class BaseAgent(
     // TODO: Consider if _agentName and _agentType should be used for overridden getName() and getType()
     // or if those methods should allow further customization by subclasses.
 
-    override fun getName(): String {
+    override fun getName(): String? { // Changed to String?
         // TODO: Reported as unused (inherited method).
         return _agentName // Using constructor parameter
     }
 
-    override fun getType(): String {
+    override fun getType(): AgentType? { // Changed to AgentType?
         // TODO: Reported as unused (inherited method).
-        return _agentType // Using constructor parameter
+        // Basic mapping from string to AgentType enum, adjust as needed
+        return try {
+            AgentType.valueOf(_agentType.uppercase())
+        } catch (e: IllegalArgumentException) {
+            null // Or a default AgentType
+        }
     }
 
     override suspend fun processRequest(_prompt: String): String {

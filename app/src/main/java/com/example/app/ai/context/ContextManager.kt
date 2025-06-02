@@ -1,5 +1,6 @@
 package com.example.app.ai.context
 
+import com.google.ai.client.generativeai.GenerativeModel // Added import
 // import com.example.app.ai.VertexAIConfig // Example, if VertexAI type is VertexAIConfig or similar
 
 /**
@@ -8,10 +9,10 @@ package com.example.app.ai.context
  */
 class ContextManager(
     // TODO: Replace 'Any' with the actual VertexAI client/service type. Reported as unused.
-    private val _vertexAI: Any
+    private val _vertexAI: GenerativeModel? // Changed from Any to GenerativeModel?
 ) {
 
-    private val currentContext: MutableMap<String, Any> = mutableMapOf()
+    private val currentContext: MutableMap<String, AIContext> = mutableMapOf() // Value type changed to AIContext
 
     init {
         // TODO: Initialize context, perhaps load from persistence or set defaults.
@@ -24,9 +25,11 @@ class ContextManager(
      * @return The context data.
      * TODO: Reported as unused. Implement or remove if not needed.
      */
-    fun getContext(key: String? = null): Any? {
+    fun getContext(key: String? = null): AIContext? { // Return type changed to AIContext?
         // TODO: Reported as unused. Implement actual context retrieval logic.
-        return if (key == null) currentContext else currentContext[key]
+        // If key is null, this would imply returning a default or aggregated context,
+        // which needs clarification. For now, returning a specific key's context or null.
+        return if (key == null) null else currentContext[key] // Simplified for now
     }
 
     /**
@@ -34,7 +37,7 @@ class ContextManager(
      * @param key The key for the context item.
      * @param value The value of the context item.
      */
-    fun updateContext(key: String, value: Any) {
+    fun updateContext(key: String, value: AIContext) { // Value type changed to AIContext
         currentContext[key] = value
         // TODO: Potentially persist context or notify listeners of change.
     }

@@ -6,6 +6,7 @@ import android.content.SharedPreferences
 import com.example.app.ai.AuraAIService // Assuming path from previous creation
 import com.example.app.ai.config.AIConfig // Assuming path from previous creation
 import com.example.app.data.SecurePreferences // Assuming path from previous creation
+import com.google.ai.client.generativeai.GenerativeModel // Added import
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -99,11 +100,12 @@ object AppModule {
      */
     @Provides
     @Singleton
-    fun provideGenerativeModel(): Any? { // Using Any as GenerativeModel type placeholder
+    fun provideGenerativeModel(): GenerativeModel? { // Changed return type from Any?
+        // TODO: Actually provide the GenerativeModel instance
         // Example:
         // val config = VertexAIConfig(apiKey = "YOUR_API_KEY") // Or inject VertexAIConfig
-        // val vertexAI = VertexAI.Builder().setVertexAIConfig(config).build()
-        // return vertexAI.getGenerativeModel("gemini-pro")
+        // val vertexAI = VertexAI.Builder().setVertexAIConfig(config).build() // This is a different VertexAI
+        // return com.google.ai.client.generativeai.GenerativeModel(modelName = "gemini-pro", apiKey = "YOUR_API_KEY") // Simplified example
         return null // Placeholder
     }
 }

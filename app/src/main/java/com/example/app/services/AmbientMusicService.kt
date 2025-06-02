@@ -6,8 +6,9 @@ import android.os.IBinder
 
 class AmbientMusicService : Service() {
 
-    override fun onBind(intent: Intent?): IBinder? {
+    override fun onBind(_intent: Intent?): IBinder? { // intent -> _intent
         // TODO: Implement binding if needed, otherwise this service cannot be bound.
+        // TODO: Parameter _intent reported as unused.
         return null
     }
 

@@ -1,7 +1,12 @@
 package com.example.app.ai.services
 
 import android.media.AudioRecord // Assuming usage of AudioRecord
+import com.google.ai.client.generativeai.GenerativeModel // Added import
+import com.example.app.model.ConversationState // Added import
+import com.example.app.model.Emotion // Added import
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.flow
 
 /**
@@ -12,7 +17,8 @@ class NeuralWhisper(
     // Parameters that might be configurable
     private val sampleRate: Int = 44100,
     private val channels: Int = 1, // e.g., AudioFormat.CHANNEL_IN_MONO
-    private val bitsPerSample: Int = 16 // e.g., AudioFormat.ENCODING_PCM_16BIT
+    private val bitsPerSample: Int = 16, // e.g., AudioFormat.ENCODING_PCM_16BIT
+    private val _model: GenerativeModel? = null // Added constructor parameter // TODO: Reported as unused or needs implementation
 ) {
 
     // TODO: Review hardcoded audio parameters (sampleRate, bitsPerSample, channels).
@@ -29,12 +35,18 @@ class NeuralWhisper(
 
     // TODO: Reported as unused. Implement or remove.
     var contextSharedWithKai: Boolean = false
+
     // TODO: Reported as unused. Implement or remove.
-    var conversationState: Any? = null // Placeholder type
+    private val _conversationStateFlow = MutableStateFlow<ConversationState>(ConversationState.Idle)
+    val conversationState: StateFlow<ConversationState> = _conversationStateFlow
+
     // TODO: Reported as unused. Implement or remove.
-    val emotionLabels: List<String> = emptyList()
+    val emotionLabels: List<String> = Emotion.values().map { it.name } // Example using Enum values
+
     // TODO: Reported as unused. Implement or remove.
-    var emotionState: String = "neutral"
+    private val _emotionStateFlow = MutableStateFlow<Emotion>(Emotion.NEUTRAL)
+    val emotionState: StateFlow<Emotion> = _emotionStateFlow
+
     // TODO: Reported as unused. Implement or remove.
     var isProcessing: Boolean = false
     // TODO: Reported as unused. Implement or remove.

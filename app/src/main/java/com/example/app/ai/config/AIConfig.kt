@@ -1,17 +1,11 @@
 package com.example.app.ai.config
 
-/**
- * Data class for holding AI configuration parameters.
- * TODO: Define actual properties based on application needs.
- * This is a general placeholder. Specific configurations (like VertexAIConfig) might also exist.
- */
+// TODO: Class reported as unused declaration. Ensure this config is used by AI components.
 data class AIConfig(
-    val apiKey: String? = null, // Example property
-    val modelName: String = "default-model", // Example property
-    val useSecureStorage: Boolean = false, // Example property
-    val temperature: Float = 0.7f, // Example property
-    val maxOutputTokens: Int = 256 // Example property
-    // Add other common AI configuration parameters as needed
-) {
-    // TODO: Reported as unused declaration. Ensure this config is used by AI components.
-}
+    val modelName: String? = null, // TODO: Reported as unused or needs implementation
+    val apiKey: String? = null, // TODO: Reported as unused or needs implementation
+    val projectId: String? = null, // TODO: Reported as unused or needs implementation
+    val temperature: Float = 0.7f, // TODO: Needs implementation detail if used
+    val maxOutputTokens: Int = 256 // TODO: Needs implementation detail if used
+    // TODO: Define actual properties
+)

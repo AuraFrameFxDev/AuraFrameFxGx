@@ -104,6 +104,9 @@ dependencies {
     implementation(libs.firebase.messaging.ktx)
     // Add other Firebase dependencies as needed (firestore, auth, etc.)
 
+    // Google AI Generative AI
+    implementation(libs.google.ai.generativeai)
+
     // Networking (OkHttp & Retrofit)
     implementation(libs.okhttp.core)
     implementation(libs.okhttp.logging.interceptor) // Useful for debugging

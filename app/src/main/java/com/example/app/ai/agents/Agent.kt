@@ -1,5 +1,7 @@
 package com.example.app.ai.agents
 
+import com.example.app.model.AgentType // Added import
+
 /**
  * Interface representing an AI agent.
  * TODO: Reported as unused declaration. Ensure this interface is implemented and used.
@@ -10,17 +12,13 @@ interface Agent {
      * Returns the name of the agent.
      * TODO: Reported as unused.
      */
-    fun getName(): String {
-        return "DefaultAgentName" // Placeholder
-    }
+    fun getName(): String? // Changed to String?
 
     /**
      * Returns the type or model of the agent.
      * TODO: Reported as unused.
      */
-    fun getType(): String {
-        return "DefaultAgentType" // Placeholder
-    }
+    fun getType(): AgentType? // Changed to AgentType?
 
     /**
      * Processes a given request (prompt) and returns a response.

@@ -15,9 +15,9 @@ interface AuraAIService {
         return null
     }
 
-    suspend fun generateImage(_prompt: String): String { // Returns URL or path to image
+    suspend fun generateImage(_prompt: String): ByteArray? { // Returns URL or path to image -> ByteArray?
         // TODO: Implement image generation
-        return "http://placeholder.com/image.jpg"
+        return null // Placeholder for image data
     }
 
     suspend fun generateText(_prompt: String): String {
@@ -25,12 +25,12 @@ interface AuraAIService {
         return "Generated text placeholder"
     }
 
-    fun getAIResponse(_prompt: String, _options: Map<String, Any>? = null): Any { // Return type might be more specific
+    fun getAIResponse(_prompt: String, _options: Map<String, Any>? = null): String? { // Return type Any -> String?
         // TODO: Implement AI response retrieval
         return "AI response placeholder"
     }
 
-    fun getMemory(_key: String): Any? {
+    fun getMemory(_memoryKey: String): String? { // param _key -> _memoryKey, Return type Any? -> String?
         // TODO: Implement memory retrieval
         return null
     }
@@ -58,4 +58,10 @@ interface AuraAIService {
     }
 
     // Add other common AI service methods if needed
+
+    fun getAppConfig(): com.example.app.ai.config.AIConfig? {
+        // TODO: Reported as unused or requires implementation.
+        // This method should provide the application's AI configuration.
+        return null
+    }
 }

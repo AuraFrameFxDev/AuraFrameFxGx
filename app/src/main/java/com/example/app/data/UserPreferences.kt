@@ -4,6 +4,7 @@ import android.content.Context
 // import androidx.datastore.preferences.core.edit
 // import androidx.datastore.preferences.core.stringPreferencesKey
 // import androidx.datastore.preferences.preferencesDataStore
+import com.example.app.model.UserData // Added import
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 
@@ -92,10 +93,10 @@ class UserPreferences(context: Context) {
      * TODO: Reported as unused. Implement actual user data retrieval.
      * @return User data object or null.
      */
-    suspend fun getUserData(): Any? {
+    suspend fun getUserData(): UserData? { // Changed return type from Any? to UserData?
         // TODO: Implement actual data retrieval logic.
         // This might involve fetching from DataStore, SharedPreferences, or a database.
-        // Example: return UserDataObject(userName, userEmail, userId, apiKey)
+        // Example: return UserData(id = userId, name = userName, email = userEmail, apiKey = apiKey)
         return null
     }
 }
