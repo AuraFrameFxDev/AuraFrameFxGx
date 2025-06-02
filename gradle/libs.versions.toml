@@ -1,17 +1,17 @@
 [versions]
 # Android SDK and Tools
-compileSdk = "34"
-minSdk = "24"
-targetSdk = "34"
-jvmTarget = "1.8" # Or "11" / "17" if project setup allows
+compileSdk = "36"
+minSdk = "31"
+targetSdk = "36"
+jvmTarget = "17"
 agp = "8.10.1" # Android Gradle Plugin
-kotlin = "1.9.22" # Kotlin version
-ksp = "1.9.22-1.0.17" # KSP version
-composeCompiler = "1.5.8" # Aligns with Kotlin 1.9.22
+kotlin = "2.1.23" # Kotlin version
+ksp = "2.1.23-1.0.32" # KSP version
+parcelize = "2.1.23" # Parcelize version
 hilt = "2.50" # Hilt version
 
 # AndroidX
-androidxCore = "1.12.0"
+androidxCore = "1.13.1"
 androidxAppCompat = "1.6.1"
 androidxActivity = "1.8.2" # For Activity Compose
 androidxLifecycle = "2.7.0"
@@ -21,10 +21,10 @@ androidxWork = "2.9.0" # For background work
 androidxHiltWork = "1.1.0" # Hilt integration for WorkManager
 
 # Jetpack Compose
-composeBom = "2024.02.01" # Compose BOM
+composeBom = "2024.05.00" # Compose BOM
 
 # Firebase
-firebaseBom = "32.7.4" # Firebase BOM
+firebaseBom = "32.8.1" # Firebase BOM
 
 # Networking
 okhttp = "4.12.0"
@@ -118,10 +118,11 @@ kotlin-kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlin" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 hilt-android = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
 kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+kotlin-parcelize = { id = "org.jetbrains.kotlin.plugin.parcelize", version.ref = "kotlin" }
+kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 google-services = { id = "com.google.gms.google-services", version.ref = "googleServicesPlugin" } # Using new version ref
 firebase-crashlytics = { id = "com.google.firebase.crashlytics", version.ref = "firebaseCrashlyticsPlugin" } # Using new version ref
 firebase-perf = { id = "com.google.firebase.firebase-perf", version.ref = "firebasePerfPlugin" } # Using new version ref
 navigation-safe-args = { id = "androidx.navigation.safeargs.kotlin", version.ref = "androidxNavigation" }
 dokka = { id = "org.jetbrains.dokka", version.ref = "dokkaPlugin" }
-kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" } # Using new version ref
 # Add other plugins like safe-args, google-services, firebase-crashlytics etc. as needed

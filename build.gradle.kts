@@ -12,12 +12,12 @@ buildscript {
         // Their versions are hardcoded here because 'libs' is not yet available.
         // Ensure these match the versions defined in your libs.versions.toml.
         classpath("com.android.tools.build:gradle:8.10.1")
-        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:2.0.0") // Updated to Kotlin 2.0.0
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:2.1.23")
         classpath("com.google.gms:google-services:4.4.1")
         classpath("com.google.firebase:firebase-crashlytics-gradle:2.9.9")
         classpath("com.google.firebase:perf-plugin:1.4.2")
-        classpath("com.google.dagger:hilt-android-gradle-plugin:2.56.2")
-        classpath("com.google.devtools.ksp:symbol-processing-gradle-plugin:2.0.0-1.0.21") // Match Kotlin 2.0.0
+        classpath("com.google.dagger:hilt-android-gradle-plugin:2.50")
+        classpath("com.google.devtools.ksp:symbol-processing-gradle-plugin:2.1.23-1.0.32")
         classpath("androidx.navigation.safeargs:androidx.navigation.safeargs.gradle.plugin:2.9.0")
         classpath("org.jetbrains.dokka:dokka-gradle-plugin:1.9.20")
     }

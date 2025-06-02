@@ -9,6 +9,7 @@ plugins {
     alias(libs.plugins.firebase.crashlytics)
     alias(libs.plugins.firebase.perf)
     alias(libs.plugins.kotlin.compose)
+    alias(libs.plugins.kotlin.parcelize) // Added Parcelize plugin
     // alias(libs.plugins.navigation.safe.args) // Only if using safe args for navigation
     // Add other plugins like google-services, firebase-crashlytics if they should be applied here
     // id("com.google.gms.google-services") // Example if not using alias from root for this one
@@ -42,8 +43,8 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8 // Or VERSION_11 / VERSION_17 to match jvmTarget
-        targetCompatibility = JavaVersion.VERSION_1_8 // Or VERSION_11 / VERSION_17
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
 
     kotlinOptions {
@@ -52,10 +53,6 @@ android {
 
     buildFeatures {
         compose = true
-    }
-
-    composeOptions {
-        kotlinCompilerExtensionVersion = libs.versions.composeCompiler.get()
     }
 
     packagingOptions {
