@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults // Added import
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -27,10 +28,17 @@ fun MenuScreen() {
         Text(
             text = "Main Menu",
             style = MaterialTheme.typography.headlineSmall,
+            color = MaterialTheme.colorScheme.primary, // Explicitly use primary color
             modifier = Modifier.padding(bottom = 24.dp)
         )
-        Button(onClick = { /* TODO: Handle Menu Item 1 click */ }) {
-            Text("Menu Item 1")
+        Button(
+            onClick = { /* TODO: Handle Menu Item 1 click */ },
+            colors = ButtonDefaults.buttonColors(
+                containerColor = MaterialTheme.colorScheme.secondary, // Explicitly use secondary
+                contentColor = MaterialTheme.colorScheme.onSecondary
+            )
+        ) {
+            Text("Menu Item 1 (Themed)")
         }
         Spacer(modifier = Modifier.height(16.dp))
         Button(onClick = { /* TODO: Handle Menu Item 2 click */ }) {
