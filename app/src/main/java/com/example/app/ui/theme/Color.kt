@@ -2,52 +2,44 @@ package com.example.app.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
-// Light Theme Colors from colors.xml (or common Material defaults)
-val Primary = Color(0xFF6200EE) // Example: Material Purple 500 / colorPrimary
-val PrimaryVariant = Color(0xFF3700B3) // Example: Material Purple 700 / colorPrimaryVariant
-val OnPrimary = Color(0xFFFFFFFF) // colorOnPrimary
+// Primary Colors from user's colors.xml
+val NeonTeal = Color(0xFF00FFCC)
+val NeonPurple = Color(0xFFFF00FF)
+val NeonBlue = Color(0xFF00FFFF)
 
-val Secondary = Color(0xFF03DAC6) // Example: Material Teal 200 / colorSecondary
-val SecondaryVariant = Color(0xFF018786) // Example: Material Teal 700 / colorSecondaryVariant
-val OnSecondary = Color(0xFF000000) // colorOnSecondary
+// Background Colors
+val DarkBackground = Color(0xFF1A1A2E) // dark_background
+val Surface = Color(0xFF2D2D3E)       // surface
+val SurfaceVariant = Color(0xFF3A3A52) // surface_variant
 
-val Background = Color(0xFFFFFFFF) // colorBackground
-val OnBackground = Color(0xFF000000) // colorOnBackground
+// Text Colors
+val OnSurface = Color(0xFFFFFFFF)       // on_surface
+val OnSurfaceVariant = Color(0xFFD0D0D0) // on_surface_variant
+val OnPrimary = Color(0xFF000000)         // on_primary (for text on NeonTeal button)
 
-val Surface = Color(0xFFFFFFFF) // colorSurface
-val OnSurface = Color(0xFF000000) // colorOnSurface
+// Error and other colors from XML
+val ErrorColor = Color(0xFFFF3B30) // error
+val WarningColor = Color(0xFFFF9500) // warning
+val SuccessColor = Color(0xFF34C759) // success
 
-val Error = Color(0xFFB00020) // colorError
-val OnError = Color(0xFFFFFFFF) // colorOnError
+// Define a light palette as well, even if the theme is primarily dark.
+// These can be adjusted later but provide a fallback.
+val LightPrimary = Color(0xFF007A6E) // Darker Teal for light theme primary
+val LightOnPrimary = Color(0xFFFFFFFF)
+val LightSecondary = Color(0xFF7A007A) // Darker Purple
+val LightOnSecondary = Color(0xFFFFFFFF)
+val LightTertiary = Color(0xFF007A7A) // Darker Cyan/Blue
+val LightOnTertiary = Color(0xFFFFFFFF)
 
-// Added from colors.xml in previous subtasks
-val Tertiary = Color(0xFF03DAC5) // colorTertiary (similar to Secondary for this example)
-val OnTertiary = Color(0xFF000000) // colorOnTertiary
+val LightBackground = Color(0xFFF0F0F8) // A light background (e.g., off-white/light lavender)
+val LightOnBackground = Color(0xFF1C1B1F) // Standard dark text for light backgrounds
+val LightSurface = Color(0xFFF8F8FC) // Slightly different from background for cards, etc.
+val LightOnSurface = Color(0xFF1C1B1F)
 
-val SurfaceVariant = Color(0xFFE0E0E0) // colorSurfaceVariant (e.g., light gray)
-val OnSurfaceVariant = Color(0xFF000000) // colorOnSurfaceVariant
+val LightError = Color(0xFFB00020) // Standard Material error for light themes
+val LightOnError = Color(0xFFFFFFFF)
 
-val Outline = Color(0xFF757575) // colorOutline (e.g., medium gray)
-
-val PrimaryInverse = Color(0xFF000000) // colorPrimaryInverse (example, can be different)
-
-// Dark Theme Colors (can be defined here or directly in darkColorScheme)
-val DarkPrimary = Color(0xFFBB86FC) // Example: Material Purple 200
-val DarkOnPrimary = Color(0xFF000000)
-
-val DarkSecondary = Color(0xFF03DAC5) // Example: Material Teal 200 (can be same as light)
-val DarkOnSecondary = OnSecondary // Often same as light theme's onSecondary
-
-val DarkBackground = Color(0xFF121212)
-val DarkOnBackground = Color(0xFFFFFFFF)
-
-val DarkSurface = Color(0xFF121212) // Often same as DarkBackground in M3
-val DarkOnSurface = Color(0xFFFFFFFF)
-
-val DarkError = Color(0xFFCF6679) // Example: Lighter red for dark themes
-val DarkOnError = Color(0xFF000000)
-
-val DarkTertiary = Color(0xFF03DAC5) // Can be same or adjusted
-val DarkOnTertiary = OnTertiary
-
-// Add any other specific colors your app theme might need.
+// Other colors from XML that might be useful in Compose
+val Accent1 = NeonTeal
+val Accent2 = NeonPurple
+val Accent3 = NeonBlue
