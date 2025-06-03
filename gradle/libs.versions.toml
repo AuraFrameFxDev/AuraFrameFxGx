@@ -89,16 +89,23 @@ mockk-agent = { group = "io.mockk", name = "mockk-agent", version.ref = "mockk" 
 google-ai-generativeai = { group = "com.google.ai.client.generativeai", name = "generativeai", version.ref = "googleAiGenerativeai" }
 
 [plugins]
-android-application = { id = "com.android.application", version.ref = "agp" } # AGP is fine with version
-kotlin-android = { id = "org.jetbrains.kotlin.android" } # Versionless
-kotlin-kapt = { id = "org.jetbrains.kotlin.kapt" } # Versionless
-ksp = { id = "com.google.devtools.ksp" } # Versionless
-hilt-android = { id = "com.google.dagger.hilt.android", version.ref = "hilt" } # External, fine with version
-kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization" } # Versionless
-kotlin-parcelize = { id = "org.jetbrains.kotlin.plugin.parcelize" } # Versionless
-kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose" } # Versionless
+# Core plugins
+android-application = { id = "com.android.application", version.ref = "agp" }
+
+# Kotlin plugins with explicit versions
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+kotlin-kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlin" }
+kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+kotlin-parcelize = { id = "org.jetbrains.kotlin.plugin.parcelize", version.ref = "kotlin" }
+kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+
+# Other plugins
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+hilt-android = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
 google-services = { id = "com.google.gms.google-services", version.ref = "googleServicesPlugin" }
 firebase-crashlytics = { id = "com.google.firebase.crashlytics", version.ref = "firebaseCrashlyticsPlugin" }
+firebase-perf = { id = "com.google.firebase.firebase-perf", version.ref = "firebasePerfPlugin" }
+dokka = { id = "org.jetbrains.dokka", version.ref = "dokkaPlugin" }
 firebase-perf = { id = "com.google.firebase.firebase-perf", version.ref = "firebasePerfPlugin" }
 navigation-safe-args = { id = "androidx.navigation.safeargs.kotlin", version.ref = "androidxNavigation" }
 dokka = { id = "org.jetbrains.dokka", version.ref = "dokkaPlugin" }
