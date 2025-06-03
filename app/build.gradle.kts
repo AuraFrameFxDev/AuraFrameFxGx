@@ -2,16 +2,48 @@ plugins {
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.kapt) // For Hilt WorkManager extensions if needed, or for other kapt-only processors
-    alias(libs.plugins.ksp) // For Hilt core and other KSP processors
     alias(libs.plugins.hilt.android)
     alias(libs.plugins.kotlin.serialization) // If using kotlinx-serialization
     alias(libs.plugins.google.services)
     alias(libs.plugins.firebase.crashlytics)
     alias(libs.plugins.firebase.perf)
     alias(libs.plugins.kotlin.compose)
+    alias(libs.plugins.dokka) // Add Dokka plugin
     // alias(libs.plugins.navigation.safe.args) // Only if using safe args for navigation
-    // Add other plugins like google-services, firebase-crashlytics if they should be applied here
-    // id("com.google.gms.google-services") // Example if not using alias from root for this one
+    // Apply KSP plugin
+    id("com.google.devtools.ksp")
+}
+
+// Configure Dokka
+tasks.dokkaHtml {
+    outputDirectory.set(buildDir.resolve("dokka"))
+    
+    dokkaSourceSets {
+        named("main") {
+            moduleName.set("AuraFrameFX")
+            moduleVersion.set(project.version.toString())
+            
+            // Include all source sets
+            sourceRoots.from(file("src/main/kotlin"))
+            
+            // Android documentation
+            noAndroidSdkLink.set(false)
+            
+            // External documentation
+            externalDocumentationLink {
+                url.set(uri("https://developer.android.com/reference/").toURL())
+                packageListUrl.set(uri("https://developer.android.com/reference/package-list").toURL())
+            }
+        }
+    }
+}
+
+repositories {
+    google()
+    mavenCentral()
+    maven { url = uri("https://jitpack.io") }
+    maven { url = uri("https://maven.google.com") }
+    maven { url = uri("https://dl.google.com/dl/android/maven2") }
 }
 
 android {
@@ -45,8 +77,8 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_17
-        targetCompatibility = JavaVersion.VERSION_17
+        sourceCompatibility = JavaVersion.VERSION_21
+        targetCompatibility = JavaVersion.VERSION_21
     }
 
     kotlinOptions {
@@ -55,10 +87,6 @@ android {
 
     buildFeatures {
         compose = true
-    }
-
-    composeOptions {
-        kotlinCompilerExtensionVersion = libs.versions.composeCompiler.get()
     }
 
     packagingOptions {

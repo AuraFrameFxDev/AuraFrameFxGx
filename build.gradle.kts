@@ -6,20 +6,21 @@ buildscript {
         google()
         mavenCentral()
         gradlePluginPortal()
+        maven { url = uri("https://maven.google.com") }
+        maven { url = uri("https://dl.google.com/dl/android/maven2") }
     }
     dependencies {
         // These are the plugins/dependencies that Gradle needs to run *this build script*.
-        // Their versions are hardcoded here because 'libs' is not yet available.
-        // These versions must match those defined in libs.versions.toml
-        classpath("com.android.tools.build:gradle:8.9.0-rc01")  // AGP for API 36
-        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:2.1.23")  // Kotlin 2.1.23
+        // Using hardcoded versions here since 'libs' is not available in buildscript block
+        classpath("com.android.tools.build:gradle:8.1.0")  // AGP 8.1.0 for Gradle 8.5
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:2.1.21")  // Kotlin 2.1.21
         classpath("com.google.gms:google-services:4.4.1")
         classpath("com.google.firebase:firebase-crashlytics-gradle:2.9.9")
         classpath("com.google.firebase:perf-plugin:1.4.2")
-        classpath("com.google.dagger:hilt-android-gradle-plugin:${libs.versions.hilt.get()}")
-        classpath("com.google.devtools.ksp:symbol-processing-gradle-plugin:${libs.versions.ksp.get()}")
-        classpath("androidx.navigation.safeargs:androidx.navigation.safeargs.gradle.plugin:${libs.versions.androidxNavigation.get()}")
-        classpath("org.jetbrains.dokka:dokka-gradle-plugin:1.9.20")
+        classpath("com.google.dagger:hilt-android-gradle-plugin:2.50")  // Hardcoded version matching libs.versions.toml
+        classpath("androidx.navigation.safeargs:androidx.navigation.safeargs.gradle.plugin:2.7.7")  // Hardcoded version
+        // KSP plugin is managed through version catalog
+        classpath("com.google.devtools.ksp:com.google.devtools.ksp.gradle.plugin:2.1.21-2.0.1")
     }
 }
 // This section MUST be at the very top of your build.gradle.kts file.
@@ -50,7 +51,7 @@ plugins {
 
     // Dependency Injection
     alias(libs.plugins.hilt.android) apply false
-    alias(libs.plugins.ksp) apply false // Keep ksp.
+    // KSP is applied in the app/build.gradle.kts file
 
     // Navigation
     alias(libs.plugins.navigation.safe.args) apply false

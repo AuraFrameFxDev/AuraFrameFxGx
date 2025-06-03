@@ -49,6 +49,16 @@ bin/
 .env.*
 !.env.example
 
+# Lock files
+*.lock
+*.lock.*
+**/gradle/*.lock
+**/gradle/*.lock.*
+**/build/*.lock
+**/build/*.lock.*
+**/*.lock
+**/*.lock.*
+
 # macOS specific
 .DS_Store
 
