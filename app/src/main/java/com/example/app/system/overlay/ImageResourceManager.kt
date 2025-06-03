@@ -3,11 +3,8 @@ package com.example.app.system.overlay
 import android.content.Context
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
-import android.graphics.drawable.BitmapDrawable
-import android.graphics.drawable.Drawable
 import androidx.core.content.ContextCompat
 import androidx.core.graphics.drawable.toBitmap
-import com.highcapable.yukihookapi.hook.xposed.XposedModule
 import com.highcapable.yukihookapi.hook.xposed.prefs.data.YukiHookModulePrefs
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -18,10 +15,11 @@ import javax.inject.Singleton
 @Singleton
 class ImageResourceManager @Inject constructor(
     private val context: Context,
-    private val prefs: YukiHookModulePrefs
+    private val prefs: YukiHookModulePrefs,
 ) {
     private val imageCache = mutableMapOf<String, ImageResource>()
-    private val imageCategories = mutableMapOf<String, MutableList<ImageResource>>() // Category -> Images
+    private val imageCategories =
+        mutableMapOf<String, MutableList<ImageResource>>() // Category -> Images
     private val imageMetadata = mutableMapOf<String, Map<String, Any>>() // ID -> Metadata
 
     private val _availableImages = MutableStateFlow<List<ImageResource>>(emptyList())
@@ -58,7 +56,7 @@ class ImageResourceManager @Inject constructor(
 
     private fun loadCustomImages() {
         val customImages = mutableListOf<ImageResource>()
-        
+
         // Load custom images from storage
         imageStorageDir.listFiles()?.forEach { file ->
             if (file.isFile && file.extension.lowercase() in listOf("png", "jpg", "jpeg", "webp")) {
@@ -68,11 +66,11 @@ class ImageResourceManager @Inject constructor(
                     file,
                     ImageType.CUSTOM
                 )
-                
+
                 // Categorize based on filename convention
                 val category = getCategoryFromFilename(id)
                 imageCategories[category]?.add(resource)
-                
+
                 customImages.add(resource)
             }
         }
@@ -85,7 +83,7 @@ class ImageResourceManager @Inject constructor(
         bitmap: Bitmap,
         type: ImageType = ImageType.CUSTOM,
         metadata: Map<String, Any> = emptyMap(),
-        category: String? = null
+        category: String? = null,
     ): ImageResource {
         val file = File(imageStorageDir, "$id.png")
         bitmap.compress(Bitmap.CompressFormat.PNG, 100, file.outputStream())
@@ -100,7 +98,7 @@ class ImageResourceManager @Inject constructor(
         // Add to cache and categories
         imageCache[id] = resource
         imageMetadata[id] = metadata
-        
+
         val targetCategory = category ?: getCategoryFromFilename(id)
         imageCategories[targetCategory]?.add(resource)
 
@@ -120,7 +118,7 @@ class ImageResourceManager @Inject constructor(
         // Remove from cache and categories
         imageCache.remove(id)
         imageMetadata.remove(id)
-        
+
         imageCategories.values.forEach { list ->
             list.removeAll { it.id == id }
         }
@@ -173,7 +171,7 @@ class ImageResourceManager @Inject constructor(
         id: String,
         resourceId: Int,
         type: ImageType,
-        metadata: Map<String, Any> = emptyMap()
+        metadata: Map<String, Any> = emptyMap(),
     ): ImageResource {
         val drawable = ContextCompat.getDrawable(context, resourceId)
         val bitmap = drawable?.toBitmap()
@@ -192,7 +190,7 @@ class ImageResourceManager @Inject constructor(
         id: String,
         file: File,
         type: ImageType,
-        metadata: Map<String, Any> = emptyMap()
+        metadata: Map<String, Any> = emptyMap(),
     ): ImageResource {
         val bitmap = BitmapFactory.decodeFile(file.absolutePath)
         return ImageResource(
@@ -224,7 +222,7 @@ data class ImageResource(
     val id: String,
     val type: ImageType,
     val bitmap: Bitmap?,
-    val metadata: Map<String, Any> = emptyMap()
+    val metadata: Map<String, Any> = emptyMap(),
 ) {
     val width: Int get() = bitmap?.width ?: 0
     val height: Int get() = bitmap?.height ?: 0

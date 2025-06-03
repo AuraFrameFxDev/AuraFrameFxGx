@@ -21,33 +21,39 @@ class KaiAIService @Inject constructor() : Agent("Kai", "Security") {
     private suspend fun processSecurityRequest(request: AiRequest): Flow<AiResponse> {
         // TODO: Implement security analysis
         return flow {
-            emit(AiResponse(
-                type = "security",
-                content = "Analyzing security threat...",
-                confidence = 0.95f
-            ))
+            emit(
+                AiResponse(
+                    type = "security",
+                    content = "Analyzing security threat...",
+                    confidence = 0.95f
+                )
+            )
         }
     }
 
     private suspend fun processAnalysisRequest(request: AiRequest): Flow<AiResponse> {
         // TODO: Implement system analysis
         return flow {
-            emit(AiResponse(
-                type = "analysis",
-                content = "Performing system analysis...",
-                confidence = 0.9f
-            ))
+            emit(
+                AiResponse(
+                    type = "analysis",
+                    content = "Performing system analysis...",
+                    confidence = 0.9f
+                )
+            )
         }
     }
 
     override suspend fun retrieveMemory(request: AiRequest): Flow<AiResponse> {
         // TODO: Implement security memory retrieval
         return flow {
-            emit(AiResponse(
-                type = "memory",
-                content = "Retrieving security logs...",
-                confidence = 0.95f
-            ))
+            emit(
+                AiResponse(
+                    type = "memory",
+                    content = "Retrieving security logs...",
+                    confidence = 0.95f
+                )
+            )
         }
     }
 

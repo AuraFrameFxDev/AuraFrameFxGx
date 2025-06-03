@@ -1,9 +1,7 @@
 package com.example.app.system.homescreen
 
 import com.example.app.system.overlay.*
-import com.highcapable.yukihookapi.hook.xposed.XposedModule
 import com.highcapable.yukihookapi.hook.xposed.prefs.data.YukiHookModulePrefs
-import com.highcapable.yukihookapi.hook.xposed.service.YukiHookService
 import com.highcapable.yukihookapi.hook.xposed.service.YukiHookServiceManager
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -16,7 +14,7 @@ class HomeScreenTransitionManager @Inject constructor(
     private val shapeManager: ShapeManager,
     private val imageManager: ImageResourceManager,
     private val prefs: YukiHookModulePrefs,
-    private val overlayService: YukiHookServiceManager
+    private val overlayService: YukiHookServiceManager,
 ) {
     private val _currentConfig = MutableStateFlow<HomeScreenTransitionConfig?>(null)
     val currentConfig: StateFlow<HomeScreenTransitionConfig?> = _currentConfig

@@ -1,7 +1,7 @@
 package com.example.app.utils
 
-import com.example.app.ai.VertexAIConfig // Import the placeholder config
 import android.util.Log
+import com.example.app.ai.VertexAIConfig
 
 /**
  * Utility object for Vertex AI operations.
@@ -56,7 +56,8 @@ object VertexAIUtils {
      */
     fun validate(_config: VertexAIConfig?): Boolean {
         // TODO: Reported as unused. Implement actual validation logic.
-        val isValid = _config != null && _config.projectId.isNotBlank() && _config.region.isNotBlank()
+        val isValid =
+            _config != null && _config.projectId.isNotBlank() && _config.region.isNotBlank()
         Log.d(TAG, "Validating config: ${isValid}")
         return isValid
     }

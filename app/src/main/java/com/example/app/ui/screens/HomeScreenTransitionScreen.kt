@@ -5,7 +5,6 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.*
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
@@ -15,7 +14,7 @@ import com.example.app.ui.theme.Color
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun HomeScreenTransitionScreen(
-    viewModel: HomeScreenTransitionViewModel = hiltViewModel()
+    viewModel: HomeScreenTransitionViewModel = hiltViewModel(),
 ) {
     val currentConfig by viewModel.currentConfig.collectAsState()
 
@@ -88,7 +87,11 @@ fun HomeScreenTransitionScreen(
                     Spacer(modifier = Modifier.height(8.dp))
                     DurationSlider(
                         currentDuration = currentConfig?.duration ?: 500,
-                        onDurationChanged = { duration -> viewModel.updateTransitionDuration(duration) }
+                        onDurationChanged = { duration ->
+                            viewModel.updateTransitionDuration(
+                                duration
+                            )
+                        }
                     )
                 }
             }
@@ -112,7 +115,11 @@ fun HomeScreenTransitionScreen(
                     Spacer(modifier = Modifier.height(8.dp))
                     TransitionPropertiesEditor(
                         currentProperties = currentConfig?.properties ?: emptyMap(),
-                        onPropertiesChanged = { properties -> viewModel.updateTransitionProperties(properties) }
+                        onPropertiesChanged = { properties ->
+                            viewModel.updateTransitionProperties(
+                                properties
+                            )
+                        }
                     )
                 }
             }
@@ -123,7 +130,7 @@ fun HomeScreenTransitionScreen(
 @Composable
 fun TransitionTypePicker(
     currentType: HomeScreenTransitionType,
-    onTypeSelected: (HomeScreenTransitionType) -> Unit
+    onTypeSelected: (HomeScreenTransitionType) -> Unit,
 ) {
     Column(
         modifier = Modifier.fillMaxWidth(),
@@ -194,7 +201,7 @@ fun TransitionTypePicker(
 @Composable
 fun DurationSlider(
     currentDuration: Int,
-    onDurationChanged: (Int) -> Unit
+    onDurationChanged: (Int) -> Unit,
 ) {
     Column(
         modifier = Modifier.fillMaxWidth(),
@@ -221,7 +228,7 @@ fun DurationSlider(
 @Composable
 fun TransitionPropertiesEditor(
     currentProperties: Map<String, Any>,
-    onPropertiesChanged: (Map<String, Any>) -> Unit
+    onPropertiesChanged: (Map<String, Any>) -> Unit,
 ) {
     Column(
         modifier = Modifier.fillMaxWidth(),
@@ -304,7 +311,7 @@ fun PropertySlider(
     label: String,
     value: Float,
     onValueChange: (Float) -> Unit,
-    valueRange: ClosedFloatingPointRange<Float>
+    valueRange: ClosedFloatingPointRange<Float>,
 ) {
     Column(
         modifier = Modifier.fillMaxWidth(),
@@ -330,7 +337,7 @@ fun PropertySlider(
 @Composable
 fun BasicTransitionRow(
     currentType: HomeScreenTransitionType,
-    onTypeSelected: (HomeScreenTransitionType) -> Unit
+    onTypeSelected: (HomeScreenTransitionType) -> Unit,
 ) {
     Row(
         modifier = Modifier.fillMaxWidth(),
@@ -362,7 +369,7 @@ fun BasicTransitionRow(
 @Composable
 fun CardStackTransitionRow(
     currentType: HomeScreenTransitionType,
-    onTypeSelected: (HomeScreenTransitionType) -> Unit
+    onTypeSelected: (HomeScreenTransitionType) -> Unit,
 ) {
     Row(
         modifier = Modifier.fillMaxWidth(),
@@ -394,7 +401,7 @@ fun CardStackTransitionRow(
 @Composable
 fun ThreeDTransitionRow(
     currentType: HomeScreenTransitionType,
-    onTypeSelected: (HomeScreenTransitionType) -> Unit
+    onTypeSelected: (HomeScreenTransitionType) -> Unit,
 ) {
     Row(
         modifier = Modifier.fillMaxWidth(),
@@ -426,7 +433,7 @@ fun ThreeDTransitionRow(
 @Composable
 fun GlobeTransitionRow(
     currentType: HomeScreenTransitionType,
-    onTypeSelected: (HomeScreenTransitionType) -> Unit
+    onTypeSelected: (HomeScreenTransitionType) -> Unit,
 ) {
     Row(
         modifier = Modifier.fillMaxWidth(),
@@ -458,7 +465,7 @@ fun GlobeTransitionRow(
 @Composable
 fun FanTransitionRow(
     currentType: HomeScreenTransitionType,
-    onTypeSelected: (HomeScreenTransitionType) -> Unit
+    onTypeSelected: (HomeScreenTransitionType) -> Unit,
 ) {
     Row(
         modifier = Modifier.fillMaxWidth(),
@@ -490,7 +497,7 @@ fun FanTransitionRow(
 @Composable
 fun SpreadTransitionRow(
     currentType: HomeScreenTransitionType,
-    onTypeSelected: (HomeScreenTransitionType) -> Unit
+    onTypeSelected: (HomeScreenTransitionType) -> Unit,
 ) {
     Row(
         modifier = Modifier.fillMaxWidth(),
@@ -523,7 +530,7 @@ fun SpreadTransitionRow(
 fun TransitionButton(
     label: String,
     isSelected: Boolean,
-    onClick: () -> Unit
+    onClick: () -> Unit,
 ) {
     Button(
         onClick = onClick,

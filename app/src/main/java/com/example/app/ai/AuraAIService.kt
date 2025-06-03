@@ -25,7 +25,10 @@ interface AuraAIService {
         return "Generated text placeholder"
     }
 
-    fun getAIResponse(_prompt: String, _options: Map<String, Any>? = null): String? { // Return type Any -> String?
+    fun getAIResponse(
+        _prompt: String,
+        _options: Map<String, Any>? = null,
+    ): String? { // Return type Any -> String?
         // TODO: Implement AI response retrieval
         return "AI response placeholder"
     }

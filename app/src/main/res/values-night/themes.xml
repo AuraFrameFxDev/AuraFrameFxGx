@@ -1,25 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <style name="Theme.App" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Override colors for night mode -->
         <item name="colorPrimary">@color/colorPrimary</item> <!-- Adjust for night -->
         <item name="colorOnPrimary">@color/colorOnPrimary</item> <!-- Adjust for night -->
-        <item name="colorPrimaryContainer">@color/colorPrimaryVariant</item> <!-- Adjust for night -->
+        <item name="colorPrimaryContainer">@color/colorPrimaryVariant
+        </item> <!-- Adjust for night -->
         <item name="colorOnPrimaryContainer">@color/colorOnPrimary</item> <!-- Adjust for night -->
         <item name="colorSecondary">@color/colorSecondary</item> <!-- Adjust for night -->
         <item name="colorOnSecondary">@color/colorOnSecondary</item> <!-- Adjust for night -->
-        <item name="colorSecondaryContainer">@color/colorSecondaryVariant</item> <!-- Adjust for night -->
-        <item name="colorOnSecondaryContainer">@color/colorOnSecondary</item> <!-- Adjust for night -->
+        <item name="colorSecondaryContainer">@color/colorSecondaryVariant
+        </item> <!-- Adjust for night -->
+        <item name="colorOnSecondaryContainer">@color/colorOnSecondary
+        </item> <!-- Adjust for night -->
         <item name="android:colorBackground">#FF121212</item> <!-- Dark background -->
         <item name="colorOnBackground">#FFFFFFFF</item> <!-- Light text on dark background -->
         <item name="colorSurface">#FF121212</item> <!-- Dark surface -->
         <item name="colorOnSurface">#FFFFFFFF</item> <!-- Light text on dark surface -->
         <item name="colorSurfaceVariant">#FF303030</item> <!-- Darker surface variant -->
-        <item name="colorOnSurfaceVariant">#FFFFFFFF</item> <!-- Light text on dark surface variant -->
+        <item name="colorOnSurfaceVariant">#FFFFFFFF
+        </item> <!-- Light text on dark surface variant -->
         <item name="colorError">#FFCF6679</item> <!-- Lighter error for dark theme -->
         <item name="colorOnError">#FF000000</item>
 
         <item name="android:windowLightStatusBar">false</item> <!-- Dark status bar icons -->
-        <item name="android:windowLightNavigationBar">false</item> <!-- Dark navigation bar icons -->
+        <item name="android:windowLightNavigationBar">false
+        </item> <!-- Dark navigation bar icons -->
     </style>
 </resources>

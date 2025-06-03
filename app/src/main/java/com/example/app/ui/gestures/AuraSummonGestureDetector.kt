@@ -1,16 +1,16 @@
 package com.example.app.ui.gestures
 
 import android.content.Context
+import android.util.Log
 import android.view.GestureDetector
 import android.view.MotionEvent
-import android.util.Log
 
 /**
  * Custom gesture detector for Aura summon actions.
  * Extends SimpleOnGestureListener to override only necessary methods.
  */
 class AuraSummonGestureDetector(
-    private val context: Context // Example: if context is needed for resources or actions
+    private val context: Context, // Example: if context is needed for resources or actions
 ) : GestureDetector.SimpleOnGestureListener() {
 
     private val tag = "AuraSummonDetector"

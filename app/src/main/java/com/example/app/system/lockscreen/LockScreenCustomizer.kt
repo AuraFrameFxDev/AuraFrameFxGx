@@ -1,9 +1,7 @@
 package com.example.app.system.lockscreen
 
 import com.example.app.system.overlay.*
-import com.highcapable.yukihookapi.hook.xposed.XposedModule
 import com.highcapable.yukihookapi.hook.xposed.prefs.data.YukiHookModulePrefs
-import com.highcapable.yukihookapi.hook.xposed.service.YukiHookService
 import com.highcapable.yukihookapi.hook.xposed.service.YukiHookServiceManager
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -16,7 +14,7 @@ class LockScreenCustomizer @Inject constructor(
     private val shapeManager: ShapeManager,
     private val imageManager: ImageResourceManager,
     private val prefs: YukiHookModulePrefs,
-    private val overlayService: YukiHookServiceManager
+    private val overlayService: YukiHookServiceManager,
 ) {
     private val _currentConfig = MutableStateFlow<LockScreenConfig?>(null)
     val currentConfig: StateFlow<LockScreenConfig?> = _currentConfig
@@ -146,14 +144,14 @@ class LockScreenCustomizer @Inject constructor(
 data class LockScreenConfig(
     val layout: LockScreenLayout,
     val background: LockScreenBackgroundConfig,
-    val elements: List<LockScreenElementConfig>
+    val elements: List<LockScreenElementConfig>,
 )
 
 @Serializable
 data class LockScreenLayout(
     val clock: LockScreenClockConfig,
     val date: LockScreenDateConfig,
-    val weather: LockScreenWeatherConfig
+    val weather: LockScreenWeatherConfig,
 )
 
 @Serializable
@@ -161,7 +159,7 @@ data class LockScreenClockConfig(
     val position: LockScreenPosition,
     val size: Int,
     val style: LockScreenClockStyle,
-    val animation: LockScreenAnimation
+    val animation: LockScreenAnimation,
 )
 
 @Serializable
@@ -169,7 +167,7 @@ data class LockScreenDateConfig(
     val position: LockScreenPosition,
     val size: Int,
     val style: LockScreenDateStyle,
-    val animation: LockScreenAnimation
+    val animation: LockScreenAnimation,
 )
 
 @Serializable
@@ -177,7 +175,7 @@ data class LockScreenWeatherConfig(
     val position: LockScreenPosition,
     val size: Int,
     val style: LockScreenWeatherStyle,
-    val animation: LockScreenAnimation
+    val animation: LockScreenAnimation,
 )
 
 @Serializable
@@ -185,7 +183,7 @@ data class LockScreenBackgroundConfig(
     val image: ImageResource?,
     val blur: Float,
     val tint: Color,
-    val pattern: LockScreenPattern
+    val pattern: LockScreenPattern,
 )
 
 @Serializable
@@ -193,7 +191,7 @@ data class LockScreenElementConfig(
     val type: LockScreenElementType,
     val position: LockScreenPosition,
     val shape: OverlayShape,
-    val animation: LockScreenAnimation
+    val animation: LockScreenAnimation,
 )
 
 @Serializable
@@ -201,7 +199,7 @@ data class LockScreenAnimation(
     val type: LockScreenAnimationType,
     val duration: Int,
     val easing: String,
-    val delay: Int = 0
+    val delay: Int = 0,
 )
 
 enum class LockScreenPosition {

@@ -21,6 +21,7 @@ class AuraMoodViewModel @Inject constructor(
 
     // Private MutableStateFlow that can be updated from this ViewModel
     private val _moodState = MutableStateFlow<Emotion>(Emotion.NEUTRAL) // Default value
+
     // Public StateFlow that is read-only from the UI
     // TODO: Property moodState reported as unused. Implement or remove.
     val moodState: StateFlow<Emotion> = _moodState

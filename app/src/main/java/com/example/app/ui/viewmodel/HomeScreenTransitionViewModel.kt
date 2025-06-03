@@ -11,7 +11,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class HomeScreenTransitionViewModel @Inject constructor(
-    private val transitionManager: HomeScreenTransitionManager
+    private val transitionManager: HomeScreenTransitionManager,
 ) : ViewModel() {
     private val _currentConfig = MutableStateFlow<HomeScreenTransitionConfig?>(null)
     val currentConfig: StateFlow<HomeScreenTransitionConfig?> = _currentConfig

@@ -14,7 +14,7 @@ import javax.inject.Singleton
 @Singleton
 class ContextManager @Inject constructor(
     private val memoryManager: MemoryManager,
-    private val config: AIPipelineConfig
+    private val config: AIPipelineConfig,
 ) {
     private val _activeContexts = MutableStateFlow(mapOf<String, ContextChain>())
     val activeContexts: StateFlow<Map<String, ContextChain>> = _activeContexts
@@ -26,7 +26,7 @@ class ContextManager @Inject constructor(
         rootContext: String,
         initialContext: String,
         agent: AgentType,
-        metadata: Map<String, Any> = emptyMap()
+        metadata: Map<String, Any> = emptyMap(),
     ): String {
         val chain = ContextChain(
             rootContext = rootContext,
@@ -54,9 +54,10 @@ class ContextManager @Inject constructor(
         chainId: String,
         newContext: String,
         agent: AgentType,
-        metadata: Map<String, Any> = emptyMap()
+        metadata: Map<String, Any> = emptyMap(),
     ): ContextChain {
-        val chain = _activeContexts.value[chainId] ?: throw IllegalStateException("Context chain not found")
+        val chain =
+            _activeContexts.value[chainId] ?: throw IllegalStateException("Context chain not found")
 
         val updatedChain = chain.copy(
             currentContext = newContext,
@@ -107,7 +108,10 @@ class ContextManager @Inject constructor(
         _contextStats.update { current ->
             current.copy(
                 totalChains = chains.size,
-                activeChains = chains.count { it.lastUpdated > Clock.System.now().minus(config.contextChainingConfig.maxChainLength) },
+                activeChains = chains.count {
+                    it.lastUpdated > Clock.System.now()
+                        .minus(config.contextChainingConfig.maxChainLength)
+                },
                 longestChain = chains.maxOfOrNull { it.contextHistory.size } ?: 0,
                 lastUpdated = Clock.System.now()
             )
@@ -119,5 +123,5 @@ data class ContextStats(
     val totalChains: Int = 0,
     val activeChains: Int = 0,
     val longestChain: Int = 0,
-    val lastUpdated: Instant = Clock.System.now()
+    val lastUpdated: Instant = Clock.System.now(),
 )

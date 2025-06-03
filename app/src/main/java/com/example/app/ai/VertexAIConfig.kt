@@ -9,6 +9,6 @@ data class VertexAIConfig(
     val publisher: String? = null, // TODO: Needs implementation. Example: "google"
     val modelName: String? = null, // TODO: Needs implementation. Example: "gemini-pro"
     val apiKey: String? = null, // TODO: Needs implementation. For API key auth.
-    val timeoutSeconds: Long = 60L // TODO: Needs implementation.
+    val timeoutSeconds: Long = 60L, // TODO: Needs implementation.
     // Add other necessary fields e.g. serviceAccountPath, credentials etc.
 )

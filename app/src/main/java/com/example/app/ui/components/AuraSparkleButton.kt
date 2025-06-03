@@ -10,7 +10,7 @@ import androidx.compose.ui.tooling.preview.Preview
 fun AuraSparkleButton(
     onClick: () -> Unit,
     modifier: Modifier = Modifier,
-    text: String = "Sparkle"
+    text: String = "Sparkle",
 ) { // Renamed to auraSparkleButton
     // TODO: Implement the actual Aura Sparkle Button with custom animation/effects
     Button(onClick = onClick, modifier = modifier) {

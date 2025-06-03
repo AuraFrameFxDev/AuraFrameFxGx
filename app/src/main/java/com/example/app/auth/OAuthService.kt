@@ -1,6 +1,7 @@
 package com.example.app.auth
 
 import android.content.Intent
+
 // import com.google.android.gms.auth.api.signin.GoogleSignInClient // Example
 // import com.google.android.gms.tasks.Task // Example
 

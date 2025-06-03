@@ -6,6 +6,7 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import javax.inject.Singleton
+
 // import androidx.work.WorkerFactory // If not using HiltWorkerFactory directly in provides method.
 // import dagger.hilt.android.EntryPointAccessors // If accessing other Hilt components
 

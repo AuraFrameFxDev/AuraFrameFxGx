@@ -1,6 +1,6 @@
 plugins {
-    alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.kapt) // For Hilt WorkManager extensions if needed, or for other kapt-only processors
     alias(libs.plugins.ksp) // For Hilt core and other KSP processors
     alias(libs.plugins.hilt.android)
@@ -34,7 +34,10 @@ android {
     buildTypes {
         release {
             isMinifyEnabled = false // Configure ProGuard/R8 for release builds
-            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
         }
         debug {
             isMinifyEnabled = false
@@ -42,8 +45,8 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8 // Or VERSION_11 / VERSION_17 to match jvmTarget
-        targetCompatibility = JavaVersion.VERSION_1_8 // Or VERSION_11 / VERSION_17
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
 
     kotlinOptions {

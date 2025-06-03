@@ -41,7 +41,7 @@ object AppModule {
      */
     @Provides
     @Singleton
-    fun provideSharedPreferences(@ApplicationContext context: Context): SharedPreferences { 
+    fun provideSharedPreferences(@ApplicationContext context: Context): SharedPreferences {
         // TODO: Parameter context was reported as _context and unused (Hilt will provide it).
         // Renamed to context from _context for clarity in usage.
         return context.getSharedPreferences("AuraFrameFX_prefs", Context.MODE_PRIVATE)
@@ -69,12 +69,12 @@ object AppModule {
     fun provideAIConfig(): AIConfig {
         // TODO: Load actual config values from a secure source or build config.
         return AIConfig(
-            modelName = "gemini-pro", 
-            apiKey = "TODO_load_api_key", 
+            modelName = "gemini-pro",
+            apiKey = "TODO_load_api_key",
             projectId = "TODO_load_project_id"
         )
     }
-    
+
     /**
      * Placeholder for AIConfigFactory - Name taken from error report list for AppModule.
      * TODO: Method reported as unused. Define AIConfigFactory and implement.
@@ -82,7 +82,7 @@ object AppModule {
     @Provides
     @Singleton
     fun provideAIConfigFactory(): Any? { // Using Any as AIConfigFactory type placeholder
-         // TODO: Define AIConfigFactory class and return an instance.
+        // TODO: Define AIConfigFactory class and return an instance.
         return null
     }
 

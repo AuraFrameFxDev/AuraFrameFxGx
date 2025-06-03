@@ -23,7 +23,7 @@ import com.example.app.ui.theme.Shape
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ImageShapeManagerScreen(
-    viewModel: ImageShapeManagerViewModel = hiltViewModel()
+    viewModel: ImageShapeManagerViewModel = hiltViewModel(),
 ) {
     val context = LocalContext.current
     val images by viewModel.availableImages.collectAsState()
@@ -64,7 +64,7 @@ fun ImageShapeManagerScreen(
                 style = MaterialTheme.typography.titleMedium
             )
             Spacer(modifier = Modifier.height(8.dp))
-            
+
             LazyColumn(
                 modifier = Modifier
                     .fillMaxWidth()
@@ -89,7 +89,7 @@ fun ImageShapeManagerScreen(
                 style = MaterialTheme.typography.titleMedium
             )
             Spacer(modifier = Modifier.height(8.dp))
-            
+
             LazyColumn(
                 modifier = Modifier
                     .fillMaxWidth()
@@ -114,7 +114,7 @@ fun ImageShapeManagerScreen(
                 style = MaterialTheme.typography.titleMedium
             )
             Spacer(modifier = Modifier.height(8.dp))
-            
+
             LazyColumn(
                 modifier = Modifier
                     .fillMaxWidth()
@@ -140,7 +140,7 @@ fun ImageCard(
     isSelected: Boolean,
     onClick: () -> Unit,
     onEdit: () -> Unit,
-    onDelete: () -> Unit
+    onDelete: () -> Unit,
 ) {
     Card(
         modifier = Modifier
@@ -196,7 +196,7 @@ fun ShapeCard(
     isSelected: Boolean,
     onClick: () -> Unit,
     onEdit: () -> Unit,
-    onDelete: () -> Unit
+    onDelete: () -> Unit,
 ) {
     Card(
         modifier = Modifier
@@ -248,10 +248,10 @@ fun ShapeCard(
 @Composable
 fun AddImageDialog(
     onDismiss: () -> Unit,
-    onConfirm: (Bitmap) -> Unit
+    onConfirm: (Bitmap) -> Unit,
 ) {
     var imageUri by remember { mutableStateOf<String?>(null) }
-    
+
     AlertDialog(
         onDismissRequest = onDismiss,
         title = { Text("Add Custom Image") },
@@ -295,11 +295,11 @@ fun AddImageDialog(
 @Composable
 fun AddShapeDialog(
     onDismiss: () -> Unit,
-    onConfirm: (OverlayShape) -> Unit
+    onConfirm: (OverlayShape) -> Unit,
 ) {
     var shapeType by remember { mutableStateOf(ShapeType.ROUNDED_RECTANGLE) }
     var properties by remember { mutableStateOf(mapOf<String, Any>()) }
-    
+
     AlertDialog(
         onDismissRequest = onDismiss,
         title = { Text("Add Custom Shape") },

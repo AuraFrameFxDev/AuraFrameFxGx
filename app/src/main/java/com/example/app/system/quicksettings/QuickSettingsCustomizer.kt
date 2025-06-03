@@ -1,9 +1,7 @@
 package com.example.app.system.quicksettings
 
 import com.example.app.system.overlay.*
-import com.highcapable.yukihookapi.hook.xposed.XposedModule
 import com.highcapable.yukihookapi.hook.xposed.prefs.data.YukiHookModulePrefs
-import com.highcapable.yukihookapi.hook.xposed.service.YukiHookService
 import com.highcapable.yukihookapi.hook.xposed.service.YukiHookServiceManager
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -16,7 +14,7 @@ class QuickSettingsCustomizer @Inject constructor(
     private val shapeManager: ShapeManager,
     private val imageManager: ImageResourceManager,
     private val prefs: YukiHookModulePrefs,
-    private val overlayService: YukiHookServiceManager
+    private val overlayService: YukiHookServiceManager,
 ) {
     private val _currentConfig = MutableStateFlow<QuickSettingsConfig?>(null)
     val currentConfig: StateFlow<QuickSettingsConfig?> = _currentConfig
@@ -131,7 +129,7 @@ data class QuickSettingsConfig(
     val layout: QuickSettingsLayout,
     val tiles: List<QuickSettingsTileConfig>,
     val header: QuickSettingsHeaderConfig,
-    val background: QuickSettingsBackgroundConfig
+    val background: QuickSettingsBackgroundConfig,
 )
 
 @Serializable
@@ -139,7 +137,7 @@ data class QuickSettingsLayout(
     val columns: Int,
     val rows: Int,
     val spacing: Int,
-    val padding: QuickSettingsPadding
+    val padding: QuickSettingsPadding,
 )
 
 @Serializable
@@ -147,7 +145,7 @@ data class QuickSettingsPadding(
     val left: Int,
     val top: Int,
     val right: Int,
-    val bottom: Int
+    val bottom: Int,
 )
 
 @Serializable
@@ -156,20 +154,20 @@ data class QuickSettingsTileConfig(
     val icon: String,
     val label: String,
     val shape: OverlayShape,
-    val animation: QuickSettingsAnimation
+    val animation: QuickSettingsAnimation,
 )
 
 @Serializable
 data class QuickSettingsHeaderConfig(
     val shape: OverlayShape,
-    val animation: QuickSettingsAnimation
+    val animation: QuickSettingsAnimation,
 )
 
 @Serializable
 data class QuickSettingsBackgroundConfig(
     val image: ImageResource?,
     val blur: Float,
-    val tint: Color
+    val tint: Color,
 )
 
 @Serializable
@@ -177,7 +175,7 @@ data class QuickSettingsAnimation(
     val type: QuickSettingsAnimationType,
     val duration: Int,
     val easing: String,
-    val delay: Int = 0
+    val delay: Int = 0,
 )
 
 enum class QuickSettingsAnimationType {

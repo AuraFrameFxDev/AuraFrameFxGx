@@ -11,7 +11,7 @@ import com.example.app.model.agent_states.LearningEvent // Added import
  * @param _context Application context. Parameter reported as unused.
  */
 class NeuralWhisperAgent(
-    _context: Context // TODO: Parameter _context reported as unused. Utilize or remove.
+    _context: Context, // TODO: Parameter _context reported as unused. Utilize or remove.
 ) {
 
     /**

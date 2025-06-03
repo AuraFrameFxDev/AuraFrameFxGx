@@ -7,7 +7,7 @@ data class AgentMessage(
     val content: String,
     val sender: AgentType,
     val timestamp: Long,
-    val confidence: Float
+    val confidence: Float,
 )
 
 enum class AgentType {

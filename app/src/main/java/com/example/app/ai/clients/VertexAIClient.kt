@@ -12,6 +12,6 @@ interface VertexAIClient {
      * TODO: Needs actual implementation in implementing classes.
      */
     suspend fun generateContent(prompt: String): String?
-    
+
     // Add other methods like startChat, listModels, etc. as needed
 }

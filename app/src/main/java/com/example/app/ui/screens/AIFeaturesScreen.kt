@@ -60,9 +60,18 @@ fun AiFeaturesScreen() {
             modifier = Modifier.padding(bottom = 16.dp)
         )
         StatusCard(statusText = "Overall Status: Active")
-        FeatureCard(title = "Feature 1: Smart Analysis", description = "Provides insightful analysis based on context.")
-        FeatureCard(title = "Feature 2: Predictive Text", description = "Suggests text completions as you type.")
-        FeatureCard(title = "Feature 3: Anomaly Detection", description = "Monitors system for unusual patterns.")
+        FeatureCard(
+            title = "Feature 1: Smart Analysis",
+            description = "Provides insightful analysis based on context."
+        )
+        FeatureCard(
+            title = "Feature 2: Predictive Text",
+            description = "Suggests text completions as you type."
+        )
+        FeatureCard(
+            title = "Feature 3: Anomaly Detection",
+            description = "Monitors system for unusual patterns."
+        )
     }
 }
 

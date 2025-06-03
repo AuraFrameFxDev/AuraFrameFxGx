@@ -11,7 +11,7 @@ import com.example.app.model.AgentType // Added import
  */
 open class BaseAgent(
     private val _agentName: String, // Underscore if constructor params are directly for properties not overridden
-    private val _agentType: String
+    private val _agentType: String,
 ) : Agent {
 
     // TODO: Consider if _agentName and _agentType should be used for overridden getName() and getType()

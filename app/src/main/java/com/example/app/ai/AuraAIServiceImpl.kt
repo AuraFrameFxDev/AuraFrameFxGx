@@ -11,7 +11,7 @@ import javax.inject.Singleton
  */
 @Singleton
 class AuraAIServiceImpl @Inject constructor(
-    private val _appConfig: AIConfig? // Example: Injecting AIConfig. Make it non-null if provideAIConfig always returns non-null.
+    private val _appConfig: AIConfig?, // Example: Injecting AIConfig. Make it non-null if provideAIConfig always returns non-null.
 ) : AuraAIService {
 
     override fun analyticsQuery(_query: String): String {
@@ -67,7 +67,7 @@ class AuraAIServiceImpl @Inject constructor(
         println("AuraAIServiceImpl.saveMemory called for key '$_key'")
         // For suspend version, change signature and use appropriate coroutine scope
     }
-    
+
     override suspend fun uploadFile(_file: File): String? {
         // TODO: Implement file upload; Reported as unused
         println("AuraAIServiceImpl.uploadFile called for file: ${_file.name}")
@@ -79,8 +79,8 @@ class AuraAIServiceImpl @Inject constructor(
         println("AuraAIServiceImpl.getAppConfig called")
         // Return injected config if available, otherwise a default placeholder
         return _appConfig ?: AIConfig(
-            modelName = "placeholder_model", 
-            apiKey = "placeholder_key", 
+            modelName = "placeholder_model",
+            apiKey = "placeholder_key",
             projectId = "placeholder_project"
             // TODO: Return actual live config or ensure _appConfig is non-null via DI
         )

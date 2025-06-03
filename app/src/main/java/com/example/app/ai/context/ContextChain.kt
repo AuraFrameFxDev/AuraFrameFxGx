@@ -17,7 +17,7 @@ data class ContextChain(
     val priority: Float = 0.5f,
     val relevanceScore: Float = 0.0f,
     val lastUpdated: Instant = Clock.System.now(),
-    val agentContext: Map<AgentType, String> = emptyMap()
+    val agentContext: Map<AgentType, String> = emptyMap(),
 )
 
 @Serializable
@@ -28,7 +28,7 @@ data class ContextNode(
     val agent: AgentType,
     val metadata: Map<String, Any> = emptyMap(),
     val relevance: Float = 0.0f,
-    val confidence: Float = 0.0f
+    val confidence: Float = 0.0f,
 )
 
 @Serializable
@@ -39,12 +39,12 @@ data class ContextQuery(
     val minRelevance: Float = 0.6f,
     val agentFilter: List<AgentType> = emptyList(),
     val timeRange: Pair<Instant, Instant>? = null,
-    val includeMemories: Boolean = true
+    val includeMemories: Boolean = true,
 )
 
 @Serializable
 data class ContextChainResult(
     val chain: ContextChain,
     val relatedChains: List<ContextChain>,
-    val query: ContextQuery
+    val query: ContextQuery,
 )

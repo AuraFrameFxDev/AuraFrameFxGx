@@ -11,14 +11,15 @@ import com.example.app.model.agent_states.SecurityContextState // Added import
  * @param _context Application context. Parameter reported as unused.
  */
 class AuraShieldAgent(
-    _context: Context // TODO: Parameter _context reported as unused. Utilize or remove.
+    _context: Context, // TODO: Parameter _context reported as unused. Utilize or remove.
 ) {
 
     /**
      * Holds the current security context or configuration.
      * TODO: Reported as unused. Define proper type and implement usage.
      */
-    val securityContext: SecurityContextState? = SecurityContextState() // Changed type and initialized
+    val securityContext: SecurityContextState? =
+        SecurityContextState() // Changed type and initialized
 
     /**
      * List of currently active or identified threats.

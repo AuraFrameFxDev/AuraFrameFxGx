@@ -6,7 +6,7 @@ package com.example.app.ai.agents
  */
 class KaiAgent(
     agentName: String = "Kai",
-    agentType: String = "SpecializedAgent"
+    agentType: String = "SpecializedAgent",
 ) : BaseAgent(agentName, agentType) {
 
     /**

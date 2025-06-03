@@ -15,7 +15,7 @@ import javax.inject.Singleton
 @Singleton
 class TaskExecutionManager @Inject constructor(
     private val scheduler: TaskScheduler,
-    private val errorHandler: ErrorHandler
+    private val errorHandler: ErrorHandler,
 ) {
     private val _executions = MutableStateFlow(mapOf<String, TaskExecution>())
     val executions: StateFlow<Map<String, TaskExecution>> = _executions
@@ -157,7 +157,8 @@ class TaskExecutionManager @Inject constructor(
                 completedExecutions = _completedExecutions.size,
                 failedExecutions = _failedExecutions.size,
                 lastUpdated = Clock.System.now(),
-                executionTimes = current.executionTimes + (execution.status to (current.executionTimes[execution.status] ?: 0) + 1)
+                executionTimes = current.executionTimes + (execution.status to (current.executionTimes[execution.status]
+                    ?: 0) + 1)
             )
         }
     }
@@ -169,5 +170,5 @@ data class ExecutionStats(
     val completedExecutions: Int = 0,
     val failedExecutions: Int = 0,
     val executionTimes: Map<ExecutionStatus, Int> = emptyMap(),
-    val lastUpdated: Instant = Clock.System.now()
+    val lastUpdated: Instant = Clock.System.now(),
 )

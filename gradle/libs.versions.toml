@@ -1,13 +1,13 @@
 [versions]
 # Android SDK and Tools
-compileSdk = "34"
-minSdk = "24"
-targetSdk = "34"
-jvmTarget = "1.8" # Or "11" / "17" if project setup allows
-agp = "8.10.1" # Android Gradle Plugin
-kotlin = "1.9.22" # Kotlin version
-ksp = "1.9.22-1.0.17" # KSP version
-composeCompiler = "1.5.8" # Aligns with Kotlin 1.9.22
+compileSdk = "36"  # Android 16 (API 36)
+minSdk = "31"      # Minimum for LSPosed (Android 12+)
+targetSdk = "36"   # Android 16 (API 36)
+jvmTarget = "17"   # Java 17 target
+agp = "8.9.0-rc01" # Android Gradle Plugin for API 36 support
+kotlin = "2.1.23"  # Kotlin version
+ksp = "2.1.23-1.0.31" # KSP version for Kotlin 2.1.23
+# composeCompiler is now handled by the Kotlin Compose Gradle Plugin
 hilt = "2.50" # Hilt version
 
 # AndroidX

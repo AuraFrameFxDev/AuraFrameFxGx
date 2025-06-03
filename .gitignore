@@ -1,1 +1,70 @@
+# Sensitive files
 app/serviceAccountKey.json
+app/*-service-account.json
+app/*-service-account-*.json
+app/*_service_account.json
+app/vertex_service_account.json
+app/*-config.json
+app/*-config-*.json
+app/*_config.json
+
+# Firebase configuration
+app/google-services.json
+app/google-services-*.json
+app/*-firebase-adminsdk-*.json
+
+# Keystore files
+*.jks
+*.keystore
+*.key
+*.p12
+*.pfx
+
+# Gradle files
+.gradle/
+build/
+
+# Local configuration files
+*.properties
+*.iml
+.idea/
+
+# Log files
+*.log
+
+# Android Studio files
+.cache/
+.cxx/
+local.properties
+
+# Generated files
+*.apk
+*.ap_
+*.dex
+*.class
+bin/
+
+# Local development files
+.env
+.env.*
+!.env.example
+
+# macOS specific
+.DS_Store
+
+# Windows specific
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Build outputs
+/app/build/
+/build/
+
+# Fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots
+fastlane/test_output
+fastlane/readme.md

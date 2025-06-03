@@ -1,7 +1,5 @@
 package com.example.app.utils
 
-import kotlinx.serialization.SerializationException // Add this import
-
 // For a full implementation, you would typically use a library like Gson or Kotlinx.serialization.
 // import kotlinx.serialization.json.Json
 // import com.google.gson.Gson

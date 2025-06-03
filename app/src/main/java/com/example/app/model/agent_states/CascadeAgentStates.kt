@@ -5,13 +5,13 @@ package com.example.app.model.agent_states
 
 data class VisionState(
     val lastObservation: String? = null,
-    val objectsDetected: List<String> = emptyList()
+    val objectsDetected: List<String> = emptyList(),
     // Add other relevant vision state properties
 )
 
 data class ProcessingState(
     val currentStep: String? = null,
     val progressPercentage: Float = 0.0f,
-    val isError: Boolean = false
+    val isError: Boolean = false,
     // Add other relevant processing state properties
 )

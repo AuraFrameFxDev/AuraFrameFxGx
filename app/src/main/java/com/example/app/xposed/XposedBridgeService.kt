@@ -32,7 +32,11 @@ class XposedBridgeService @Inject constructor() : Service() {
         return null
     }
 
-    override fun onStartCommand(_intent: Intent?, _flags: Int, _startId: Int): Int { // params underscored
+    override fun onStartCommand(
+        _intent: Intent?,
+        _flags: Int,
+        _startId: Int,
+    ): Int { // params underscored
         Log.d(tag, "onStartCommand called.")
         // TODO: Handle commands sent to this service.
         // TODO: Utilize parameters if needed by actual implementation.

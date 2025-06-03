@@ -16,7 +16,7 @@ data class AIError(
     val metadata: Map<String, Any> = emptyMap(),
     val recoveryAttempts: Int = 0,
     val recoveryStatus: RecoveryStatus = RecoveryStatus.PENDING,
-    val recoveryActions: List<RecoveryAction> = emptyList()
+    val recoveryActions: List<RecoveryAction> = emptyList(),
 )
 
 @Serializable
@@ -26,7 +26,7 @@ data class RecoveryAction(
     val actionType: RecoveryActionType,
     val description: String,
     val result: RecoveryResult? = null,
-    val metadata: Map<String, Any> = emptyMap()
+    val metadata: Map<String, Any> = emptyMap(),
 )
 
 enum class ErrorType {

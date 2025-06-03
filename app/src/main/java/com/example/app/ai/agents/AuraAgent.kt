@@ -9,7 +9,7 @@ import kotlinx.coroutines.flow.emptyFlow
  */
 class AuraAgent(
     agentName: String = "Aura",
-    agentType: String = "VersatileAssistant"
+    agentType: String = "VersatileAssistant",
 ) : BaseAgent(agentName, agentType) {
 
     /**

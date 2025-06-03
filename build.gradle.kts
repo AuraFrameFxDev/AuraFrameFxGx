@@ -10,15 +10,15 @@ buildscript {
     dependencies {
         // These are the plugins/dependencies that Gradle needs to run *this build script*.
         // Their versions are hardcoded here because 'libs' is not yet available.
-        // Ensure these match the versions defined in your libs.versions.toml.
-        classpath("com.android.tools.build:gradle:8.10.1")
-        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:2.0.0") // Updated to Kotlin 2.0.0
+        // These versions must match those defined in libs.versions.toml
+        classpath("com.android.tools.build:gradle:8.9.0-rc01")  // AGP for API 36
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:2.1.23")  // Kotlin 2.1.23
         classpath("com.google.gms:google-services:4.4.1")
         classpath("com.google.firebase:firebase-crashlytics-gradle:2.9.9")
         classpath("com.google.firebase:perf-plugin:1.4.2")
-        classpath("com.google.dagger:hilt-android-gradle-plugin:2.56.2")
-        classpath("com.google.devtools.ksp:symbol-processing-gradle-plugin:2.0.0-1.0.21") // Match Kotlin 2.0.0
-        classpath("androidx.navigation.safeargs:androidx.navigation.safeargs.gradle.plugin:2.9.0")
+        classpath("com.google.dagger:hilt-android-gradle-plugin:${libs.versions.hilt.get()}")
+        classpath("com.google.devtools.ksp:symbol-processing-gradle-plugin:${libs.versions.ksp.get()}")
+        classpath("androidx.navigation.safeargs:androidx.navigation.safeargs.gradle.plugin:${libs.versions.androidxNavigation.get()}")
         classpath("org.jetbrains.dokka:dokka-gradle-plugin:1.9.20")
     }
 }
@@ -56,13 +56,12 @@ plugins {
     alias(libs.plugins.navigation.safe.args) apply false
 
     // Documentation
-    alias(libs.plugins.dokka)
-    alias(libs.plugins.kotlin.compose) apply false // Apply Dokka plugin using alias
-}
+    alias(libs.plugins.dokka) apply false
+
 
 // Common configurations for all projects
 allprojects {
     // ... (rest of your existing allprojects block, it should be fine as is)
-}
+}}
 
 // ... (rest of your build.gradle.kts file)}

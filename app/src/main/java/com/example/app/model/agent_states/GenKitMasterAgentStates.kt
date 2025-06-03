@@ -5,6 +5,6 @@ package com.example.app.model.agent_states
 data class GenKitUiState(
     val systemStatus: String = "Nominal",
     val activeAgentCount: Int = 0,
-    val lastOptimizationTime: Long? = null
+    val lastOptimizationTime: Long? = null,
     // Add other relevant UI state properties
 )

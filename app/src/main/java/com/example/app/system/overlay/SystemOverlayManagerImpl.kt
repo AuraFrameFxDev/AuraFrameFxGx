@@ -2,9 +2,7 @@ package com.example.app.system.overlay
 
 import com.example.app.ai.services.AuraAIService
 import com.example.app.ui.theme.Color
-import com.highcapable.yukihookapi.hook.xposed.XposedModule
 import com.highcapable.yukihookapi.hook.xposed.prefs.data.YukiHookModulePrefs
-import com.highcapable.yukihookapi.hook.xposed.service.YukiHookService
 import com.highcapable.yukihookapi.hook.xposed.service.YukiHookServiceManager
 import javax.inject.Inject
 import javax.inject.Singleton
@@ -13,7 +11,7 @@ import javax.inject.Singleton
 class SystemOverlayManagerImpl @Inject constructor(
     private val prefs: YukiHookModulePrefs,
     private val overlayService: YukiHookServiceManager,
-    private val auraService: AuraAIService
+    private val auraService: AuraAIService,
 ) : SystemOverlayManager {
     private val activeElements = mutableMapOf<String, OverlayElement>()
     private val activeAnimations = mutableMapOf<String, OverlayAnimation>()

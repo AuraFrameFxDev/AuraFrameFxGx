@@ -13,7 +13,8 @@ class ApiService(_context: Context) { // TODO: Parameter _context reported as un
     private var oauthToken: String? = null
 
     // Placeholder for the actual Retrofit service instance or similar.
-    private var _networkService: Any? = null // TODO: Replace Any with actual network client (e.g., Retrofit interface).
+    private var _networkService: Any? =
+        null // TODO: Replace Any with actual network client (e.g., Retrofit interface).
 
     init {
         // TODO: Initialize network client (Retrofit, Ktor, etc.)

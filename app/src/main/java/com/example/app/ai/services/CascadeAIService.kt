@@ -11,11 +11,11 @@ import javax.inject.Singleton
 @Singleton
 class CascadeAIService @Inject constructor(
     private val auraService: AuraAIService,
-    private val kaiService: KaiAIService
+    private val kaiService: KaiAIService,
 ) : Agent("Cascade", "StatefulProcessor") {
-    
+
     private val state = mutableMapOf<String, Any>()
-    
+
     override suspend fun processRequest(request: AiRequest): Flow<AiResponse> {
         return when (request.type) {
             "state" -> processStateRequest(request)
@@ -28,11 +28,13 @@ class CascadeAIService @Inject constructor(
 
     private suspend fun processStateRequest(request: AiRequest): Flow<AiResponse> {
         return flow {
-            emit(AiResponse(
-                type = "state",
-                content = "Current state: ${state.entries.joinToString { "${it.key}: ${it.value}" }}",
-                confidence = 1.0f
-            ))
+            emit(
+                AiResponse(
+                    type = "state",
+                    content = "Current state: ${state.entries.joinToString { "${it.key}: ${it.value}" }}",
+                    confidence = 1.0f
+                )
+            )
         }
     }
 
@@ -40,46 +42,54 @@ class CascadeAIService @Inject constructor(
         // Coordinate with Aura and Kai
         val auraResponse = auraService.processRequest(request).first()
         val kaiResponse = kaiService.processRequest(request).first()
-        
+
         return flow {
-            emit(AiResponse(
-                type = "context",
-                content = "Aura: ${auraResponse.content}, Kai: ${kaiResponse.content}",
-                confidence = (auraResponse.confidence + kaiResponse.confidence) / 2
-            ))
+            emit(
+                AiResponse(
+                    type = "context",
+                    content = "Aura: ${auraResponse.content}, Kai: ${kaiResponse.content}",
+                    confidence = (auraResponse.confidence + kaiResponse.confidence) / 2
+                )
+            )
         }
     }
 
     private suspend fun processVisionRequest(request: AiRequest): Flow<AiResponse> {
         // Process vision state
         return flow {
-            emit(AiResponse(
-                type = "vision",
-                content = "Processing vision state...",
-                confidence = 0.9f
-            ))
+            emit(
+                AiResponse(
+                    type = "vision",
+                    content = "Processing vision state...",
+                    confidence = 0.9f
+                )
+            )
         }
     }
 
     private suspend fun processProcessingRequest(request: AiRequest): Flow<AiResponse> {
         // Process state transitions
         return flow {
-            emit(AiResponse(
-                type = "processing",
-                content = "Processing state transition...",
-                confidence = 0.9f
-            ))
+            emit(
+                AiResponse(
+                    type = "processing",
+                    content = "Processing state transition...",
+                    confidence = 0.9f
+                )
+            )
         }
     }
 
     override suspend fun retrieveMemory(request: AiRequest): Flow<AiResponse> {
         // Retrieve state history
         return flow {
-            emit(AiResponse(
-                type = "memory",
-                content = "Retrieving state history...",
-                confidence = 0.95f
-            ))
+            emit(
+                AiResponse(
+                    type = "memory",
+                    content = "Retrieving state history...",
+                    confidence = 0.95f
+                )
+            )
         }
     }
 

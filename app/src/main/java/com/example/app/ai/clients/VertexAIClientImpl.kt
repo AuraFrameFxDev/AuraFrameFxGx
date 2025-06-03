@@ -14,7 +14,7 @@ import javax.inject.Singleton
 @Singleton
 class VertexAIClientImpl @Inject constructor(
     private val _config: VertexAIConfig?, // TODO: Make non-null if provideVertexAIConfig ensures it
-    private val _generativeModel: GenerativeModel? // TODO: Make non-null if provideGenerativeModel ensures it
+    private val _generativeModel: GenerativeModel?, // TODO: Make non-null if provideGenerativeModel ensures it
 ) : VertexAIClient {
 
     init {
@@ -36,7 +36,7 @@ class VertexAIClientImpl @Inject constructor(
             println("VertexAIClientImpl: GenerativeModel is null, cannot generate content.")
             return "Error: Model not available for prompt: $prompt"
         }
-        
+
         println("VertexAIClientImpl.generateContent called with prompt: $prompt using model: ${_generativeModel}")
         try {
             // val response = _generativeModel.generateContent(prompt)

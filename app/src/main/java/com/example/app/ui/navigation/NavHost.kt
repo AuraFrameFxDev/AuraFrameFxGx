@@ -2,6 +2,7 @@ package com.example.app.ui.navigation
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+
 // import androidx.navigation.NavHostController
 // import androidx.navigation.compose.NavHost
 // import androidx.navigation.compose.composable
@@ -11,10 +12,11 @@ import androidx.compose.ui.Modifier
  * Defines the navigation graph for the application.
  */
 @Composable
-fun AuraNavHost( // Renamed from AuraNavHost to auraNavHost
+fun AuraNavHost(
+    // Renamed from AuraNavHost to auraNavHost
     // navController: NavHostController,
     modifier: Modifier = Modifier,
-    startDestination: String = "home" // Example start destination
+    startDestination: String = "home", // Example start destination
 ) {
     // TODO: Implement actual NavHost with routes and composable screens
     // NavHost(
@@ -29,7 +31,10 @@ fun AuraNavHost( // Renamed from AuraNavHost to auraNavHost
     // }
 
     // Placeholder content if NavHost is not yet fully set up
-    androidx.compose.foundation.layout.Box(modifier.fillMaxSize(), contentAlignment = androidx.compose.ui.Alignment.Center) {
+    androidx.compose.foundation.layout.Box(
+        modifier.fillMaxSize(),
+        contentAlignment = androidx.compose.ui.Alignment.Center
+    ) {
         androidx.compose.material3.Text("NavHost Placeholder (auraNavHost)")
     }
 }

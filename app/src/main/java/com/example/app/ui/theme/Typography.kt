@@ -1,6 +1,7 @@
 package com.example.app.ui.theme
 
 import androidx.compose.material3.Typography
+
 // Import TextStyles if defining custom ones, e.g.:
 // import androidx.compose.ui.text.TextStyle
 // import androidx.compose.ui.text.font.FontFamily
