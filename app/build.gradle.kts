@@ -1,17 +1,16 @@
 plugins {
-    alias(libs.plugins.android.application)
-    alias(libs.plugins.kotlin.android)
-    alias(libs.plugins.kotlin.kapt) // For Hilt WorkManager extensions if needed, or for other kapt-only processors
-    alias(libs.plugins.ksp) // For Hilt core and other KSP processors
-    alias(libs.plugins.hilt.android)
-    alias(libs.plugins.kotlin.serialization) // If using kotlinx-serialization
-    alias(libs.plugins.google.services)
-    alias(libs.plugins.firebase.crashlytics)
-    alias(libs.plugins.firebase.perf)
-    alias(libs.plugins.kotlin.compose)
+    alias(libs.plugins.android.application) // Keep using alias for AGP
+    id("org.jetbrains.kotlin.android")
+    id("org.jetbrains.kotlin.kapt")
+    id("com.google.devtools.ksp")
+    alias(libs.plugins.hilt.android) // Keep using alias for Hilt
+    id("org.jetbrains.kotlin.plugin.serialization")
+    alias(libs.plugins.google.services) // Keep using alias for Firebase
+    alias(libs.plugins.firebase.crashlytics) // Keep using alias for Firebase
+    alias(libs.plugins.firebase.perf) // Keep using alias for Firebase
+    id("org.jetbrains.kotlin.plugin.compose")
+    id("org.jetbrains.kotlin.plugin.parcelize")
     // alias(libs.plugins.navigation.safe.args) // Only if using safe args for navigation
-    // Add other plugins like google-services, firebase-crashlytics if they should be applied here
-    // id("com.google.gms.google-services") // Example if not using alias from root for this one
 }
 
 android {
@@ -42,8 +41,8 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8 // Or VERSION_11 / VERSION_17 to match jvmTarget
-        targetCompatibility = JavaVersion.VERSION_1_8 // Or VERSION_11 / VERSION_17
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
 
     kotlinOptions {
@@ -52,10 +51,6 @@ android {
 
     buildFeatures {
         compose = true
-    }
-
-    composeOptions {
-        kotlinCompilerExtensionVersion = libs.versions.composeCompiler.get()
     }
 
     packagingOptions {
@@ -116,7 +111,7 @@ dependencies {
     implementation(libs.okhttp.core)
     implementation(libs.okhttp.logging.interceptor) // Useful for debugging
     implementation(libs.retrofit.core)
-    implementation(libs.retrofit.converter.gson) // Or your preferred converter
+    implementation(libs.retrofit.converter.gson) // Or other converters like kotlinx.serialization
 
     // Testing
     testImplementation(libs.junit)
