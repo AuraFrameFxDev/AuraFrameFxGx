@@ -7,9 +7,9 @@
     <color name="neon_teal_transparent">#3300FFCC</color> <!-- 20% opacity for neon_teal -->
 
     <!-- Background Colors -->
-    <color name="dark_background">#1A1A2E</color>
-    <color name="surface">#2D2D3E</color>
-    <color name="surface_variant">#3A3A52</color>
+    <color name="app_background_light">#424242</color>
+    <color name="surface">#525252</color>
+    <color name="surface_variant">#626262</color>
 
     <!-- Text Colors -->
     <color name="on_surface">#FFFFFF</color>
