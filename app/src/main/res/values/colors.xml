@@ -16,13 +16,8 @@
     <color name="on_primary">#000000</color>
 
     <!-- Status Bar and Navigation Bar -->
-    <color name="status_bar">#1A1A2E</color> <!-- Note: Theme sets transparent, this might be for specific use -->
-    <color name="navigation_bar">#FF00FF</color> <!-- Note: Theme sets transparent -->
 
     <!-- Accent Colors -->
-    <color name="accent1">#00FFCC</color>
-    <color name="accent2">#FF00FF</color>
-    <color name="accent3">#00FFFF</color>
 
     <!-- Error and Warning Colors -->
     <color name="error">#FF3B30</color>
