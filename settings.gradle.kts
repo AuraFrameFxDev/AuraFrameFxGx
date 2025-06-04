@@ -1,4 +1,3 @@
-// Minimal settings.gradle.kts to debug version catalog issue
 pluginManagement {
     repositories {
         gradlePluginPortal()
@@ -8,18 +7,19 @@ pluginManagement {
 }
 
 dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
         google()
         mavenCentral()
+        maven { url = uri("https://jitpack.io") }
+    }
+    
+    versionCatalogs {
+        create("libs") {
+            from(files("gradle/libs.versions.toml"))
+        }
     }
 }
 
-// Comment out the version catalog temporarily
-// versionCatalogs {
-//     create("libs") {
-//         from(files("gradle/libs.versions.toml"))
-//     }
-// }
-
-rootProject.name = "auraframefx"
+rootProject.name = "AuraFrameFX"
 include(":app")

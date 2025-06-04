@@ -34,17 +34,19 @@ buildscript {
 plugins {
     // Core plugins
     alias(libs.plugins.android.application) apply false
-    // alias(libs.plugins.android.library) apply false // Commented out to resolve the error
-    alias(libs.plugins.kotlin.android) apply false // Last unresolved - keeping as is for now
-    alias(libs.plugins.kotlin.kapt) apply false // Keep kapt for now as issues were around it.
+    alias(libs.plugins.kotlin.android) apply false
     alias(libs.plugins.kotlin.serialization) apply false
-
-    // Code Quality Plugins (applied to all projects)
-    // alias(libs.plugins.detekt) apply false // Temporarily removed
-    // alias(libs.plugins.ktlint) apply false // Temporarily removed
-    // alias(libs.plugins.spotless) apply false // Temporarily removed
-
-    // Firebase plugins
+    
+    // KSP - Using direct ID since it's not in version catalog by default
+    id("com.google.devtools.ksp") version "${libs.versions.ksp.get()}" apply false
+    
+    // Compose
+    id("org.jetbrains.compose") version "1.5.10" apply false
+    
+    // Hilt
+    alias(libs.plugins.hilt.android) apply false
+    
+    // Firebase
     alias(libs.plugins.google.services) apply false
     alias(libs.plugins.firebase.crashlytics) apply false
     alias(libs.plugins.firebase.perf) apply false

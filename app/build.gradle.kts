@@ -38,17 +38,19 @@ tasks.dokkaHtml {
     }
 }
 
-repositories {
-    google()
-    mavenCentral()
-    maven { url = uri("https://jitpack.io") }
-    maven { url = uri("https://maven.google.com") }
-    maven { url = uri("https://dl.google.com/dl/android/maven2") }
-}
+// Repositories are managed in settings.gradle.kts
 
 android {
     namespace = "com.example.app" // Ensure this matches your actual desired namespace
     compileSdk = libs.versions.compileSdk.get().toInt()
+    
+    buildFeatures {
+        compose = true
+    }
+    
+    composeOptions {
+        kotlinCompilerExtensionVersion = libs.versions.compose.compiler.get()
+    }
 
     defaultConfig {
         applicationId = "com.example.app" // Ensure this matches
@@ -97,10 +99,19 @@ android {
 }
 
 dependencies {
+    // Compose BOM (Bill of Materials)
+    implementation(platform(libs.compose.bom))
+    implementation(libs.compose.ui)
+    implementation(libs.compose.ui.graphics)
+    implementation(libs.compose.ui.tooling.preview)
+    implementation(libs.compose.material3)
+    debugImplementation(libs.compose.ui.tooling)
+    
     // AndroidX Core
     implementation(libs.androidx.core.ktx)
-    implementation(libs.androidx.appcompat) // If using AppCompat themes/views
+    implementation(libs.androidx.appcompat)
     implementation(libs.androidx.activity.compose)
+    implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
     implementation(libs.androidx.lifecycle.viewmodel.compose)
