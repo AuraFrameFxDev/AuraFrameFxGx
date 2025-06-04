@@ -67,6 +67,11 @@
         <item name="materialButtonStyle">@style/Widget.AuraFrameFX.Button</item>
         <item name="materialCardViewStyle">@style/Widget.AuraFrameFX.CardView</item>
         <!-- Add other default widget styles here -->
+        <item name="chipStyle">@style/Widget.AuraFrameFX.Chip</item>
+        <item name="floatingActionButtonStyle">@style/Widget.AuraFrameFX.FloatingActionButton</item>
+        <item name="textInputStyle">@style/Widget.AuraFrameFX.TextInputLayout.FilledBox</item>
+        <item name="materialToolbarStyle">@style/Widget.AuraFrameFX.Toolbar</item>
+        <item name="bottomNavigationStyle">@style/Widget.AuraFrameFX.BottomNavigationView</item>
 
     </style>
 
@@ -105,6 +110,53 @@
     <style name="ShapeAppearance.AuraFrameFX.LargeComponent" parent="ShapeAppearance.Material3.LargeComponent">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">16dp</item> <!-- Example adjustment -->
+    </style>
+
+    <!-- Chip Style -->
+    <style name="Widget.AuraFrameFX.Chip" parent="Widget.Material3.Chip.Assist">
+        <item name="chipBackgroundColor">@color/surface_variant</item>
+        <item name="android:textColor">@color/on_surface</item>
+        <item name="chipStrokeColor">@color/neon_teal</item>
+        <item name="chipStrokeWidth">1dp</item>
+        <item name="shapeAppearance">@style/ShapeAppearance.AuraFrameFX.SmallComponent</item>
+    </style>
+
+    <!-- FloatingActionButton Style -->
+    <style name="Widget.AuraFrameFX.FloatingActionButton" parent="Widget.Material3.FloatingActionButton.Primary">
+        <item name="backgroundTint">@color/neon_purple</item>
+        <item name="tint">@color/on_primary</item> <!-- For the icon -->
+        <item name="shapeAppearance">@style/ShapeAppearance.AuraFrameFX.LargeComponent</item>
+    </style>
+
+    <!-- TextInputLayout Style (FilledBox) -->
+    <style name="Widget.AuraFrameFX.TextInputLayout.FilledBox" parent="Widget.Material3.TextInputLayout.FilledBox">
+        <item name="boxBackgroundColor">@color/surface_variant</item>
+        <item name="android:textColorHint">@color/on_surface_variant</item>
+        <item name="hintTextColor">@color/neon_teal</item>
+        <item name="shapeAppearance">@style/ShapeAppearance.AuraFrameFX.SmallComponent</item>
+        <item name="endIconTint">@color/neon_teal</item>
+        <item name="startIconTint">@color/neon_teal</item>
+    </style>
+
+    <!-- Toolbar Style -->
+    <style name="Widget.AuraFrameFX.Toolbar" parent="Widget.Material3.Toolbar">
+        <item name="android:background">@color/surface</item>
+        <item name="titleTextColor">@color/on_surface</item>
+        <item name="subtitleTextColor">@color/on_surface_variant</item>
+        <item name="navigationIconTint">@color/neon_teal</item> <!-- For hamburger/back icon -->
+        <item name="menuIconTint">@color/neon_teal</item> <!-- For overflow menu icon, if applicable -->
+    </style>
+
+    <!-- BottomNavigationView Style -->
+    <style name="Widget.AuraFrameFX.BottomNavigationView" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
+        <item name="android:background">@color/surface</item>
+        <item name="itemIconTint">@drawable/bottom_nav_item_color_selector</item>
+        <item name="itemTextColor">@drawable/bottom_nav_item_color_selector</item>
+        <item name="itemActiveIndicatorStyle">@style/Widget.AuraFrameFX.BottomNavigationView.ActiveIndicator</item>
+    </style>
+
+    <style name="Widget.AuraFrameFX.BottomNavigationView.ActiveIndicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
+        <item name="android:color">@color/neon_teal_transparent</item> <!-- Example, define neon_teal_transparent in colors.xml -->
     </style>
 
 </resources>

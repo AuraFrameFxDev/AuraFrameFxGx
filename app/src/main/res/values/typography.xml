@@ -32,20 +32,20 @@
         <item name="android:textColor">@color/on_surface</item>
     </style>
     <style name="TextAppearance.AuraFrameFX.TitleMedium" parent="TextAppearance.Material3.TitleMedium">
-        <item name="android:textColor">@color/on_surface_variant</item>
+        <item name="android:textColor">@color/on_surface</item>
     </style>
     <style name="TextAppearance.AuraFrameFX.TitleSmall" parent="TextAppearance.Material3.TitleSmall">
-        <item name="android:textColor">@color/on_surface_variant</item>
+        <item name="android:textColor">@color/on_surface</item>
     </style>
 
     <style name="TextAppearance.AuraFrameFX.BodyLarge" parent="TextAppearance.Material3.BodyLarge">
         <item name="android:textColor">@color/on_surface</item>
     </style>
     <style name="TextAppearance.AuraFrameFX.BodyMedium" parent="TextAppearance.Material3.BodyMedium">
-        <item name="android:textColor">@color/on_surface_variant</item>
+        <item name="android:textColor">@color/on_surface</item>
     </style>
     <style name="TextAppearance.AuraFrameFX.BodySmall" parent="TextAppearance.Material3.BodySmall">
-        <item name="android:textColor">@color/on_surface_variant</item>
+        <item name="android:textColor">@color/on_surface</item>
         <item name="android:textSize">12sp</item> <!-- Example customization -->
     </style>
 
@@ -53,9 +53,9 @@
         <item name="android:textColor">@color/neon_teal</item> <!-- Example: Accent color for labels -->
     </style>
     <style name="TextAppearance.AuraFrameFX.LabelMedium" parent="TextAppearance.Material3.LabelMedium">
-        <item name="android:textColor">@color/on_surface_variant</item>
+        <item name="android:textColor">@color/on_surface</item>
     </style>
     <style name="TextAppearance.AuraFrameFX.LabelSmall" parent="TextAppearance.Material3.LabelSmall">
-        <item name="android:textColor">@color/on_surface_variant</item>
+        <item name="android:textColor">@color/on_surface</item>
     </style>
 </resources>
