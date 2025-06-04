@@ -30,10 +30,7 @@ pluginManagement {
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS) // Recommended
     versionCatalogs {
-        create("libs") {
-            // Matching original syntax just in case
-            (files("gradle/libs.versions.toml"))
-        }
+        create("libs")
     }
 }
 

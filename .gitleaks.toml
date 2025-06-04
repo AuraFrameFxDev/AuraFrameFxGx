@@ -2,7 +2,8 @@ title = "gitleaks config"
 [[rules]]
 description = "Generic API Key"
 id = "generic-api-key"
-regex = '''(?i)(?:key|api|token|secret|client|passwd|password|pwd|android:value)[^\w\/\r\n\\][\w-]*[=: ]*[\'\"]*([a-z0-9]{32,45})[\'\"]'''
+regex = '''(?i)(?:key|api|token|secret|client|passwd|password|pwd|android:value)[^\w\/
+\][\w-]*[=: ]*['"]*(?!AIza)([a-z0-9]{32,45})['"]'''
 
 [[rules]]
 description = "Google API Key"
