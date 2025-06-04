@@ -112,23 +112,6 @@
         <item name="cornerSize">16dp</item> <!-- Example adjustment -->
     </style>
 
-    <!-- Text Appearances -->
-    <style name="TextAppearance.AuraFrameFX.DisplayLarge" parent="TextAppearance.Material3.DisplayLarge"></style>
-    <style name="TextAppearance.AuraFrameFX.DisplayMedium" parent="TextAppearance.Material3.DisplayMedium"></style>
-    <style name="TextAppearance.AuraFrameFX.DisplaySmall" parent="TextAppearance.Material3.DisplaySmall"></style>
-    <style name="TextAppearance.AuraFrameFX.HeadlineLarge" parent="TextAppearance.Material3.HeadlineLarge"></style>
-    <style name="TextAppearance.AuraFrameFX.HeadlineMedium" parent="TextAppearance.Material3.HeadlineMedium"></style>
-    <style name="TextAppearance.AuraFrameFX.HeadlineSmall" parent="TextAppearance.Material3.HeadlineSmall"></style>
-    <style name="TextAppearance.AuraFrameFX.TitleLarge" parent="TextAppearance.Material3.TitleLarge"></style>
-    <style name="TextAppearance.AuraFrameFX.TitleMedium" parent="TextAppearance.Material3.TitleMedium"></style>
-    <style name="TextAppearance.AuraFrameFX.TitleSmall" parent="TextAppearance.Material3.TitleSmall"></style>
-    <style name="TextAppearance.AuraFrameFX.BodyLarge" parent="TextAppearance.Material3.BodyLarge"></style>
-    <style name="TextAppearance.AuraFrameFX.BodyMedium" parent="TextAppearance.Material3.BodyMedium"></style>
-    <style name="TextAppearance.AuraFrameFX.BodySmall" parent="TextAppearance.Material3.BodySmall"></style>
-    <style name="TextAppearance.AuraFrameFX.LabelLarge" parent="TextAppearance.Material3.LabelLarge"></style>
-    <style name="TextAppearance.AuraFrameFX.LabelMedium" parent="TextAppearance.Material3.LabelMedium"></style>
-    <style name="TextAppearance.AuraFrameFX.LabelSmall" parent="TextAppearance.Material3.LabelSmall"></style>
-
     <!-- Chip Style -->
     <style name="Widget.AuraFrameFX.Chip" parent="Widget.Material3.Chip.Assist">
         <item name="chipBackgroundColor">@color/surface_variant</item>
