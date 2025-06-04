@@ -107,6 +107,9 @@ dependencies {
     // Google AI Generative AI
     implementation(libs.google.ai.generativeai)
 
+    // Google Material Components
+    implementation(libs.google.android.material)
+
     // Networking (OkHttp & Retrofit)
     implementation(libs.okhttp.core)
     implementation(libs.okhttp.logging.interceptor) // Useful for debugging
