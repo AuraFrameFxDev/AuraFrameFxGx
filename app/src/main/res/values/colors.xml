@@ -4,6 +4,7 @@
     <color name="neon_teal">#00FFCC</color>
     <color name="neon_purple">#FF00FF</color>
     <color name="neon_blue">#00FFFF</color>
+    <color name="neon_teal_transparent">#3300FFCC</color> <!-- 20% opacity for neon_teal -->
 
     <!-- Background Colors -->
     <color name="dark_background">#1A1A2E</color>
