@@ -18,7 +18,7 @@
         <item name="colorTertiaryContainer">@color/neon_blue</item> <!-- Adjusted -->
         <item name="colorOnTertiaryContainer">@color/on_surface</item> <!-- Adjusted -->
 
-        <item name="android:colorBackground">@color/dark_background</item>
+        <item name="android:colorBackground">@color/app_background_light</item>
         <item name="colorOnBackground">@color/on_surface</item>
 
         <item name="colorSurface">@color/surface</item>
@@ -34,7 +34,7 @@
         <!-- System UI -->
         <item name="android:statusBarColor">@android:color/transparent</item>
         <item name="android:navigationBarColor">@android:color/transparent</item>
-        <item name="android:windowLightStatusBar">false</item> <!-- Assuming dark background means light text/icons -->
+        <item name="android:windowLightStatusBar">true</item> <!-- Assuming dark background means light text/icons -->
         <item name="android:windowLightNavigationBar">false</item> <!-- Assuming dark background means light icons -->
         <item name="android:windowDrawsSystemBarBackgrounds">true</item>
         <item name="android:enforceNavigationBarContrast">false</item>
