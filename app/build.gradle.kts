@@ -14,11 +14,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.app" // Ensure this matches your actual desired namespace
+    namespace = "com.genesis.ai.app" // Ensure this matches your actual desired namespace
     compileSdk = libs.versions.compileSdk.get().toInt()
 
     defaultConfig {
-        applicationId = "com.example.app" // Ensure this matches
+        applicationId = "com.genesis.ai.app" // Ensure this matches
         minSdk = libs.versions.minSdk.get().toInt()
         targetSdk = libs.versions.targetSdk.get().toInt()
         versionCode = 1
