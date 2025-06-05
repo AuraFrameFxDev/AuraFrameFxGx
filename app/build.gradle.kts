@@ -1,17 +1,16 @@
 plugins {
-    alias(libs.plugins.android.application)
-    alias(libs.plugins.kotlin.android)
-    alias(libs.plugins.kotlin.kapt)
-    alias(libs.plugins.ksp)
-    alias(libs.plugins.hilt.android)
-    alias(libs.plugins.kotlin.serialization)
-    alias(libs.plugins.kotlin.parcelize)
-    alias(libs.plugins.kotlin.compose)
-    alias(libs.plugins.google.services)
-    alias(libs.plugins.firebase.crashlytics)
-    alias(libs.plugins.firebase.perf)
-    alias(libs.plugins.navigation.safe.args)
-    alias(libs.plugins.openapi.generator)
+    alias(libs.plugins.android.application) // Keep using alias for AGP
+    id("org.jetbrains.kotlin.android")
+    id("org.jetbrains.kotlin.kapt")
+    id("com.google.devtools.ksp")
+    alias(libs.plugins.hilt.android) // Keep using alias for Hilt
+    id("org.jetbrains.kotlin.plugin.serialization")
+    alias(libs.plugins.google.services) // Keep using alias for Firebase
+    alias(libs.plugins.firebase.crashlytics) // Keep using alias for Firebase
+    alias(libs.plugins.firebase.perf) // Keep using alias for Firebase
+    id("org.jetbrains.kotlin.plugin.compose")
+    id("org.jetbrains.kotlin.plugin.parcelize")
+    // alias(libs.plugins.navigation.safe.args) // Only if using safe args for navigation
 }
 
 android {
@@ -64,159 +63,81 @@ android {
 dependencies {
     // AndroidX Core
     implementation(libs.androidx.core.ktx)
-    implementation(libs.androidx.appcompat)
-    implementation(libs.androidx.appcompat.resources)
+    implementation(libs.androidx.appcompat) // If using AppCompat themes/views
     implementation(libs.androidx.activity.compose)
-    implementation(libs.androidx.activity.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
     implementation(libs.androidx.lifecycle.viewmodel.compose)
-    
-    // Legacy Support & UI
-    implementation(libs.androidx.legacy.support.v4)
-    implementation(libs.androidx.support.v4)
-    implementation(libs.androidx.support.core.ui)
-    implementation(libs.androidx.recyclerview.v7)
-    implementation(libs.androidx.constraintlayout)
-    implementation(libs.androidx.viewpager2)
-    implementation(libs.androidx.drawerlayout) 
-    implementation(libs.androidx.fragment.ktx)
-    implementation(libs.androidx.animated.vector.drawable)
-    implementation(libs.androidx.exifinterface)
-    
-    // Room Database
-    implementation(libs.androidx.room.ktx)
-    
-    // ViewBinding & DataBinding
-    implementation(libs.androidx.viewbinding)
-    implementation(libs.androidx.databinding.runtime)
-    implementation(libs.androidx.databinding.adapters)
-    implementation(libs.androidx.databinding.library)
-    
-    // Navigation
-    implementation(libs.androidx.navigation.compose)
-    implementation(libs.androidx.navigation.fragment.ktx)
-    implementation(libs.androidx.navigation.ui.ktx)
-    
-    // WorkManager
-    implementation(libs.androidx.work.runtime.ktx)
 
-    // Jetpack Compose
+    // AndroidX Navigation
+    implementation(libs.androidx.navigation.compose)
+    // implementation(libs.androidx.navigation.fragment.ktx) // Uncomment if using Fragments
+    // implementation(libs.androidx.navigation.ui.ktx)    // Uncomment if using Fragments
+
+    // AndroidX WorkManager (Optional, based on usage)
+    // implementation(libs.androidx.work.runtime.ktx)
+
+    // Jetpack Compose (BOM already included in libs.versions.toml, so just declare modules)
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.compose.ui)
     implementation(libs.androidx.compose.ui.graphics)
     implementation(libs.androidx.compose.ui.tooling.preview)
     implementation(libs.androidx.compose.material3)
-    implementation(libs.androidx.compose.runtime)
-    implementation(libs.androidx.compose.foundation)
-    implementation(libs.jetbrains.compose.resources.android)
 
     // Hilt (Dependency Injection)
     implementation(libs.hilt.android)
-    ksp(libs.hilt.compiler)
-    implementation(libs.androidx.hilt.work)
-    kapt(libs.androidx.hilt.compiler)
+    ksp(libs.hilt.compiler) // Use KSP for Hilt
+    // implementation(libs.androidx.hilt.work) // For Hilt + WorkManager
+    // kapt(libs.androidx.hilt.compiler)    // Kapt for Hilt WorkManager extensions
 
-    // Kotlin Core Libraries
-    implementation(libs.kotlin.stdlib)
-    implementation(libs.kotlin.script.runtime)
-    implementation(libs.kotlin.script.util)
-    implementation(libs.kotlin.scripting.jvm)
-    implementation(libs.kotlin.scripting.compiler)
-    implementation(libs.kotlin.scripting.dependencies)
-    implementation(libs.kotlin.bom)
-    
-    // KotlinX
+    // KotlinX Coroutines
     implementation(libs.kotlinx.coroutines.core)
     implementation(libs.kotlinx.coroutines.android)
+
+    // KotlinX Serialization (If used)
     implementation(libs.kotlinx.serialization.json)
 
-    // Firebase
+    // Firebase (BOM included in libs.versions.toml)
     implementation(platform(libs.firebase.bom))
     implementation(libs.firebase.analytics.ktx)
     implementation(libs.firebase.crashlytics.ktx)
     implementation(libs.firebase.messaging.ktx)
-    
-    // Google AI & Material
+    // Add other Firebase dependencies as needed (firestore, auth, etc.)
+
+    // Google AI Generative AI
     implementation(libs.google.ai.generativeai)
+
+    // Google Material Components
     implementation(libs.google.android.material)
 
-    // Networking
+    // Networking (OkHttp & Retrofit)
     implementation(libs.okhttp.core)
-    implementation(libs.okhttp.logging.interceptor)
+    implementation(libs.okhttp.logging.interceptor) // Useful for debugging
     implementation(libs.retrofit.core)
-    implementation(libs.retrofit.converter.gson)
-    implementation(libs.volley)
-    implementation(libs.grpc.kotlin.stub)
-    
-    // UI Components & Utils
-    implementation(libs.glide)
-    implementation(libs.easy.permissions)
-    implementation(libs.agentweb)
-    
-    // JSON & Data Handling
-    implementation(libs.jackson.module.kotlin)
-    
-    // Utilities
-    implementation(libs.timber)
-    implementation(libs.vertx.kotlin.coroutines)
-    implementation(libs.util.kotlin)
-    implementation(libs.gsdk.common)
-    
+    implementation(libs.retrofit.converter.gson) // Or other converters like kotlinx.serialization
+
     // Testing
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.ext.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-    androidTestImplementation(platform(libs.androidx.compose.bom))
-    androidTestImplementation(libs.androidx.compose.ui.test.junit4)
-    debugImplementation(libs.androidx.compose.ui.tooling)
+    androidTestImplementation(platform(libs.androidx.compose.bom)) // For Compose tests
+    androidTestImplementation(libs.androidx.compose.ui.test.junit4) // For Compose tests
+    debugImplementation(libs.androidx.compose.ui.tooling) // For Compose Previews in debug builds
+    // MockK for testing
     testImplementation(libs.mockk.agent)
-    testImplementation(libs.mockk.android)
+    testImplementation(libs.mockk.android) // or testImplementation(libs.mockk.jvm) if preferred for unit tests
     androidTestImplementation(libs.mockk.android)
+
+
+    // TODO: Add any other specific dependencies the project needs.
 }
 
-// Kotlin compiler configuration
-tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
-    kotlinOptions {
-        jvmTarget = libs.versions.jvmTarget.get()
-        // Use Kotlin's explicit API mode for better API visibility
-        freeCompilerArgs = freeCompilerArgs + listOf(
-            "-opt-in=kotlin.RequiresOptIn",
-            "-Xjvm-default=all"
-        )
-    }
-}
-
-// OpenAPI Generator configuration
-openApiGenerate {
-    generatorName.set("kotlin")
-    // Define the source OpenAPI specification file
-    inputSpec.set("${project.projectDir}/src/main/resources/api-spec.yaml") 
-    // Output directory for generated code
-    outputDir.set("${project.buildDir}/generated/openapi")
-    
-    // Configure the Kotlin generator
-    configOptions.set(mapOf(
-        "dateLibrary" to "java8",
-        "enumPropertyNaming" to "UPPERCASE",
-        "serializationLibrary" to "jackson", // Use Jackson for serialization
-        "packageName" to "com.genesis.ai.api",
-        "useCoroutines" to "true", // Enable Kotlin coroutines
-        "interfaceOnly" to "true", // Generate only interfaces for API clients
-        "library" to "jvm-retrofit2" // Use Retrofit2 for API client generation
-    ))
-    
-    // Configure output settings
-    apiPackage.set("com.genesis.ai.api")
-    invokerPackage.set("com.genesis.ai.api.infrastructure")
-    modelPackage.set("com.genesis.ai.api.models")
-}
-
-// Make the OpenAPI generated code available to the main source set
-kotlin {
-    sourceSets {
-        main {
-            kotlin.srcDir("${project.buildDir}/generated/openapi/src/main/kotlin")
-        }
-    }
-}
+// Apply Hilt Kapt plugin if using kapt for Hilt WorkManager or other specific processors
+// Ensure this is compatible with KSP usage for core Hilt.
+// It's often better to standardize on KSP if possible.
+// tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
+//    kotlinOptions {
+//        // Required for Hilt KAPT mode if there are Java classes using Hilt.
+//        // freeCompilerArgs = freeCompilerArgs + "-Xopt-in=dagger.hilt.android.internal.disableMissingCopyInternal"
+//    }
+// }
