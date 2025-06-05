@@ -1,4 +1,4 @@
-package com.example.app.model
+package com.genesis.ai.app.model
 
 /**
  * Represents different types of user or system activities.

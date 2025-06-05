@@ -1,4 +1,4 @@
-package com.example.app.ui.debug
+package com.genesis.ai.app.ui.debug
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
@@ -8,9 +8,9 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.example.app.ai.agents.CascadeAgent
-import com.example.app.model.agent_states.ProcessingState
-import com.example.app.model.agent_states.VisionState
+import com.genesis.ai.app.ai.agents.CascadeAgent
+import com.genesis.ai.app.model.agent_states.ProcessingState
+import com.genesis.ai.app.model.agent_states.VisionState
 import kotlinx.coroutines.flow.StateFlow
 import javax.inject.Inject
 import javax.inject.Singleton

@@ -1,4 +1,4 @@
-package com.example.app.di
+package com.genesis.ai.app.di
 
 import androidx.hilt.work.HiltWorkerFactory
 import dagger.Module

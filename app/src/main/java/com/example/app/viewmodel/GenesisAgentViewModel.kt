@@ -1,10 +1,10 @@
-package com.example.app.viewmodel
+package com.genesis.ai.app.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.app.ai.agents.GenesisAgent
-import com.example.app.model.AgentConfig
-import com.example.app.model.AgentType
+import com.genesis.ai.app.ai.agents.GenesisAgent
+import com.genesis.ai.app.model.AgentConfig
+import com.genesis.ai.app.model.AgentType
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 import javax.inject.Inject

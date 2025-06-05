@@ -1,6 +1,6 @@
-package com.example.app.ai.pipeline
+package com.genesis.ai.app.ai.pipeline
 
-import com.example.app.model.AgentType
+import com.genesis.ai.app.model.AgentType
 
 data class AIPipelineConfig(
     val maxRetries: Int = 3,

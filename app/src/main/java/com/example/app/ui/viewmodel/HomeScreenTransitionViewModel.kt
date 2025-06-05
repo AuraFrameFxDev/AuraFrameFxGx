@@ -1,8 +1,8 @@
-package com.example.app.ui.viewmodel
+package com.genesis.ai.app.ui.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.app.system.homescreen.HomeScreenTransitionManager
+import com.genesis.ai.app.system.homescreen.HomeScreenTransitionManager
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow

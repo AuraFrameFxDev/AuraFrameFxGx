@@ -1,4 +1,4 @@
-package com.example.app.ui.screens
+package com.genesis.ai.app.ui.screens
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
@@ -16,9 +16,9 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import coil.compose.AsyncImage
-import com.example.app.system.overlay.*
-import com.example.app.ui.theme.Color
-import com.example.app.ui.theme.Shape
+import com.genesis.ai.app.system.overlay.*
+import com.genesis.ai.app.ui.theme.Color
+import com.genesis.ai.app.ui.theme.Shape
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

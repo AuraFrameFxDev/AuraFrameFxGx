@@ -1,8 +1,8 @@
-package com.example.app.ai.services
+package com.genesis.ai.app.ai.services
 
-import com.example.app.ai.agents.Agent
-import com.example.app.model.requests.AiRequest
-import com.example.app.model.responses.AiResponse
+import com.genesis.ai.app.ai.agents.Agent
+import com.genesis.ai.app.model.requests.AiRequest
+import com.genesis.ai.app.model.responses.AiResponse
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 import javax.inject.Singleton

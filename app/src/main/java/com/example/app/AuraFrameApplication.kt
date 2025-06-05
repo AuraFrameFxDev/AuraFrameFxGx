@@ -1,4 +1,4 @@
-package com.example.app
+package com.genesis.ai.app
 
 import android.app.Application
 import androidx.work.Configuration // Added import for Configuration

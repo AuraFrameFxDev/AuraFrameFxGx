@@ -1,6 +1,6 @@
-package com.example.app.utils
+package com.genesis.ai.app.utils
 
-import com.example.app.ai.VertexAIConfig // Import the placeholder config
+import com.genesis.ai.app.ai.VertexAIConfig // Import the placeholder config
 import android.util.Log
 
 /**

@@ -1,4 +1,4 @@
-package com.example.app.ui.state
+package com.genesis.ai.app.ui.state
 
 /**
  * Represents the state of an AI text response operation.

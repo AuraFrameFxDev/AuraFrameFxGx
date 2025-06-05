@@ -1,4 +1,4 @@
-package com.example.app.ai
+package com.genesis.ai.app.ai
 
 // Assuming common types, replace with actual types if different
 import java.io.File
@@ -59,7 +59,7 @@ interface AuraAIService {
 
     // Add other common AI service methods if needed
 
-    fun getAppConfig(): com.example.app.ai.config.AIConfig? {
+    fun getAppConfig(): com.genesis.ai.app.ai.config.AIConfig? {
         // TODO: Reported as unused or requires implementation.
         // This method should provide the application's AI configuration.
         return null

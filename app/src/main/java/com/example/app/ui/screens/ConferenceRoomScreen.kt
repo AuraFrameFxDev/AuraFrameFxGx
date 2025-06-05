@@ -1,4 +1,4 @@
-package com.example.app.ui.screens
+package com.genesis.ai.app.ui.screens
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
@@ -11,14 +11,14 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
-import com.example.app.ui.theme.NeonTeal
-import com.example.app.ui.theme.NeonPurple
-import com.example.app.ui.theme.NeonBlue
-import com.example.app.ui.theme.NeonPink
-import com.example.app.ui.theme.GlowOverlay
-import com.example.app.ui.theme.PulseOverlay
-import com.example.app.ui.theme.HoverOverlay
-import com.example.app.ui.theme.PressOverlay
+import com.genesis.ai.app.ui.theme.NeonTeal
+import com.genesis.ai.app.ui.theme.NeonPurple
+import com.genesis.ai.app.ui.theme.NeonBlue
+import com.genesis.ai.app.ui.theme.NeonPink
+import com.genesis.ai.app.ui.theme.GlowOverlay
+import com.genesis.ai.app.ui.theme.PulseOverlay
+import com.genesis.ai.app.ui.theme.HoverOverlay
+import com.genesis.ai.app.ui.theme.PressOverlay
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

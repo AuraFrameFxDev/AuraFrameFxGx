@@ -1,9 +1,9 @@
-package com.example.app.ai.agents
+package com.genesis.ai.app.ai.agents
 
 import android.content.Context // As per constructor parameter in error report
-import com.example.app.model.agent_states.ActiveContext // Added import
-import com.example.app.model.agent_states.ContextChainEvent // Added import
-import com.example.app.model.agent_states.LearningEvent // Added import
+import com.genesis.ai.app.model.agent_states.ActiveContext // Added import
+import com.genesis.ai.app.model.agent_states.ContextChainEvent // Added import
+import com.genesis.ai.app.model.agent_states.LearningEvent // Added import
 
 /**
  * NeuralWhisperAgent, focused on context chaining and learning from experience.

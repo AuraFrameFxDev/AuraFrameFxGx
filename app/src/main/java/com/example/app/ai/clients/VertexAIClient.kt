@@ -1,4 +1,4 @@
-package com.example.app.ai.clients
+package com.genesis.ai.app.ai.clients
 
 /**
  * Interface for a Vertex AI client.

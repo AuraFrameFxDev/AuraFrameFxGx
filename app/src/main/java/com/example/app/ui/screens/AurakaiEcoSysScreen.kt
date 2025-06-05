@@ -1,4 +1,4 @@
-package com.example.app.ui.screens
+package com.genesis.ai.app.ui.screens
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -16,7 +16,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
-import com.example.app.ui.AuraMoodViewModel // Adjust import if AuraMoodViewModel is elsewhere
+import com.genesis.ai.app.ui.AuraMoodViewModel // Adjust import if AuraMoodViewModel is elsewhere
 
 // TODO: Function reported as unused or needs implementation.
 @Composable

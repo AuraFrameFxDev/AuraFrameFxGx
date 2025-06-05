@@ -1,4 +1,4 @@
-package com.example.app.model.agent_states
+package com.genesis.ai.app.model.agent_states
 
 // TODO: Define actual properties for these states/events.
 // TODO: Classes reported as unused or need implementation. Ensure these are utilized by NeuralWhisperAgent.

@@ -1,8 +1,8 @@
-package com.example.app.ai.task
+package com.genesis.ai.app.ai.task
 
-import com.example.app.ai.error.ErrorHandler
-import com.example.app.ai.pipeline.AIPipelineConfig
-import com.example.app.model.AgentType
+import com.genesis.ai.app.ai.error.ErrorHandler
+import com.genesis.ai.app.ai.pipeline.AIPipelineConfig
+import com.genesis.ai.app.model.AgentType
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.update

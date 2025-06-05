@@ -1,7 +1,7 @@
-package com.example.app.ai.task.execution
+package com.genesis.ai.app.ai.task.execution
 
-import com.example.app.ai.task.Task
-import com.example.app.model.AgentType
+import com.genesis.ai.app.ai.task.Task
+import com.genesis.ai.app.model.AgentType
 import kotlinx.datetime.Clock
 import kotlinx.datetime.Instant
 import kotlinx.serialization.Serializable

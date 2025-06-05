@@ -1,4 +1,4 @@
-package com.example.app.receivers
+package com.genesis.ai.app.receivers
 
 import android.content.BroadcastReceiver
 import android.content.Context

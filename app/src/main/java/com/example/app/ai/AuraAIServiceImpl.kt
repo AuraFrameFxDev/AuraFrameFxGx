@@ -1,6 +1,6 @@
-package com.example.app.ai
+package com.genesis.ai.app.ai
 
-import com.example.app.ai.config.AIConfig // Ensure this import
+import com.genesis.ai.app.ai.config.AIConfig // Ensure this import
 import java.io.File // For downloadFile return type
 import javax.inject.Inject
 import javax.inject.Singleton

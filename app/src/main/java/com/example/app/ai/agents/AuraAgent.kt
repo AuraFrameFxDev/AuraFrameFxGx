@@ -1,4 +1,4 @@
-package com.example.app.ai.agents
+package com.genesis.ai.app.ai.agents
 
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.emptyFlow

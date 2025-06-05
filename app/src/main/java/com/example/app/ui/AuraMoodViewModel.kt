@@ -1,9 +1,9 @@
-package com.example.app.ui
+package com.genesis.ai.app.ui
 
 // import android.app.Application // Add if injecting Application
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope // Already present, but good to confirm
-import com.example.app.model.Emotion
+import com.genesis.ai.app.model.Emotion
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow

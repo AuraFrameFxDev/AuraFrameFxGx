@@ -1,4 +1,4 @@
-package com.example.app.system.overlay
+package com.genesis.ai.app.system.overlay
 
 import android.content.Context
 import android.graphics.Bitmap

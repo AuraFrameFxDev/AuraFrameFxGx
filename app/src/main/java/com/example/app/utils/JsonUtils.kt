@@ -1,4 +1,4 @@
-package com.example.app.utils
+package com.genesis.ai.app.utils
 
 import kotlinx.serialization.SerializationException // Add this import
 

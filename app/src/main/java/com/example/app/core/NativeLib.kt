@@ -1,4 +1,4 @@
-package com.example.app.core
+package com.genesis.ai.app.core
 
 class NativeLib {
     // No init {} block, as the original issue was "redundant empty initializer".

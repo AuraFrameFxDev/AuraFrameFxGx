@@ -1,4 +1,4 @@
-package com.example.app.ai.context
+package com.genesis.ai.app.ai.context
 
 // TODO: Class reported as unused or needs implementation. Ensure this is utilized by ContextManager.
 data class AIContext(

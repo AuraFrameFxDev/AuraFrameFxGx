@@ -1,4 +1,4 @@
-package com.example.app.network
+package com.genesis.ai.app.network
 
 import android.content.Context
 

@@ -1,11 +1,11 @@
-package com.example.app.ui.navigation
+package com.genesis.ai.app.ui.navigation
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 // import androidx.navigation.NavHostController
 // import androidx.navigation.compose.NavHost
 // import androidx.navigation.compose.composable
-// import com.example.app.ui.screens.HomeScreen // Example screen
+// import com.genesis.ai.app.ui.screens.HomeScreen // Example screen
 
 /**
  * Defines the navigation graph for the application.

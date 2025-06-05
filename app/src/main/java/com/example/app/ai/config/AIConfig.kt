@@ -1,4 +1,4 @@
-package com.example.app.ai.config
+package com.genesis.ai.app.ai.config
 
 // TODO: Class reported as unused declaration. Ensure this config is used by AI components.
 data class AIConfig(

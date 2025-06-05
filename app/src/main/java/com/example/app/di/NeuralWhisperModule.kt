@@ -1,6 +1,6 @@
-package com.example.app.di
+package com.genesis.ai.app.di
 
-// import com.example.app.ai.services.NeuralWhisper // Assuming path from previous creation
+// import com.genesis.ai.app.ai.services.NeuralWhisper // Assuming path from previous creation
 // import android.content.Context // If NeuralWhisper needs context
 import dagger.Module
 import dagger.Provides

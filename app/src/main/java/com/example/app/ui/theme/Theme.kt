@@ -1,4 +1,4 @@
-package com.example.app.ui.theme
+package com.genesis.ai.app.ui.theme
 
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
@@ -140,12 +140,5 @@ fun AuraFrameFXTheme(
                 content()
             }
         }
-    )
-}
-    MaterialTheme(
-        colorScheme = colorScheme,
-        typography = AppTypography, // From Typography.kt
-        // shapes = AppShapes, // TODO: Define AppShapes in Shapes.kt if custom shapes are needed
-        content = content
     )
 }

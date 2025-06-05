@@ -1,4 +1,4 @@
-package com.example.app.ui.screens
+package com.genesis.ai.app.ui.screens
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.icons.Icons
@@ -9,9 +9,9 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
-import com.example.app.system.quicksettings.QuickSettingsCustomizer
-import com.example.app.system.lockscreen.LockScreenCustomizer
-import com.example.app.ui.theme.Color
+import com.genesis.ai.app.system.quicksettings.QuickSettingsCustomizer
+import com.genesis.ai.app.system.lockscreen.LockScreenCustomizer
+import com.genesis.ai.app.ui.theme.Color
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

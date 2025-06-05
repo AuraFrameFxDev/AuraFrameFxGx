@@ -1,9 +1,9 @@
-package com.example.app.ai.services
+package com.genesis.ai.app.ai.services
 
 import android.media.AudioRecord // Assuming usage of AudioRecord
 import com.google.ai.client.generativeai.GenerativeModel // Added import
-import com.example.app.model.ConversationState // Added import
-import com.example.app.model.Emotion // Added import
+import com.genesis.ai.app.model.ConversationState // Added import
+import com.genesis.ai.app.model.Emotion // Added import
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow

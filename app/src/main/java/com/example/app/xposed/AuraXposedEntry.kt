@@ -1,4 +1,4 @@
-package com.example.app.xposed
+package com.genesis.ai.app.xposed
 
 // Basic Xposed Module Entry Point (IXposedHookLoadPackage)
 // This is a common structure. Actual implementation details depend on Xposed API.

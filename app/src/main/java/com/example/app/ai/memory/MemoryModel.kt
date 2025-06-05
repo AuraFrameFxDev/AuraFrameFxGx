@@ -1,6 +1,6 @@
-package com.example.app.ai.memory
+package com.genesis.ai.app.ai.memory
 
-import com.example.app.model.AgentType
+import com.genesis.ai.app.model.AgentType
 import kotlinx.datetime.Clock
 import kotlinx.datetime.Instant
 import kotlinx.serialization.Serializable

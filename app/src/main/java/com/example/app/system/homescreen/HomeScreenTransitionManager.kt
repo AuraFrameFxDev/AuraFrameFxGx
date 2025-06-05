@@ -1,6 +1,6 @@
-package com.example.app.system.homescreen
+package com.genesis.ai.app.system.homescreen
 
-import com.example.app.system.overlay.*
+import com.genesis.ai.app.system.overlay.*
 import com.highcapable.yukihookapi.hook.xposed.XposedModule
 import com.highcapable.yukihookapi.hook.xposed.prefs.data.YukiHookModulePrefs
 import com.highcapable.yukihookapi.hook.xposed.service.YukiHookService

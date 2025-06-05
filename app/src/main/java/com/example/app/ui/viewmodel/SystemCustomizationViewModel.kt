@@ -1,9 +1,9 @@
-package com.example.app.ui.viewmodel
+package com.genesis.ai.app.ui.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.app.system.quicksettings.QuickSettingsCustomizer
-import com.example.app.system.lockscreen.LockScreenCustomizer
+import com.genesis.ai.app.system.quicksettings.QuickSettingsCustomizer
+import com.genesis.ai.app.system.lockscreen.LockScreenCustomizer
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow

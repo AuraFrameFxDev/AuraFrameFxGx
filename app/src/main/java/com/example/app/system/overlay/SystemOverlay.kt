@@ -1,6 +1,6 @@
-package com.example.app.system.overlay
+package com.genesis.ai.app.system.overlay
 
-import com.example.app.ui.theme.Color
+import com.genesis.ai.app.ui.theme.Color
 import com.highcapable.yukihookapi.hook.xposed.XposedModule
 import com.highcapable.yukihookapi.hook.xposed.prefs.data.YukiHookModulePrefs
 import kotlinx.serialization.Serializable

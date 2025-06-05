@@ -1,9 +1,9 @@
-package com.example.app.ai.task.execution
+package com.genesis.ai.app.ai.task.execution
 
-import com.example.app.ai.error.ErrorHandler
-import com.example.app.ai.task.Task
-import com.example.app.ai.task.TaskScheduler
-import com.example.app.model.AgentType
+import com.genesis.ai.app.ai.error.ErrorHandler
+import com.genesis.ai.app.ai.task.Task
+import com.genesis.ai.app.ai.task.TaskScheduler
+import com.genesis.ai.app.model.AgentType
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.update

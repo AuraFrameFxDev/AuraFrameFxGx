@@ -1,4 +1,4 @@
-package com.example.app.xposed
+package com.genesis.ai.app.xposed
 
 import android.app.Service
 import android.content.Intent
