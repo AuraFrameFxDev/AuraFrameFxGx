@@ -1,0 +1,906 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AndroidLayouts">
+    <shared>
+      <config />
+    </shared>
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="NONE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="4023b09e-7b85-4d8e-aad3-4057b1bad004" name="Changes" comment="h">
+      <change afterPath="$PROJECT_DIR$/../AuraFrameFx/.gitattributes" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../AuraFrameFx/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../AuraFrameFx/app/build.gradle.kts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../AuraFrameFx/app/src/main/kotlin/com/genesis/ai/app/App.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../AuraFrameFx/app/src/test/kotlin/com/genesis/ai/app/AppTest.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../AuraFrameFx/gradle.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../AuraFrameFx/gradle/libs.versions.toml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../AuraFrameFx/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../AuraFrameFx/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../AuraFrameFx/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../AuraFrameFx/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../AuraFrameFx/settings.gradle.kts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../AuraFrameFxGx-main.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitleaks.toml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.14.1/checksums/checksums.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.14.1/checksums/md5-checksums.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.14.1/checksums/sha1-checksums.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.14.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.14.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.14.1/fileChanges/last-build.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.14.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.14.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.14.1/gc.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/config.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/configuration-cache/222c5c65-8efc-4cc2-9902-3fe7e97aee90/.globals.work.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/configuration-cache/222c5c65-8efc-4cc2-9902-3fe7e97aee90/.strings.work.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/configuration-cache/222c5c65-8efc-4cc2-9902-3fe7e97aee90/_.work.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/configuration-cache/222c5c65-8efc-4cc2-9902-3fe7e97aee90/buildfingerprint.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/configuration-cache/222c5c65-8efc-4cc2-9902-3fe7e97aee90/entry.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/configuration-cache/222c5c65-8efc-4cc2-9902-3fe7e97aee90/projectfingerprint.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/configuration-cache/222c5c65-8efc-4cc2-9902-3fe7e97aee90/work.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/configuration-cache/51c1w4f3f7uuq30gjnqgc3xwj/candidates.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/configuration-cache/5d5c6db7-d80f-43bb-8ebc-8bb42754a82a/.globals.work.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/configuration-cache/5d5c6db7-d80f-43bb-8ebc-8bb42754a82a/.strings.work.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/configuration-cache/5d5c6db7-d80f-43bb-8ebc-8bb42754a82a/_.work.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/configuration-cache/5d5c6db7-d80f-43bb-8ebc-8bb42754a82a/buildfingerprint.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/configuration-cache/5d5c6db7-d80f-43bb-8ebc-8bb42754a82a/entry.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/configuration-cache/5d5c6db7-d80f-43bb-8ebc-8bb42754a82a/projectfingerprint.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/configuration-cache/5d5c6db7-d80f-43bb-8ebc-8bb42754a82a/work.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/configuration-cache/6e193576-ee6b-4d10-87cb-6e44bf8041e4/.globals.work.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/configuration-cache/6e193576-ee6b-4d10-87cb-6e44bf8041e4/.strings.work.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/configuration-cache/6e193576-ee6b-4d10-87cb-6e44bf8041e4/_.work.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/configuration-cache/6e193576-ee6b-4d10-87cb-6e44bf8041e4/buildfingerprint.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/configuration-cache/6e193576-ee6b-4d10-87cb-6e44bf8041e4/entry.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/configuration-cache/6e193576-ee6b-4d10-87cb-6e44bf8041e4/projectfingerprint.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/configuration-cache/6e193576-ee6b-4d10-87cb-6e44bf8041e4/work.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/configuration-cache/74c6850e-7396-4755-9f6d-edda2f427ede/.globals.work.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/configuration-cache/74c6850e-7396-4755-9f6d-edda2f427ede/.strings.work.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/configuration-cache/74c6850e-7396-4755-9f6d-edda2f427ede/_.work.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/configuration-cache/74c6850e-7396-4755-9f6d-edda2f427ede/buildfingerprint.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/configuration-cache/74c6850e-7396-4755-9f6d-edda2f427ede/entry.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/configuration-cache/74c6850e-7396-4755-9f6d-edda2f427ede/projectfingerprint.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/configuration-cache/74c6850e-7396-4755-9f6d-edda2f427ede/work.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/configuration-cache/97wqkibz28d2nzfyw03bpnznl/candidates.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/configuration-cache/ai3d0hc8wkmp4s1ut1j2yxwl2/candidates.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/configuration-cache/aohfdbxwycpqv6476e5fomp74/candidates.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/configuration-cache/configuration-cache.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/configuration-cache/gc.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/vcs-1/gc.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/workspace-id.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/workspace-id.txt.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/AndroidProjectSystem.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/deploymentTargetSelector.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/kotlinc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/migrations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/studiobot.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.vscode/settings.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/COMMIT_EDITMSG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FETCH_HEAD" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HEAD" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ORIG_HEAD" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TOC.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/auraframefx-firebase-adminsdk-fbsvc-9c493ac034.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build.gradle.kts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/google-services.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/proguard-rules.pro" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app/AuraFrameApplication.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app/MainActivity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app/VertexSyncService.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app/ai/AuraAIService.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app/ai/AuraAIServiceImpl.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app/ai/AuraController.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app/ai/VertexAIConfig.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app/ai/agents/Agent.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app/ai/agents/AuraAgent.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app/ai/agents/AuraShieldAgent.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app/ai/agents/BaseAgent.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app/ai/agents/CascadeAgent.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app/ai/agents/GenKitMasterAgent.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app/ai/agents/GenesisAgent.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app/ai/agents/KaiAgent.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app/ai/agents/NeuralWhisperAgent.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app/ai/clients/VertexAIClient.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app/ai/clients/VertexAIClientImpl.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app/ai/config/AIConfig.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app/ai/context/AIContext.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app/ai/context/ContextChain.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app/ai/context/ContextManager.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app/ai/error/ErrorHandler.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app/ai/error/ErrorModel.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app/ai/memory/MemoryManager.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app/ai/memory/MemoryModel.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app/ai/pipeline/AIPipelineConfig.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app/ai/pipeline/AIPipelineProcessor.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app/ai/services/AuraAIService.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app/ai/services/CascadeAIService.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app/ai/services/KaiAIService.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app/ai/services/NeuralWhisper.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app/ai/task/TaskModel.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app/ai/task/TaskScheduler.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app/ai/task/execution/TaskExecutionManager.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app/ai/task/execution/TaskExecutionModel.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app/auth/OAuthService.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app/core/NativeLib.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app/data/SecurePreferences.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app/data/UserPreferences.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app/di/AppModule.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app/di/AppStateModule.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app/di/CoroutineDispatchersModule.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app/di/DataStoreModule.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app/di/KaiModule.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app/di/NeuralWhisperModule.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app/di/PreferencesModule.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app/di/VertexAIModule.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app/di/WorkManagerModule.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app/di/WorkerModule.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app/initializers/AppInitializerInitializer.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app/model/ActivityType.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app/model/AgentHierarchy.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app/model/AgentMessage.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app/model/AgentType.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app/model/ConversationState.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app/model/Emotion.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app/model/UserData.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app/model/agent_states/AuraShieldAgentStates.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app/model/agent_states/CascadeAgentStates.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app/model/agent_states/GenKitMasterAgentStates.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app/model/agent_states/NeuralWhisperAgentStates.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app/network/ApiService.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app/receivers/BootCompletedReceiver.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app/security/SecurityContext.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app/services/AmbientMusicService.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app/services/BackupService.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app/services/MyFirebaseMessagingService.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app/services/VertexCloudService.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app/system/homescreen/HomeScreenTransition.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app/system/homescreen/HomeScreenTransitionManager.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app/system/lockscreen/LockScreenCustomizer.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app/system/overlay/ImageResourceManager.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app/system/overlay/ShapeManager.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app/system/overlay/SystemOverlay.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app/system/overlay/SystemOverlayManagerImpl.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app/system/quicksettings/QuickSettingsCustomizer.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app/ui/AuraMoodViewModel.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app/ui/KaiController.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app/ui/components/AuraSparkleButton.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app/ui/components/HaloView.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app/ui/components/HologramTransition.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app/ui/components/PlaceholderAuraOrb.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app/ui/components/StaticOrb.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app/ui/debug/CascadeZOrderPlayground.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app/ui/gestures/AuraSummonGestureDetector.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app/ui/models/Overlay.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app/ui/navigation/NavHost.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app/ui/overlays/OverlayManager.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app/ui/screens/AIChatScreen.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app/ui/screens/AIFeaturesScreen.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app/ui/screens/AppBuilderScreen.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app/ui/screens/AurakaiEcoSysScreen.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app/ui/screens/ConferenceRoomScreen.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app/ui/screens/DigitalTransitionRow.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app/ui/screens/EcosystemMenuScreen.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app/ui/screens/HomeScreenTransitionScreen.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app/ui/screens/ImageShapeManagerScreen.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app/ui/screens/IntroScreen.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app/ui/screens/MenuScreen.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app/ui/screens/OverlayScreen.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app/ui/screens/PlaceholderScreen.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app/ui/screens/SwipeMenuScreen.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app/ui/screens/SystemCustomizationScreen.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app/ui/screens/UIEngineScreen.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app/ui/screens/XhancementScreen.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app/ui/screens/screens.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app/ui/state/AIImageState.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app/ui/state/AIResponseState.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app/ui/theme/Color.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app/ui/theme/Theme.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app/ui/theme/Typography.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app/ui/viewmodel/HomeScreenTransitionViewModel.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app/ui/viewmodel/SystemCustomizationViewModel.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app/utils/DisplayUtils.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app/utils/JsonUtils.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app/utils/VertexAIUtils.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app/viewmodel/ConferenceRoomViewModel.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app/viewmodel/GenesisAgentViewModel.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app/xposed/AuraXposedEntry.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app/xposed/XposedBridgeService.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/bottom_nav_item_color_selector.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_launcher_foreground.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/font/PixelifySans-Medium.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/values-night/colors.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/values-night/themes.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/values/arrays.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/values/integers.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/values/splash_screen.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/values/themes.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/values/typography.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/resources/api-spec.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/vertex_service_account.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/reports/configuration-cache/13k4029ilp4wta6oqeu2p98nc/12t029bj5ysr13afx638y7gz7/configuration-cache-report.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/reports/configuration-cache/4ak2orjaysbwitj289vhqnckx/6d93xg9w39qkobyml9cgb903g/configuration-cache-report.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/reports/configuration-cache/4ak2orjaysbwitj289vhqnckx/dbvsyvqv3z3dk840o5o1yw5ca/configuration-cache-report.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/reports/configuration-cache/51c1w4f3f7uuq30gjnqgc3xwj/ieaz2idsl5z2t30ieilixjcz/configuration-cache-report.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/reports/configuration-cache/53g281wy8qzt5v7gpyryz1rve/a27cwy16f4tec8eriv7l8wkfo/configuration-cache-report.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/reports/configuration-cache/5d2neh4w0w283cq3pszq8k4fa/4m3oj9wdtfhs2fz1tqh6ulcv3/configuration-cache-report.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/reports/configuration-cache/5d2neh4w0w283cq3pszq8k4fa/c1279756z9c9qpe8tl151gvup/configuration-cache-report.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/reports/configuration-cache/5d2neh4w0w283cq3pszq8k4fa/dg9yqzqpblzncfpezrv7z1z8/configuration-cache-report.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/reports/configuration-cache/6dw5wsxg3tyyoq59qssrwame/uotefxp409j3d0vo3gda3294/configuration-cache-report.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/reports/configuration-cache/79ijzfhyddtrlv2tsswmit0i4/9m34ctr1sak3nh57nh2kgsmia/configuration-cache-report.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/reports/configuration-cache/97wqkibz28d2nzfyw03bpnznl/2x4ztryqzmbua956cra2fudl7/configuration-cache-report.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/reports/configuration-cache/97wqkibz28d2nzfyw03bpnznl/31g845y1xfmyooggqznfvsc1g/configuration-cache-report.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/reports/configuration-cache/97wqkibz28d2nzfyw03bpnznl/36w0pi9v9rg2auzjtffs00gwd/configuration-cache-report.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/reports/configuration-cache/97wqkibz28d2nzfyw03bpnznl/4s8lt38031byxlnh8dc1dtklm/configuration-cache-report.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/reports/configuration-cache/97wqkibz28d2nzfyw03bpnznl/5gh2bx5hegqokkk02if82p6n2/configuration-cache-report.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/reports/configuration-cache/97wqkibz28d2nzfyw03bpnznl/5nxw2ihbej1a15efr8o4aakih/configuration-cache-report.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/reports/configuration-cache/97wqkibz28d2nzfyw03bpnznl/6jeaek0aedzdsz2mj9zpaa25i/configuration-cache-report.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/reports/configuration-cache/97wqkibz28d2nzfyw03bpnznl/7vc5ag7o0m7kghrlkpjeget0f/configuration-cache-report.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/reports/configuration-cache/97wqkibz28d2nzfyw03bpnznl/9rb7k8yibev0660reyqogt7db/configuration-cache-report.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/reports/configuration-cache/97wqkibz28d2nzfyw03bpnznl/box56yjdwh2mbniapt4oqg5u8/configuration-cache-report.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/reports/configuration-cache/97wqkibz28d2nzfyw03bpnznl/dpmf22ikcik44hu6ye5wdtecg/configuration-cache-report.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/reports/configuration-cache/97wqkibz28d2nzfyw03bpnznl/du8lsuzwxsjejjnejqqb2xirj/configuration-cache-report.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/reports/configuration-cache/97wqkibz28d2nzfyw03bpnznl/em6l2cs0pfm418ncrw10ol84d/configuration-cache-report.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/reports/configuration-cache/97wqkibz28d2nzfyw03bpnznl/ezxnemjhhj1z2ovb1v6yu4bnm/configuration-cache-report.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/reports/configuration-cache/97wqkibz28d2nzfyw03bpnznl/hkte2l1ixnszz1lymun70u9u/configuration-cache-report.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/reports/configuration-cache/97wqkibz28d2nzfyw03bpnznl/jaev9zq0t1wucyen8acmmdp5/configuration-cache-report.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/reports/configuration-cache/9ho3etn921psjknruk695qpg6/acf16buuapr57pfhn0qcccq6r/configuration-cache-report.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/reports/configuration-cache/ai3d0hc8wkmp4s1ut1j2yxwl2/3rdalxa8x595xnf0hp8qwws4v/configuration-cache-report.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/reports/configuration-cache/ao47fgfs8tbdw5e116f5wfka0/57lds13g46h0yjx5d0jjd2quv/configuration-cache-report.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/reports/configuration-cache/aohfdbxwycpqv6476e5fomp74/2za1g7yzrr1jjv94yaqtu3da8/configuration-cache-report.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/reports/configuration-cache/aohfdbxwycpqv6476e5fomp74/7jfsucl2t0pxkuqu04yzig5n/configuration-cache-report.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/reports/configuration-cache/aoznljl6fepyh6xa9p50noxoy/a5rvhniq8fj4atfhcn1p3wk67/configuration-cache-report.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/reports/configuration-cache/aq7w5rfqt62fb4473lcsdbyet/275th9jnx2zzf2tdq7da1e8tg/configuration-cache-report.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/reports/configuration-cache/aq7w5rfqt62fb4473lcsdbyet/ba2w7xz88kg6twt9one3jmxx/configuration-cache-report.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/reports/configuration-cache/aq7w5rfqt62fb4473lcsdbyet/d3fq8skpt1r2ps6hqtxzhvi8w/configuration-cache-report.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/reports/configuration-cache/b2qxsm29pqvhcakiaqrueb1nf/7piwd7a628ig8bo9g2v3zwkll/configuration-cache-report.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/reports/configuration-cache/bjz4pobhs5j6rrf1gqpbx614d/2n4d4fgcqsxwr4fua8h56szll/configuration-cache-report.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/reports/configuration-cache/bjz4pobhs5j6rrf1gqpbx614d/4hkf9hla4slusvvu5np3bpdvy/configuration-cache-report.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/reports/configuration-cache/bjz4pobhs5j6rrf1gqpbx614d/5xqfy54qwfor3eaidsia1jx64/configuration-cache-report.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/reports/configuration-cache/bjz4pobhs5j6rrf1gqpbx614d/6s6db3bvc4jgzdkd75xi64v4x/configuration-cache-report.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/reports/configuration-cache/c6k5pfbulz45o0q0n9xdkfowt/79fy4kp4tywrr9l6wpzuilka4/configuration-cache-report.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/reports/configuration-cache/c6k5pfbulz45o0q0n9xdkfowt/8l4f74rr3duv6vbf4kv9l1zro/configuration-cache-report.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/reports/configuration-cache/dnrfi7sgnhoc3xy6l27kcnjqe/1b3w0fxspn34882gl2lzss29a/configuration-cache-report.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/reports/configuration-cache/dnrfi7sgnhoc3xy6l27kcnjqe/7loxsi8pdn84yiu8vmzq8sgqv/configuration-cache-report.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/reports/configuration-cache/el518q10mt2kmtq5g7ackzovk/3ot37m4ygv7lx1oa3tl8lkpqe/configuration-cache-report.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/reports/configuration-cache/z2jscwghai77cewdqwrfd2r6/2pl6x3vgwr0my3nm5p7p1bze0/configuration-cache-report.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/reports/problems/problems-report.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/description" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradle.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradle/libs.versions.toml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hooks/applypatch-msg.sample" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hooks/commit-msg.sample" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hooks/fsmonitor-watchman.sample" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hooks/post-update.sample" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hooks/pre-applypatch.sample" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hooks/pre-commit.sample" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hooks/pre-merge-commit.sample" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hooks/pre-push.sample" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hooks/pre-rebase.sample" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hooks/pre-receive.sample" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hooks/prepare-commit-msg.sample" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hooks/push-to-checkout.sample" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hooks/sendemail-validate.sample" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hooks/update.sample" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/index" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/info/exclude" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/build.gradle.kts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/src/main/java/dev/aurakai/lib/MyClass.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/HEAD" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/refs/heads/Update" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/refs/heads/main" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/refs/remotes/origin/HEAD" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/refs/remotes/origin/Master" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/refs/remotes/origin/Update" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/refs/remotes/origin/fix/gradle-config-and-sync-issues" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/refs/remotes/origin/fix/gradle-java-home" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/refs/remotes/origin/jules-foundational-review-1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/refs/remotes/origin/main" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/refs/stash" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/00/4861afceea8531feb0176acd84cb04a7a0993f" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/00/d117c8ce5899f2943cf3420fb7907a466a7a76" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/03/0d13dca4c4bacfd07cb6946ad8c54c16f520eb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/03/9be40264c6e65d5aac5dbb42c00937e3b341da" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/03/c4ddb5d01175b3bddc1f9826b9ef6461c34156" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/03/ee0c318bbd27a75270e7206816de84ef939f0c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/04/6e4c5344e320d26cb736e8136802db68ec093c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/05/5d7baa8cd7ce496d4014c6477a01d8b92a8e96" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/06/48fb47f92e2160ef5426cfca135c62ef10fb0a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/06/a604820ec8f08b27c879bb429f40092503e4f2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/07/615786dd22a6c2df1ebd0b3a53fcd204d49d6c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/08/ec3fb246b1ac7f0a49032631e11e39a3609748" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/0a/52927e874e0931f5bd59abfd36db4a8eed0f71" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/0b/ab977c7534d1c9d9288a069688b69b79c3c248" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/0d/cd9f6b5ad8d7699849a326339b21cbe6aabc32" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/0d/f9074cff35850a45b99bae97c7f6bc61256fb6" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/0f/04e40bba8654efd676f044408f84f4eae9ceb2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/0f/5509ca7f6a7fe00441e32cb8c6be58e9a1c8db" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/11/4f501a175d1a302b90584f6850c67446b5515a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/12/17e928894cecf247fd980964e5e9f7fad16e4e" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/12/1aa7ad5d6534bf7002541d3bb91767efba987b" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/15/35ec51c0c6e42b284f665a172f9ef7302f067e" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/16/3bdf4d24960da87562f7f13cb1d9b94d14667a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/16/52cca196a2bcc245533893ef8453998db47ca9" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/18/5e85aa4c3e8a1e1d9d2586b44f44f885ca9dd9" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/19/91bc4dfdb146b9f4d3180318359341924ce3d6" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/1a/34b194a26bfec2aa2f2b55e409d3e9eb5afd8d" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/1b/9a6956b3acdc11f40ce2bb3f6efbd845cc243f" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/1d/236733e1dadd009bdaa4b4c14200b2bc7808d0" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/1e/393a74a0d5446cd8e399f41869dcd6689aefbe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/1f/f4f79eab920dca1f9f4dd9b8630b495ccaf863" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/21/05f35f05032291885a73348b3432359a206be8" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/23/b945f212cb91e2be9d79c346ffa5d23fb8c925" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/24/46d53b17f7b497d1c43a94f102890ce49f526f" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/28/50434c3354926b90054bcd7a7affb1e89f165e" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/28/d4b77f9f036a47549d47db79c16788749dca10" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/28/eae5cae0b34e5bdddeff97e80b69bd8b32d4e1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/29/5dbdb0b156fa2b8d809e7a97499fd69c386263" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/2b/068d11462a4b96669193de13a711a3a36220a0" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/2b/4754684527e9e70a71588f5d6da8aad744b21e" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/2d/7eb388ee499fbcf3e992723ec409c095640104" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/2d/e6a254a969ae0b88f58eccf2a7198bd1776599" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/2f/6bf87b23bdefe68680defd4aefb0f0e3429324" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/2f/bba997071ab01a90a0c5303f029ae01cd5cd12" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/30/3219603a8b54e19d468af553beb4cf5f180efe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/32/4bd88699ed531f4e74a5b8f87d9b17023c198c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/33/ba1b606c7105866511c89d157b56654cda77e2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/34/82fde90984922ae6844f784e128d4c78d5bd5e" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/34/d3bb85bbb051f185388fa1ff4f4d5e6553cb2c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/35/79aceaf82e7fc4abe61b7bb54e528dbc2cc316" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/38/a213a051fea3311c067babc225ab787674155a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/3c/cd2bfb23acbfd703e6754e1036869265297efe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/3d/587222065b0b9f0474c34078302252b46e0096" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/3e/a04e700dfa8c15ab64cac383b89bb7458bfdc0" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/3f/37eeb06869d7b2aa5f39c985fc34c4ec72ba09" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/40/4d80301cdfbd44af05fe7d6fdd8897066fe699" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/40/f939a25f0bf6bce0a6e6b55e8faef9b709e9b5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/41/abf6b6f5f4f85e97f17c1b1324e9a6def44fa0" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/42/022c214b8c47a5d5f9774197529f763d5716a0" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/43/f316c01b1ddef493d78586c0d35ae0d637a87d" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/44/3b87e7d9958995188866a57860b0c8e0d58efe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/44/c6e7dd00e97def3c6a0f3a03be3c4acac01ad1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/44/fed74ec93e845a33afac0b8e1b76d50db769f1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/45/e0aee5e34f12dc55dd87bc32e131ca22e48031" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/46/cf00f8eca6d00d4ca94aa6add4c7b0b097b69c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/47/3502ee88cad23b1250e2f0183e84ad73933e18" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/47/6787add5fa5f459fa2b20a73f2f153c1522d24" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/47/803902e86cb6dd0b680f5042bebb421baba2bc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/48/8207aa6cd66b9c0b18ee312faa1ff9b2204fd3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/4c/5509da562b38c0ab01e9fcdeb7d7e38571757c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/4e/b8a7bb22868b3027fd448919baff0de90d71fb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/4f/0f1d64e58ba64d180ce43ee13bf9a17835fbca" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/51/58330edd83b1b29cbeb906b0a303eaa91f113d" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/53/eb34ee6f0d55f08269f2a65ccf546625ec2c5c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/55/136e9e88cfe341d2bcb1e31157d23aea7c12a7" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/55/9fef4b35fad93473011e1dc3ff7eae66c044bc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/57/1bdf4c07118d43461df9ed19d205e79031bd8f" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/57/85c6578f227f1f1890af21f94e082042a3f789" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/59/423696b96dce17839e2241548c443d9d37818d" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/59/4e0f3434a161a6b1c45fdd60ec43d695f1ef54" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/5a/39d0a4e7f8599162dc64ed5e1d1e986e36aa8c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/5c/5f41e74b369b05dd6d8aa894c667813f878ca4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/5c/c4dc076019008a6460a2f3142fd8ec0b4cfab8" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/5d/5053c8c73bd77472a4a5185a3731c04908f7fe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/60/3cd539322685467bdcc68b8b127c135091ae0e" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/60/9905c285120ccc820d2eb715d286542ae258e3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/60/e83add137ae4392760000497fb43d113940912" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/62/153a9f536b91e496afaa26c04a3d196ae5f1d2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/62/2e393c32f68a7640870abe06fa89c57c0bd46d" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/62/7a87114400a9a7a0c8dedfffbb52e7b0d94f8e" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/62/b611da081676d42f6c3f78a2c91e7bcedddedb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/65/f91f68074c242a85ab672e580839931a1ffd79" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/66/80987188abac3aadcbbac2bdfd58ec7ee60acb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/69/de13038ab4e47dd6223b58ea02a64017ce0570" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/6c/1a6cebbcaf881a229687d2ddba72b9e9b129fe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/6e/755ca47b3e020b7718fcc874b81caf0a89e449" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/6f/6b21580820b6d3f9eba5641a0d7413b2096a95" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/70/2a294b077c8fd9f4f2bff8259ec27aee719011" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/70/92e32b04a3b6b13d0686f0ef0e100590511e06" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/71/d8e2a089368a7c2d57d66daf60ea9943d84aaf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/72/29f797fd2b69e7e07903ebc9461ae20c69feac" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/72/66b30b3cbdf0ad47b86c3040325f71af12af24" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/74/e529f16be95d31c5df9316dbe99c3bb3551bae" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/75/ad358ff35eb9833679790f160accb2d5ac29e5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/7d/2f3748404ec1cf89962ef567582e7cefaaf29a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/83/a45a8a2ebe69eee1c35ae514ac1eb0e6c6fda6" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/84/a19c33170e4e2549510a93b8ad26c0fb6ec8d4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/85/9c10c8f00db259440e0e0c6449bb99ff4999b7" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/89/0e6657a9be277120c5a20022c3c1784d0c0fc6" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/8a/c0d04ae60f261d270aeea7b98cb4bf668395da" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/8a/df5a5aebf832091c548a0a70131a8656b7eb9d" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/8d/5e25bd010aa27bdf00d4e0bc0c628447be8657" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/8d/63c3f2a6eb659552ea3291bbf1b688efc5cb73" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/8e/4dfc2ce1d9586e8156190f4e71f9db9624a856" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/90/cb920de0e869a89443faf8ef2c6ea0598ee1ed" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/91/26ae37cbc3587421d6889eadd1d91fbf1994d4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/91/c052b65f3628a2ffd7204585e82b50e5b34d3a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/92/87f5083623b375139afb391af71cc533a7dd37" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/93/3d139e59ca5695b883d46ad973948a27e6e086" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/94/8a3070fe34c611c42c0d3ad3013a0dce358be0" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/94/dc89fdbe9af8303da3c205c1d94b8fd08e9a67" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/97/4a445f7465151f63c2ad963f33b8a2f99f14a4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/98/2dc57c4666a9af19636044b72e618a4a0c99e6" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/9a/267a7b623523046654208fc81a28cfd4705579" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/9b/13b6a1b8f06b654fb966ebfddcd25050dcbeaf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/9b/bc975c742b298b441bfb90dbc124400a3751b9" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/9e/3ddbf642c17ce1a8f596a34cbbb83c804184cf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/9f/1fecb861742e04fbfaacb23409179e91558572" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/a3/ce5f3f60126b432ff29fa015afe5d71250a691" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/a3/de34961096076e3ad578310142d8e33859d1bb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/a4/e82c520294b66089ab176b5e6e4e125780f80c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/a6/4132c0e02d28850e68499e7f9f694f6960ac4d" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/a8/dfe06a6ac19ea0d00ca0491afa7966a53f6812" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/aa/7d6427e6fa1074b79ccd52ef67ac15c5637e85" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/ae/1967dc84ace87be6cde9d230dc90ed3bfb0fb5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/b1/c7c74dbc1c94bd3d60e8c2ab72a093bf1476a5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/b2/19c1efbb182b9d1751c3e014bc257a784a2256" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/b2/3d1c72b5988b66d414ce16c4e83331382631ae" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/b2/dfe3d1ba5cf3ee31b3ecc1ced89044a1f3b7a9" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/b3/8d573c93aa7e64a08ce1a354f9de8888c12d0c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/b3/b59f40aabb387375c7bfbfe7e81f55c7d32218" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/b9/ede39693e76db6c3347b82907aa5e79be3205a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/bb/de1dfa3f4aa76f6b80f3f46653d026dade40fe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/bc/866a361b0671696074f7f6d425fd404ef3f2f1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/bc/e4f5762da2de4c9bdf9229082c82a31c4c22a7" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/be/752335ad2d9391ab11cc0137e0c5a8d6bc2e02" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/be/bcb68cd08fe84329402b5a501460cbed64cc55" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/bf/f8c277caf04b1c86ecfe1c44c671538a4db1f2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/c0/08c4d4ec2482886f636f84c4ad7e7b5ec4e444" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/c0/33b6b2e70a2d6993c415f583601bc6745f63fb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/c1/1a7db9c6ff68bb0ec8f3cda64d55ae6bf8bdbf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/c2/09e78ecd372343283f4157dcfd918ec5165bb3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/c2/68e71ea009fe187e87bf65594b225bfdd64fa1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/c2/9a100f2445e4e813ce24f37d99a027b75b4cf4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/c5/092c8106d44cbe4eb93723a7c4180006302680" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/c5/f3f6b9c754225a4c577122bc2f9c0b49713e3c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/c6/46b6cb28b40564d5b1d4145b925e7ac66ba1a1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/c9/e24765bb278c08711fcc64cc6d4979d29f9a00" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/ca/bd3a91c42055537e345f77c22500f2610b2f2b" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/cd/a2780e5a3c20af7eff992a17742912f6430edc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/ce/f6ea21d3fb5f5c1aa5d3ee137d5f6aba5ba8b9" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/cf/6f6203faf0f8eba5ab52f25d0bf4686aa72bd1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/d4/6631abe4c4bd8f2fc09e1e511360882c3f4f1c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/d4/de18d7c100922c047ac69b230785f75a32da6f" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/d4/f8b107992152265dca630146108e489796980a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/d7/7351d4333cbf2a336df5d6278096501e575bc8" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/d7/d34d8f88391018c45aa9eb70683d552f4d4c0c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/de/f0d84f6aae089fde37cb1af1cf7cdc59e463ba" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/df/98a3d153768a61a137991cd0b4bd948140ae26" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/e0/1291d85c06ba5a22acf0487cd6ce2f089c51de" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/e2/e4523fdfca20d36e48a9fcf1af76754cc10690" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/e4/ba388dab3d6ccf7365f06282b88ef31d305f29" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/e4/d1e8fe0c33de5fe8388cb0149f21a6945e41c9" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/e5/d7aab5eabed7947eea020dee5f9afe7d7d0a96" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/e6/9de29bb2d1d6434b8b29ae775ad8c2e48c5391" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/e6/a74dcc3185036efd1cd4c740546e5756fe45f9" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/e9/5056145d0a338683bef48faea389f1eb2be0cf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/ea/60ce1b43155629650ddad426d21501e8934298" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/ea/9deebf3756a35916328a1fd563c6f61517ffce" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/ea/dd3f78a7113444d89fb32516896625924ac290" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/ed/a1632d95fb86536843802df991d0a56eb8f611" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/ed/b0364e71b462326f2fca67b4c24cf748338222" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/ee/524e6fb72ad2939ac2abd61180b8014ac9477f" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/ee/5502e6ebc8a4abdc0ee42e0846ee7e606f9016" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/f4/6030cb31fd62604deda5a3afe5a44799b921ea" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/f4/9f7ae3089f0b40a4b1c6f828b86433ac358b5b" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/f5/1134cc32d7dc91fe182349b0cf212961681025" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/f5/ba4f885aa42b1f44e50ffb843d1e4fd89b540d" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/f8/708ac7b78708e310ffc2756a21d3fea74de028" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/fa/6aed640a1102a0186e662e8e589c4162f97c05" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/fa/f93008b77e7b52e18c44e4eef257fc2f8fd76d" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/fd/0b927102e7fa75e890fdf04dfcc7d0fe8aa3b7" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/fe/43e460748f134b306d3bf3a4ee0f4300c2f888" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/fe/c1bbc1d9ceb0e726bd0a2ea45b847f952e114a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/pack/pack-5c4f5276779c6636226bfcbfda2f2f29d6e38e4c.idx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/pack/pack-5c4f5276779c6636226bfcbfda2f2f29d6e38e4c.pack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/pack/pack-5c4f5276779c6636226bfcbfda2f2f29d6e38e4c.rev" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/refs/heads/Update" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/refs/heads/main" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/refs/remotes/origin/HEAD" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/refs/remotes/origin/Master" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/refs/remotes/origin/Update" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/refs/remotes/origin/fix/gradle-config-and-sync-issues" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/refs/remotes/origin/fix/gradle-java-home" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/refs/remotes/origin/jules-foundational-review-1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/refs/remotes/origin/main" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/refs/stash" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/set-java-home.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/settings.gradle.kts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../app/src/main/resources/api-spec.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../build/reports/configuration-cache/3rehdb9r875r97htyikagykgh/ceva3y30dj2iastt2bfskmpfi/configuration-cache-report.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../set-java-home.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../starter.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.gradle/8.12/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../.gradle/8.12/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.gradle/8.12/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../.gradle/8.12/checksums/md5-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.gradle/8.12/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../.gradle/8.12/checksums/sha1-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.gradle/8.12/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../.gradle/8.12/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.gradle/8.12/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../.gradle/8.12/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.gradle/8.12/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../.gradle/8.12/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/../.gradle/file-system.probe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/../app/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/../build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gradle/libs.versions.toml" beforeDir="false" afterPath="$PROJECT_DIR$/../gradle/libs.versions.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../local.properties" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=LocalEmulator, isTemplate=false, identifier=path=C:\Users\Wehtt\.android\avd\Pixel_9.avd)]" />
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="AuraFrameFxGx-main" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="AuraFrameFxGx-main" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="AuraFrameFxGx-main" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="help" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="AuraFrameFxGx-main" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="other" type="c8890929:TasksNode$1" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;AuraFrameFxDev&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/AuraFrameFxDev/AuraFrameFxGx&quot;,
+    &quot;accountId&quot;: &quot;5af923cb-a2e2-40b5-accb-fc31289ec78d&quot;
+  }
+}</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
+  <component name="ProjectId" id="2y3lDuBDNVVVsqaVBh4fLxdT7Ly" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Android App.auraframefx.app.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.AuraFrameFxGx-main [:dependencies].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.AuraFrameFxGx-main [:dependentComponents].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.AuraFrameFxGx-main [:tasks].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.AuraFrameFxGx-main [artifactTransforms].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.AuraFrameFxGx-main [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.AuraFrameFxGx-main [components].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.AuraFrameFxGx-main [javaToolchains].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.AuraFrameFxGx-main [kotlinDslAccessorsReport].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.AuraFrameFxGx-main [prepareKotlinBuildScriptModel].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.AuraFrameFxGx-main [tasks].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.AuraFrameFxGx-main [updateDaemonJvm].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.AuraFrameFxGx-main [wrapper].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.AuraFrameFxGx-main.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Load Gradle Dependencies.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;android.gradle.sync.needed&quot;: &quot;true&quot;,
+    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Wehtt/.android/wrapper/dists/gradle-8.14.1-bin&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Build Variants&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.17&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.1285347&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gradle&quot;
+  }
+}</component>
+  <component name="PsdUISettings">
+    <option name="MODULE_TAB" value="Properties" />
+    <option name="BUILD_VARIANTS_TAB" value="Flavors" />
+    <option name="LAST_EDITED_BUILD_TYPE" value="debug" />
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="gradle wrapper" />
+      <command value="gradle :tasks" />
+      <command value="gradle tasks" />
+      <command value="gradle components" />
+      <command value="gradle javaToolchains" />
+      <command value="gradle updateDaemonJvm" />
+      <command value="gradle :dependencies" />
+      <command value="gradle prepareKotlinBuildScriptModel" />
+      <command value="gradle :dependentComponents" />
+      <command value="gradle --full-stacktrace" />
+      <command value="gradle --refresh-dependencies" />
+      <command value="gradle -t" />
+      <command value="gradle --rerun-tasks" />
+      <command value="gradle clean" />
+    </option>
+  </component>
+  <component name="RunManager" selected="Gradle.AuraFrameFxGx-main">
+    <configuration name="auraframefx.app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
+      <module name="auraframefx.app" />
+      <option name="ANDROID_RUN_CONFIGURATION_SCHEMA_VERSION" value="1" />
+      <option name="DEPLOY" value="true" />
+      <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
+      <option name="DEPLOY_AS_INSTANT" value="false" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="ALL_USERS" value="false" />
+      <option name="ALWAYS_INSTALL_WITH_PM" value="false" />
+      <option name="ALLOW_ASSUME_VERIFIED" value="false" />
+      <option name="CLEAR_APP_STORAGE" value="false" />
+      <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="RESTORE_ENABLED" value="false" />
+      <option name="RESTORE_FILE" value="" />
+      <option name="RESTORE_FRESH_INSTALL_ONLY" value="false" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+        <option name="ATTACH_ON_WAIT_FOR_DEBUGGER" value="false" />
+        <option name="DEBUG_SANDBOX_SDK" value="false" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+        <option name="ATTACH_ON_WAIT_FOR_DEBUGGER" value="false" />
+        <option name="DEBUG_SANDBOX_SDK" value="false" />
+      </Hybrid>
+      <Java>
+        <option name="ATTACH_ON_WAIT_FOR_DEBUGGER" value="false" />
+        <option name="DEBUG_SANDBOX_SDK" value="false" />
+      </Java>
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+        <option name="ATTACH_ON_WAIT_FOR_DEBUGGER" value="false" />
+        <option name="DEBUG_SANDBOX_SDK" value="false" />
+      </Native>
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Java/Kotlin Method Sample (legacy)" />
+        <option name="STARTUP_NATIVE_MEMORY_PROFILING_ENABLED" value="false" />
+        <option name="NATIVE_MEMORY_SAMPLE_RATE_BYTES" value="2048" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="SEARCH_ACTIVITY_IN_GLOBAL_SCOPE" value="false" />
+      <option name="SKIP_ACTIVITY_VALIDATION" value="false" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AuraFrameFxGx-main [:dependencies]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":dependencies" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="AuraFrameFxGx-main [:dependentComponents]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":dependentComponents" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="AuraFrameFxGx-main [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="clean" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="AuraFrameFxGx-main [prepareKotlinBuildScriptModel]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="prepareKotlinBuildScriptModel" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="AuraFrameFxGx-main" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--full-stacktrace" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list />
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.AuraFrameFxGx-main [clean]" />
+        <item itemvalue="Gradle.AuraFrameFxGx-main" />
+        <item itemvalue="Gradle.AuraFrameFxGx-main [:dependentComponents]" />
+        <item itemvalue="Gradle.AuraFrameFxGx-main [prepareKotlinBuildScriptModel]" />
+        <item itemvalue="Gradle.AuraFrameFxGx-main [:dependencies]" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4023b09e-7b85-4d8e-aad3-4057b1bad004" name="Changes" comment="" />
+      <created>1749071021529</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1749071021529</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="h" />
+    <option name="LAST_COMMIT_MESSAGE" value="h" />
+  </component>
+  <component name="play_dynamic_filters_status">
+    <option name="appIdToCheckInfo">
+      <map>
+        <entry key="com.example.app">
+          <value>
+            <CheckInfo lastCheckTimestamp="1749083901149" />
+          </value>
+        </entry>
+        <entry key="com.example.app.test">
+          <value>
+            <CheckInfo lastCheckTimestamp="1749083901151" />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
