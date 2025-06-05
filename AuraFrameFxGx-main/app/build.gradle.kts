@@ -11,6 +11,7 @@ plugins {
     alias(libs.plugins.firebase.crashlytics)
     alias(libs.plugins.firebase.perf)
     alias(libs.plugins.navigation.safe.args)
+    id("org.openapitools.generator") version "5.3.0"
 }
 
 android {
@@ -189,32 +190,30 @@ tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach 
     }
 }
 
-// Custom task for OpenAPI code generation
-tasks.register("generateApiClient") {
-    group = "openapi tools"
-    description = "Generate API client from OpenAPI spec"
+// Configure the OpenAPI Generator
+openApiGenerate {
+    generatorName.set("kotlin")
+    inputSpec.set("${layout.projectDirectory}/src/main/resources/api-spec.yaml")
+    outputDir.set("${layout.buildDirectory}/generated/openapi")
     
-    doLast {
-        exec {
-            workingDir = projectDir
-            executable = "${rootProject.projectDir}/gradlew"
-            args = listOf(
-                "openApiGenerate",
-                "--generator-name=kotlin",
-                "--input-spec=${layout.projectDirectory}/src/main/resources/api-spec.yaml",
-                "--output=${layout.buildDirectory}/generated/openapi",
-                "--config-options=dateLibrary=java8,enumPropertyNaming=UPPERCASE,serializationLibrary=jackson,packageName=com.genesis.ai.api,useCoroutines=true,interfaceOnly=true,library=jvm-retrofit2",
-                "--api-package=com.genesis.ai.api",
-                "--invoker-package=com.genesis.ai.api.infrastructure",
-                "--model-package=com.genesis.ai.api.models"
-            )
-        }
-    }
+    apiPackage.set("com.genesis.ai.api")
+    invokerPackage.set("com.genesis.ai.api.infrastructure")
+    modelPackage.set("com.genesis.ai.api.models")
+    
+    configOptions.set(mapOf(
+        "dateLibrary" to "java8",
+        "enumPropertyNaming" to "UPPERCASE",
+        "serializationLibrary" to "jackson",
+        "packageName" to "com.genesis.ai.api",
+        "useCoroutines" to "true",
+        "interfaceOnly" to "true",
+        "library" to "jvm-retrofit2"
+    ))
 }
 
 // Run OpenAPI generation before build
 tasks.named("preBuild") {
-    dependsOn("generateApiClient")
+    dependsOn("openApiGenerate")
 }
 
 // Make the OpenAPI generated code available to the main source set
