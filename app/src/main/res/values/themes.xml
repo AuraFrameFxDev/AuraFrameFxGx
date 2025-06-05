@@ -1,37 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Main Application Theme -->
-    <style name="Theme.AuraFrameFX.Material3" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Material 3 Color Palette -->
-        <item name="colorPrimary">@color/neon_teal</item>
-        <item name="colorOnPrimary">@color/on_primary</item>
-        <item name="colorPrimaryContainer">@color/neon_blue</item> <!-- Adjusted, can be different -->
-        <item name="colorOnPrimaryContainer">@color/on_primary</item> <!-- Adjusted -->
-
-        <item name="colorSecondary">@color/neon_purple</item>
-        <item name="colorOnSecondary">@color/on_surface</item> <!-- Adjusted, was on_primary -->
-        <item name="colorSecondaryContainer">@color/neon_purple</item> <!-- Adjusted -->
-        <item name="colorOnSecondaryContainer">@color/on_surface</item> <!-- Adjusted -->
-
-        <item name="colorTertiary">@color/neon_blue</item>
-        <item name="colorOnTertiary">@color/on_surface</item> <!-- Adjusted, was on_primary -->
-        <item name="colorTertiaryContainer">@color/neon_blue</item> <!-- Adjusted -->
-        <item name="colorOnTertiaryContainer">@color/on_surface</item> <!-- Adjusted -->
-
-        <item name="android:colorBackground">@color/dark_background</item>
-        <item name="colorOnBackground">@color/on_surface</item>
-
-        <item name="colorSurface">@color/surface</item>
-        <item name="colorOnSurface">@color/on_surface</item>
-        <item name="colorSurfaceVariant">@color/surface_variant</item>
-        <item name="colorOnSurfaceVariant">@color/on_surface_variant</item>
-        
-        <item name="colorError">@color/error</item>
-        <item name="colorOnError">@color/on_surface</item> <!-- Adjusted, was on_primary -->
-        <item name="colorErrorContainer">@color/error</item> <!-- Adjusted -->
-        <item name="colorOnErrorContainer">@color/on_surface</item> <!-- Adjusted -->
-
+    <style name="Theme.AuraFrameFX.Material3" parent="Theme.AppCompat.DayNight.NoActionBar">
         <!-- System UI -->
+        <item name="android:colorBackground">@color/dark_background</item>
         <item name="android:statusBarColor">@android:color/transparent</item>
         <item name="android:navigationBarColor">@android:color/transparent</item>
         <item name="android:windowLightStatusBar">false</item> <!-- Assuming dark background means light text/icons -->
@@ -40,11 +12,6 @@
         <item name="android:enforceNavigationBarContrast">false</item>
         <item name="android:enforceStatusBarContrast">false</item>
         <item name="android:windowLayoutInDisplayCutoutMode">shortEdges</item> <!-- Example -->
-
-        <!-- Shape Appearances -->
-        <item name="shapeAppearanceSmallComponent">@style/ShapeAppearance.AuraFrameFX.SmallComponent</item>
-        <item name="shapeAppearanceMediumComponent">@style/ShapeAppearance.AuraFrameFX.MediumComponent</item>
-        <item name="shapeAppearanceLargeComponent">@style/ShapeAppearance.AuraFrameFX.LargeComponent</item>
 
         <!-- Text Appearances -->
         <item name="textAppearanceDisplayLarge">@style/TextAppearance.AuraFrameFX.DisplayLarge</item>
