@@ -1,4 +1,4 @@
-package com.genesis.ai.app.security
+package com.example.app.security
 
 import android.content.Context
 

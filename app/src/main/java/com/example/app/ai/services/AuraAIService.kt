@@ -1,8 +1,8 @@
-package com.genesis.ai.app.ai.services
+package com.example.app.ai.services
 
-import com.genesis.ai.app.ai.agents.Agent
-import com.genesis.ai.app.model.requests.AiRequest
-import com.genesis.ai.app.model.responses.AiResponse
+import com.example.app.ai.agents.Agent
+import com.example.app.model.requests.AiRequest
+import com.example.app.model.responses.AiResponse
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 import javax.inject.Singleton
@@ -21,33 +21,39 @@ class AuraAIService @Inject constructor() : Agent("Aura", "Creative") {
     private suspend fun processTextRequest(request: AiRequest): Flow<AiResponse> {
         // TODO: Implement creative text generation
         return flow {
-            emit(AiResponse(
-                type = "text",
-                content = "Processing creative request...",
-                confidence = 0.9f
-            ))
+            emit(
+                AiResponse(
+                    type = "text",
+                    content = "Processing creative request...",
+                    confidence = 0.9f
+                )
+            )
         }
     }
 
     private suspend fun processImageRequest(request: AiRequest): Flow<AiResponse> {
         // TODO: Implement image generation
         return flow {
-            emit(AiResponse(
-                type = "image",
-                content = "Processing image request...",
-                confidence = 0.9f
-            ))
+            emit(
+                AiResponse(
+                    type = "image",
+                    content = "Processing image request...",
+                    confidence = 0.9f
+                )
+            )
         }
     }
 
     override suspend fun retrieveMemory(request: AiRequest): Flow<AiResponse> {
         // TODO: Implement memory retrieval
         return flow {
-            emit(AiResponse(
-                type = "memory",
-                content = "Retrieving relevant memories...",
-                confidence = 0.95f
-            ))
+            emit(
+                AiResponse(
+                    type = "memory",
+                    content = "Retrieving relevant memories...",
+                    confidence = 0.95f
+                )
+            )
         }
     }
 

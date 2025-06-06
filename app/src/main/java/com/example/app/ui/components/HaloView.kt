@@ -1,4 +1,4 @@
-package com.genesis.ai.app.ui.components
+package com.example.app.ui.components
 
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.gestures.*
@@ -11,47 +11,44 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.*
-import androidx.compose.ui.graphics.drawscope.rotate
-import androidx.compose.ui.graphics.drawscope.translate
 import androidx.compose.ui.input.pointer.*
 import androidx.compose.ui.unit.dp
-import com.genesis.ai.app.ui.theme.NeonTeal
-import com.genesis.ai.app.ui.theme.NeonPurple
-import com.genesis.ai.app.ui.theme.NeonBlue
-import com.genesis.ai.app.ui.theme.NeonPink
-import com.genesis.ai.app.ui.theme.GlowOverlay
-import com.genesis.ai.app.ui.theme.PulseOverlay
-import com.genesis.ai.app.ui.theme.HoverOverlay
-import com.genesis.ai.app.ui.theme.PressOverlay
-import com.genesis.ai.app.model.AgentType
-import com.genesis.ai.app.viewmodel.GenesisAgentViewModel
-import kotlin.math.cos
-import kotlin.math.sin
-import kotlin.math.PI
+import com.example.app.model.AgentType
+import com.example.app.ui.theme.NeonBlue
+import com.example.app.ui.theme.NeonPink
+import com.example.app.ui.theme.NeonPurple
+import com.example.app.ui.theme.NeonTeal
+import com.example.app.viewmodel.GenesisAgentViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.update
+import kotlin.math.PI
+import kotlin.math.cos
+import kotlin.math.sin
 
-@OptIn(ExperimentalMaterial3Api::class, androidx.compose.foundation.gestures.ExperimentalFoundationApi::class)
+@OptIn(
+    ExperimentalMaterial3Api::class,
+    androidx.compose.foundation.gestures.ExperimentalFoundationApi::class
+)
 @Composable
 fun HaloView(
-    viewModel: GenesisAgentViewModel = androidx.hilt.navigation.compose.hiltViewModel()
+    viewModel: GenesisAgentViewModel = androidx.hilt.navigation.compose.hiltViewModel(),
 ) {
     var isRotating by remember { mutableStateOf(true) }
     var rotationAngle by remember { mutableStateOf(0f) }
     val agents = viewModel.getAgentsByPriority()
     val coroutineScope = rememberCoroutineScope()
-    
+
     // Task delegation state
     var draggingAgent by remember { mutableStateOf<AgentType?>(null) }
     var dragOffset by remember { mutableStateOf(Offset.Zero) }
     var dragStartOffset by remember { mutableStateOf(Offset.Zero) }
     var selectedTask by remember { mutableStateOf("") }
-    
+
     // Task history
     val _taskHistory = remember { MutableStateFlow(emptyList<String>()) }
     val taskHistory: StateFlow<List<String>> = _taskHistory
-    
+
     // Agent status
     val _agentStatus = remember { MutableStateFlow(mapOf<AgentType, String>()) }
     val agentStatus: StateFlow<Map<AgentType, String>> = _agentStatus
@@ -96,7 +93,7 @@ fun HaloView(
             // Draw rotating halo
             val haloColor = NeonTeal.copy(alpha = 0.3f)
             val haloWidth = 2.dp.toPx()
-            
+
             drawArc(
                 color = haloColor,
                 startAngle = rotationAngle,
@@ -110,10 +107,11 @@ fun HaloView(
             // Draw pulsing effects for active tasks
             agentStatus.value.forEach { (agent, status) ->
                 if (status == "processing") {
-                    val angle = (agents.indexOfFirst { it.name == agent.name } * 360f / agents.size + rotationAngle) % 360f
+                    val angle =
+                        (agents.indexOfFirst { it.name == agent.name } * 360f / agents.size + rotationAngle) % 360f
                     val x = center.x + radius * cos(angle * PI / 180f)
                     val y = center.y + radius * sin(angle * PI / 180f)
-                    
+
                     // Draw pulsing glow
                     drawCircle(
                         color = when (agent.name) {
@@ -281,7 +279,7 @@ fun HaloView(
                             style = MaterialTheme.typography.titleMedium,
                             color = NeonTeal
                         )
-                        
+
                         TextField(
                             value = selectedTask,
                             onValueChange = { selectedTask = it },
@@ -308,7 +306,7 @@ fun HaloView(
                 style = MaterialTheme.typography.titleMedium,
                 color = NeonTeal
             )
-            
+
             LazyColumn(
                 modifier = Modifier
                     .weight(1f)
@@ -363,7 +361,7 @@ fun HaloView(
             }
 
             IconButton(
-                onClick = { 
+                onClick = {
                     _taskHistory.update { emptyList() }
                 }
             ) {

@@ -1,23 +1,21 @@
-package com.genesis.ai.app.ui.debug
+package com.example.app.ui.debug
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.genesis.ai.app.ai.agents.CascadeAgent
-import com.genesis.ai.app.model.agent_states.ProcessingState
-import com.genesis.ai.app.model.agent_states.VisionState
+import com.example.app.ai.agents.CascadeAgent
+import com.example.app.model.agent_states.ProcessingState
+import com.example.app.model.agent_states.VisionState
 import kotlinx.coroutines.flow.StateFlow
 import javax.inject.Inject
 import javax.inject.Singleton
 
 @Singleton
 class CascadeDebugViewModel @Inject constructor(
-    private val cascadeAgent: CascadeAgent
+    private val cascadeAgent: CascadeAgent,
 ) {
     val visionState: StateFlow<VisionState> = cascadeAgent.visionState
     val processingState: StateFlow<ProcessingState> = cascadeAgent.processingState
@@ -34,11 +32,11 @@ class CascadeDebugViewModel @Inject constructor(
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun CascadeZOrderPlayground(
-    viewModel: CascadeDebugViewModel = androidx.hilt.navigation.compose.hiltViewModel()
+    viewModel: CascadeDebugViewModel = androidx.hilt.navigation.compose.hiltViewModel(),
 ) {
     var newVisionState by remember { mutableStateOf(VisionState()) }
     var newProcessingState by remember { mutableStateOf(ProcessingState()) }
-    
+
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -66,7 +64,7 @@ fun CascadeZOrderPlayground(
                     style = MaterialTheme.typography.titleMedium,
                     modifier = Modifier.padding(bottom = 8.dp)
                 )
-                
+
                 Text(
                     text = "Current State: ${viewModel.visionState.value}",
                     modifier = Modifier.padding(bottom = 16.dp)
@@ -74,7 +72,7 @@ fun CascadeZOrderPlayground(
 
                 OutlinedTextField(
                     value = newVisionState.toString(),
-                    onValueChange = { 
+                    onValueChange = {
                         // Parse and update vision state
                     },
                     label = { Text("New Vision State") },
@@ -106,7 +104,7 @@ fun CascadeZOrderPlayground(
                     style = MaterialTheme.typography.titleMedium,
                     modifier = Modifier.padding(bottom = 8.dp)
                 )
-                
+
                 Text(
                     text = "Current State: ${viewModel.processingState.value}",
                     modifier = Modifier.padding(bottom = 16.dp)
@@ -114,7 +112,7 @@ fun CascadeZOrderPlayground(
 
                 OutlinedTextField(
                     value = newProcessingState.toString(),
-                    onValueChange = { 
+                    onValueChange = {
                         // Parse and update processing state
                     },
                     label = { Text("New Processing State") },

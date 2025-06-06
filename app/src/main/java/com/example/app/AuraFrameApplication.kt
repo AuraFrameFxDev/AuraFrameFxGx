@@ -1,4 +1,4 @@
-package com.genesis.ai.app
+package com.example.app
 
 import android.app.Application
 import androidx.work.Configuration // Added import for Configuration
@@ -6,7 +6,8 @@ import dagger.hilt.android.HiltAndroidApp
 
 @HiltAndroidApp // Added annotation
 // TODO: Class AuraFrameApplication reported as unused. Verify usage or remove if truly obsolete.
-class AuraFrameApplication : Application() { // Potentially also implements androidx.work.Configuration.Provider
+class AuraFrameApplication :
+    Application() { // Potentially also implements androidx.work.Configuration.Provider
     override fun onCreate() {
         super.onCreate()
         // TODO: Reported as unused entry point. Verify usage or remove if truly obsolete.

@@ -1,24 +1,28 @@
+import org.openapitools.generator.gradle.plugin.tasks.GenerateTask
+import org.openapitools.generator.gradle.plugin.extensions.OpenApiGeneratorGenerateExtension
+
 plugins {
-    alias(libs.plugins.android.application) // Keep using alias for AGP
-    id("org.jetbrains.kotlin.android")
-    id("org.jetbrains.kotlin.kapt")
-    id("com.google.devtools.ksp")
-    alias(libs.plugins.hilt.android) // Keep using alias for Hilt
-    id("org.jetbrains.kotlin.plugin.serialization")
-    alias(libs.plugins.google.services) // Keep using alias for Firebase
-    alias(libs.plugins.firebase.crashlytics) // Keep using alias for Firebase
-    alias(libs.plugins.firebase.perf) // Keep using alias for Firebase
-    id("org.jetbrains.kotlin.plugin.compose")
-    id("org.jetbrains.kotlin.plugin.parcelize")
-    // alias(libs.plugins.navigation.safe.args) // Only if using safe args for navigation
+    alias(libs.plugins.android.application)
+    alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.kotlin.kapt)
+    alias(libs.plugins.ksp)
+    alias(libs.plugins.hilt.android)
+    alias(libs.plugins.kotlin.serialization)
+    alias(libs.plugins.kotlin.parcelize)
+    alias(libs.plugins.kotlin.compose)
+    alias(libs.plugins.google.services)
+    alias(libs.plugins.firebase.crashlytics)
+    alias(libs.plugins.firebase.perf)
+    alias(libs.plugins.navigation.safe.args)
+    id("org.openapitools.generator") version "5.3.0"
 }
 
 android {
-    namespace = "com.genesis.ai.app" // Ensure this matches your actual desired namespace
+    namespace = "com.example.app" // Ensure this matches your actual desired namespace
     compileSdk = libs.versions.compileSdk.get().toInt()
 
     defaultConfig {
-        applicationId = "com.genesis.ai.app" // Ensure this matches
+        applicationId = "com.example.app" // Ensure this matches
         minSdk = libs.versions.minSdk.get().toInt()
         targetSdk = libs.versions.targetSdk.get().toInt()
         versionCode = 1
@@ -33,7 +37,10 @@ android {
     buildTypes {
         release {
             isMinifyEnabled = false // Configure ProGuard/R8 for release builds
-            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
         }
         debug {
             isMinifyEnabled = false
@@ -45,100 +52,179 @@ android {
         targetCompatibility = JavaVersion.VERSION_17
     }
 
-    kotlinOptions {
-        jvmTarget = libs.versions.jvmTarget.get()
+    kotlin {
+        jvmToolchain(17)
     }
 
     buildFeatures {
         compose = true
     }
 
-    packagingOptions {
+    packaging {
         resources {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
     }
+    buildToolsVersion = "36.0.0"
+    ndkVersion = "29.0.13113456 rc1"
 }
 
 dependencies {
     // AndroidX Core
     implementation(libs.androidx.core.ktx)
-    implementation(libs.androidx.core.splashscreen)
-    implementation(libs.androidx.appcompat) // If using AppCompat themes/views
+    implementation(libs.androidx.appcompat)
+    implementation(libs.androidx.appcompat.resources)
     implementation(libs.androidx.activity.compose)
+    implementation(libs.androidx.activity.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
     implementation(libs.androidx.lifecycle.viewmodel.compose)
 
-    // AndroidX Navigation
+    // AndroidX UI Components
+    implementation(libs.androidx.constraintlayout)
+    implementation(libs.androidx.viewpager2)
+    implementation(libs.androidx.drawerlayout)
+    implementation(libs.androidx.fragment.ktx)
+    implementation(libs.androidx.recyclerview)
+    implementation(libs.androidx.core)
+    implementation(libs.androidx.vectordrawable.animated)
+    implementation(libs.androidx.exifinterface)
+
+    // Room Database
+    implementation(libs.androidx.room.ktx)
+
+    // ViewBinding & DataBinding
+    implementation(libs.androidx.viewbinding)
+    implementation(libs.androidx.databinding.runtime)
+    implementation(libs.androidx.databinding.adapters)
+    implementation(libs.androidx.databinding.library)
+
+    // Navigation
     implementation(libs.androidx.navigation.compose)
-    // implementation(libs.androidx.navigation.fragment.ktx) // Uncomment if using Fragments
-    // implementation(libs.androidx.navigation.ui.ktx)    // Uncomment if using Fragments
+    implementation(libs.androidx.navigation.fragment.ktx)
+    implementation(libs.androidx.navigation.ui.ktx)
 
-    // AndroidX WorkManager (Optional, based on usage)
-    // implementation(libs.androidx.work.runtime.ktx)
+    // WorkManager
+    implementation(libs.androidx.work.runtime.ktx)
 
-    // Jetpack Compose (BOM already included in libs.versions.toml, so just declare modules)
+    // Jetpack Compose
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.compose.ui)
     implementation(libs.androidx.compose.ui.graphics)
     implementation(libs.androidx.compose.ui.tooling.preview)
     implementation(libs.androidx.compose.material3)
+    implementation(libs.androidx.compose.runtime)
+    implementation(libs.androidx.compose.foundation)
+    implementation(libs.jetbrains.compose.resources.android)
 
     // Hilt (Dependency Injection)
     implementation(libs.hilt.android)
-    ksp(libs.hilt.compiler) // Use KSP for Hilt
-    // implementation(libs.androidx.hilt.work) // For Hilt + WorkManager
-    // kapt(libs.androidx.hilt.compiler)    // Kapt for Hilt WorkManager extensions
+    ksp(libs.hilt.compiler)
+    implementation(libs.androidx.hilt.work)
+    kapt(libs.androidx.hilt.compiler)
 
-    // KotlinX Coroutines
+    // Kotlin Core Libraries
+    implementation(libs.kotlin.stdlib)
+    implementation(libs.kotlin.script.runtime)
+    implementation(libs.kotlin.script.util)
+    implementation(libs.kotlin.scripting.jvm)
+    implementation(libs.kotlin.scripting.compiler)
+    implementation(libs.kotlin.scripting.dependencies)
+    implementation(libs.kotlin.bom)
+
+    // KotlinX
     implementation(libs.kotlinx.coroutines.core)
     implementation(libs.kotlinx.coroutines.android)
-
-    // KotlinX Serialization (If used)
     implementation(libs.kotlinx.serialization.json)
 
-    // Firebase (BOM included in libs.versions.toml)
+    // Firebase
     implementation(platform(libs.firebase.bom))
     implementation(libs.firebase.analytics.ktx)
     implementation(libs.firebase.crashlytics.ktx)
     implementation(libs.firebase.messaging.ktx)
-    // Add other Firebase dependencies as needed (firestore, auth, etc.)
 
-    // Google AI Generative AI
+    // Google AI & Material
     implementation(libs.google.ai.generativeai)
-
-    // Google Material Components
     implementation(libs.google.android.material)
 
-    // Networking (OkHttp & Retrofit)
+    // Networking
     implementation(libs.okhttp.core)
-    implementation(libs.okhttp.logging.interceptor) // Useful for debugging
+    implementation(libs.okhttp.logging.interceptor)
     implementation(libs.retrofit.core)
-    implementation(libs.retrofit.converter.gson) // Or other converters like kotlinx.serialization
+    implementation(libs.retrofit.converter.gson)
+    implementation(libs.volley)
+    implementation(libs.grpc.kotlin.stub)
+
+    // UI Components & Utils
+    implementation(libs.glide)
+    implementation(libs.easy.permissions)
+    implementation(libs.agentweb)
+
+    // JSON & Data Handling
+    implementation(libs.jackson.module.kotlin)
+
+    // Utilities
+    implementation(libs.timber)
+    implementation(libs.vertx.kotlin.coroutines)
+    implementation(libs.util.kotlin)
+    implementation(libs.gsdk.common)
 
     // Testing
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.ext.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-    androidTestImplementation(platform(libs.androidx.compose.bom)) // For Compose tests
-    androidTestImplementation(libs.androidx.compose.ui.test.junit4) // For Compose tests
-    debugImplementation(libs.androidx.compose.ui.tooling) // For Compose Previews in debug builds
-    // MockK for testing
+    androidTestImplementation(platform(libs.androidx.compose.bom))
+    androidTestImplementation(libs.androidx.compose.ui.test.junit4)
+    debugImplementation(libs.androidx.compose.ui.tooling)
     testImplementation(libs.mockk.agent)
-    testImplementation(libs.mockk.android) // or testImplementation(libs.mockk.jvm) if preferred for unit tests
+    testImplementation(libs.mockk.android)
     androidTestImplementation(libs.mockk.android)
-
-
-    // TODO: Add any other specific dependencies the project needs.
 }
 
-// Apply Hilt Kapt plugin if using kapt for Hilt WorkManager or other specific processors
-// Ensure this is compatible with KSP usage for core Hilt.
-// It's often better to standardize on KSP if possible.
-// tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
-//    kotlinOptions {
-//        // Required for Hilt KAPT mode if there are Java classes using Hilt.
-//        // freeCompilerArgs = freeCompilerArgs + "-Xopt-in=dagger.hilt.android.internal.disableMissingCopyInternal"
-//    }
-// }
+// Kotlin compiler configuration
+tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
+    compilerOptions {
+        jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_21)
+        // Use Kotlin's explicit API mode for better API visibility
+        freeCompilerArgs.addAll(
+            "-opt-in=kotlin.RequiresOptIn",
+            "-Xjvm-default=all"
+        )
+    }
+}
+
+// Configure the OpenAPI Generator
+openApiGenerate {
+    generatorName.set("kotlin")
+    inputSpec.set("${layout.projectDirectory}/src/main/resources/api-spec.yaml")
+    outputDir.set("${layout.buildDirectory}/generated/openapi")
+    
+    apiPackage.set("com.genesis.ai.api")
+    invokerPackage.set("com.genesis.ai.api.infrastructure")
+    modelPackage.set("com.genesis.ai.api.models")
+    
+    configOptions.set(mapOf(
+        "dateLibrary" to "java8",
+        "enumPropertyNaming" to "UPPERCASE",
+        "serializationLibrary" to "jackson",
+        "packageName" to "com.genesis.ai.api",
+        "useCoroutines" to "true",
+        "interfaceOnly" to "true",
+        "library" to "jvm-retrofit2"
+    ))
+}
+
+// Run OpenAPI generation before build
+tasks.named("preBuild") {
+    dependsOn("openApiGenerate")
+}
+
+// Make the OpenAPI generated code available to the main source set
+kotlin {
+    sourceSets {
+        main {
+            kotlin.srcDir(layout.buildDirectory.dir("generated/openapi/src/main/kotlin"))
+
+        }
+    }
+}

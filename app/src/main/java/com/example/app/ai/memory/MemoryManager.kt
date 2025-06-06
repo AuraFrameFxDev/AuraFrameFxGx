@@ -1,7 +1,6 @@
-package com.genesis.ai.app.ai.memory
+package com.example.app.ai.memory
 
-import com.genesis.ai.app.ai.pipeline.AIPipelineConfig
-import com.genesis.ai.app.model.AgentType
+import com.example.app.ai.pipeline.AIPipelineConfig
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.update
@@ -13,7 +12,7 @@ import javax.inject.Singleton
 
 @Singleton
 class MemoryManager @Inject constructor(
-    private val config: AIPipelineConfig
+    private val config: AIPipelineConfig,
 ) {
     private val memoryStore = ConcurrentHashMap<String, MemoryItem>()
     private val _recentAccess = MutableStateFlow(mutableSetOf<String>())
@@ -47,7 +46,9 @@ class MemoryManager @Inject constructor(
 
     fun getContextWindow(task: String): List<MemoryItem> {
         val recentItems = memoryStore.values
-            .filter { it.timestamp > Clock.System.now().minus(config.contextChainingConfig.maxChainLength) }
+            .filter {
+                it.timestamp > Clock.System.now().minus(config.contextChainingConfig.maxChainLength)
+            }
             .sortedByDescending { it.timestamp }
             .take(config.contextChainingConfig.maxChainLength)
 
@@ -63,7 +64,10 @@ class MemoryManager @Inject constructor(
             current.copy(
                 totalItems = memoryStore.size,
                 recentItems = memoryStore.values
-                    .filter { it.timestamp > Clock.System.now().minus(config.contextChainingConfig.maxChainLength) }
+                    .filter {
+                        it.timestamp > Clock.System.now()
+                            .minus(config.contextChainingConfig.maxChainLength)
+                    }
                     .size,
                 memorySize = memoryStore.values.sumOf { it.content.length }
             )
@@ -86,5 +90,5 @@ data class MemoryStats(
     val totalItems: Int = 0,
     val recentItems: Int = 0,
     val memorySize: Int = 0,
-    val lastUpdated: Instant = Clock.System.now()
+    val lastUpdated: Instant = Clock.System.now(),
 )

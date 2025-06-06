@@ -1,7 +1,6 @@
-package com.genesis.ai.app.ai.task.execution
+package com.example.app.ai.task.execution
 
-import com.genesis.ai.app.ai.task.Task
-import com.genesis.ai.app.model.AgentType
+import com.example.app.model.AgentType
 import kotlinx.datetime.Clock
 import kotlinx.datetime.Instant
 import kotlinx.serialization.Serializable
@@ -18,7 +17,7 @@ data class TaskExecution(
     val result: ExecutionResult? = null,
     val metadata: Map<String, Any> = emptyMap(),
     val executionPlan: ExecutionPlan? = null,
-    val checkpoints: List<Checkpoint> = emptyList()
+    val checkpoints: List<Checkpoint> = emptyList(),
 )
 
 @Serializable
@@ -27,7 +26,7 @@ data class ExecutionPlan(
     val steps: List<ExecutionStep>,
     val estimatedDuration: Long,
     val requiredResources: Set<String>,
-    val metadata: Map<String, Any> = emptyMap()
+    val metadata: Map<String, Any> = emptyMap(),
 )
 
 @Serializable
@@ -38,7 +37,7 @@ data class ExecutionStep(
     val priority: Float = 0.5f,
     val estimatedDuration: Long = 0,
     val dependencies: Set<String> = emptySet(),
-    val metadata: Map<String, Any> = emptyMap()
+    val metadata: Map<String, Any> = emptyMap(),
 )
 
 @Serializable
@@ -48,7 +47,7 @@ data class Checkpoint(
     val stepId: String,
     val status: CheckpointStatus,
     val progress: Float = 0.0f,
-    val metadata: Map<String, Any> = emptyMap()
+    val metadata: Map<String, Any> = emptyMap(),
 )
 
 enum class ExecutionStatus {

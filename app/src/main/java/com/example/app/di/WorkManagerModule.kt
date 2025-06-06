@@ -1,4 +1,4 @@
-package com.genesis.ai.app.di
+package com.example.app.di
 
 import android.content.Context
 import androidx.hilt.work.HiltWorkerFactory // For Configuration.Builder().setWorkerFactory
@@ -28,7 +28,7 @@ object WorkManagerModule {
     @Provides
     @Singleton
     fun provideWorkManagerConfiguration(
-        _workerFactory: HiltWorkerFactory // Hilt will provide this if WorkerModule is included
+        _workerFactory: HiltWorkerFactory, // Hilt will provide this if WorkerModule is included
     ): Configuration {
         // TODO: Parameter _workerFactory reported as unused. (Hilt will provide it).
         // return Configuration.Builder()
@@ -49,7 +49,7 @@ object WorkManagerModule {
     @Singleton
     fun provideWorkManager(
         @ApplicationContext _context: Context,
-        _configuration: Configuration // Hilt will provide this from the method above
+        _configuration: Configuration, // Hilt will provide this from the method above
     ): WorkManager {
         // TODO: Parameters _context, _configuration reported as unused (Hilt will provide them).
         // WorkManager.initialize(_context, _configuration) // This should be done once, usually in Application.onCreate

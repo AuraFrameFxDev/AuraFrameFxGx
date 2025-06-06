@@ -1,4 +1,4 @@
-package com.genesis.ai.app.ui.models
+package com.example.app.ui.models
 
 /**
  * Represents an overlay item.
@@ -12,7 +12,7 @@ data class Overlay(
     val yPosition: Int = 0,
     val width: Int = -1, // -1 for wrap_content or match_parent depending on interpretation
     val height: Int = -1,
-    val zOrder: Int = 0
+    val zOrder: Int = 0,
     // Example for color if 'FFCC' was relevant:
     // val backgroundColor: String? = null // e.g., "#FFCC00"
     // TODO: Review color code 'FFCC' if it was intended for this model.

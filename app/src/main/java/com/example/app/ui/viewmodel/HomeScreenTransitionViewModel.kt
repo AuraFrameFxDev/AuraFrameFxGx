@@ -1,8 +1,8 @@
-package com.genesis.ai.app.ui.viewmodel
+package com.example.app.ui.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.genesis.ai.app.system.homescreen.HomeScreenTransitionManager
+import com.example.app.system.homescreen.HomeScreenTransitionManager
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -11,7 +11,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class HomeScreenTransitionViewModel @Inject constructor(
-    private val transitionManager: HomeScreenTransitionManager
+    private val transitionManager: HomeScreenTransitionManager,
 ) : ViewModel() {
     private val _currentConfig = MutableStateFlow<HomeScreenTransitionConfig?>(null)
     val currentConfig: StateFlow<HomeScreenTransitionConfig?> = _currentConfig

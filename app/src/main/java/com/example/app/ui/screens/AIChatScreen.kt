@@ -1,8 +1,7 @@
-package com.genesis.ai.app.ui.screens
+package com.example.app.ui.screens
 
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -40,11 +39,23 @@ fun AiChatScreen() {
             // Example messages - replace with actual data handling
             item { Text("User: Hello AI!", style = MaterialTheme.typography.bodyMedium) }
             item { Spacer(modifier = Modifier.height(4.dp)) }
-            item { Text("AI: Hi there, User! How can I help you today?", style = MaterialTheme.typography.bodyMedium, modifier = Modifier.padding(start = 8.dp)) }
+            item {
+                Text(
+                    "AI: Hi there, User! How can I help you today?",
+                    style = MaterialTheme.typography.bodyMedium,
+                    modifier = Modifier.padding(start = 8.dp)
+                )
+            }
             item { Spacer(modifier = Modifier.height(4.dp)) }
             item { Text("User: Tell me a fun fact.", style = MaterialTheme.typography.bodyMedium) }
             item { Spacer(modifier = Modifier.height(4.dp)) }
-            item { Text("AI: Honey never spoils. Archaeologists have found pots of honey in ancient Egyptian tombs that are over 3,000 years old and still perfectly edible!", style = MaterialTheme.typography.bodyMedium, modifier = Modifier.padding(start = 8.dp)) }
+            item {
+                Text(
+                    "AI: Honey never spoils. Archaeologists have found pots of honey in ancient Egyptian tombs that are over 3,000 years old and still perfectly edible!",
+                    style = MaterialTheme.typography.bodyMedium,
+                    modifier = Modifier.padding(start = 8.dp)
+                )
+            }
         }
 
         // Input area

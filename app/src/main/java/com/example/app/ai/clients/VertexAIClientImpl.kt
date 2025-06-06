@@ -1,6 +1,6 @@
-package com.genesis.ai.app.ai.clients
+package com.example.app.ai.clients
 
-import com.genesis.ai.app.ai.VertexAIConfig
+import com.example.app.ai.VertexAIConfig
 import com.google.ai.client.generativeai.GenerativeModel
 import javax.inject.Inject
 import javax.inject.Singleton
@@ -14,7 +14,7 @@ import javax.inject.Singleton
 @Singleton
 class VertexAIClientImpl @Inject constructor(
     private val _config: VertexAIConfig?, // TODO: Make non-null if provideVertexAIConfig ensures it
-    private val _generativeModel: GenerativeModel? // TODO: Make non-null if provideGenerativeModel ensures it
+    private val _generativeModel: GenerativeModel?, // TODO: Make non-null if provideGenerativeModel ensures it
 ) : VertexAIClient {
 
     init {
@@ -36,7 +36,7 @@ class VertexAIClientImpl @Inject constructor(
             println("VertexAIClientImpl: GenerativeModel is null, cannot generate content.")
             return "Error: Model not available for prompt: $prompt"
         }
-        
+
         println("VertexAIClientImpl.generateContent called with prompt: $prompt using model: ${_generativeModel}")
         try {
             // val response = _generativeModel.generateContent(prompt)

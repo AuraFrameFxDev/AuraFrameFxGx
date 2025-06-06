@@ -1,4 +1,4 @@
-package com.genesis.ai.app.ui.overlays
+package com.example.app.ui.overlays
 
 import android.content.Context
 import android.graphics.Bitmap // For loadImageForOverlay placeholder

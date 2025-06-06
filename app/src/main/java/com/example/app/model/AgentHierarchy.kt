@@ -1,4 +1,4 @@
-package com.genesis.ai.app.model
+package com.example.app.model
 
 enum class AgentRole {
     HIVE_MIND, // Genesis
@@ -20,7 +20,7 @@ data class AgentConfig(
     val name: String,
     val role: AgentRole,
     val priority: AgentPriority,
-    val capabilities: Set<String>
+    val capabilities: Set<String>,
 )
 
 object AgentHierarchy {
@@ -54,7 +54,7 @@ object AgentHierarchy {
 
     fun registerAuxiliaryAgent(
         name: String,
-        capabilities: Set<String>
+        capabilities: Set<String>,
     ): AgentConfig {
         val config = AgentConfig(
             name = name,

@@ -1,4 +1,4 @@
-package com.genesis.ai.app.initializers
+package com.example.app.initializers
 
 import android.content.Context
 import androidx.startup.Initializer

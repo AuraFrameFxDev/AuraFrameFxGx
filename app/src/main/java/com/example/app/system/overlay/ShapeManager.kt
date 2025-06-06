@@ -1,9 +1,7 @@
-package com.genesis.ai.app.system.overlay
+package com.example.app.system.overlay
 
-import com.genesis.ai.app.ui.theme.Color
-import com.highcapable.yukihookapi.hook.xposed.XposedModule
+import com.example.app.ui.theme.Color
 import com.highcapable.yukihookapi.hook.xposed.prefs.data.YukiHookModulePrefs
-import com.highcapable.yukihookapi.hook.xposed.service.YukiHookService
 import com.highcapable.yukihookapi.hook.xposed.service.YukiHookServiceManager
 import javax.inject.Inject
 import javax.inject.Singleton
@@ -11,7 +9,7 @@ import javax.inject.Singleton
 @Singleton
 class ShapeManager @Inject constructor(
     private val prefs: YukiHookModulePrefs,
-    private val overlayService: YukiHookServiceManager
+    private val overlayService: YukiHookServiceManager,
 ) {
     private val activeShapes = mutableMapOf<String, OverlayShape>()
     private val shapePresets = mutableMapOf<String, OverlayShape>()
@@ -212,7 +210,7 @@ class ShapeManager @Inject constructor(
         margins: ShapeMargins = ShapeMargins(),
         padding: ShapePadding = ShapePadding(),
         border: ShapeBorder = ShapeBorder(),
-        shadow: ShapeShadow = ShapeShadow()
+        shadow: ShapeShadow = ShapeShadow(),
     ): OverlayShape {
         return OverlayShape(
             id = "custom_${System.currentTimeMillis()}",

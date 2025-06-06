@@ -1,6 +1,6 @@
-package com.genesis.ai.app.ai.pipeline
+package com.example.app.ai.pipeline
 
-import com.genesis.ai.app.model.AgentType
+import com.example.app.model.AgentType
 
 data class AIPipelineConfig(
     val maxRetries: Int = 3,
@@ -14,17 +14,17 @@ data class AIPipelineConfig(
         AgentType.CASCADE to 0.7f
     ),
     val memoryRetrievalConfig: MemoryRetrievalConfig = MemoryRetrievalConfig(),
-    val contextChainingConfig: ContextChainingConfig = ContextChainingConfig()
+    val contextChainingConfig: ContextChainingConfig = ContextChainingConfig(),
 )
 
 data class MemoryRetrievalConfig(
     val maxContextLength: Int = 2000,
     val similarityThreshold: Float = 0.75f,
-    val maxRetrievedItems: Int = 5
+    val maxRetrievedItems: Int = 5,
 )
 
 data class ContextChainingConfig(
     val maxChainLength: Int = 10,
     val relevanceThreshold: Float = 0.6f,
-    val decayRate: Float = 0.9f
+    val decayRate: Float = 0.9f,
 )

@@ -1,8 +1,8 @@
-package com.genesis.ai.app.di
+package com.example.app.di
 
-import com.genesis.ai.app.ai.VertexAIConfig // Assuming path from previous creation
-import com.genesis.ai.app.ai.clients.VertexAIClient // Added import
-import com.genesis.ai.app.ai.clients.VertexAIClientImpl // Added import
+import com.example.app.ai.VertexAIConfig // Assuming path from previous creation
+import com.example.app.ai.clients.VertexAIClient // Added import
+import com.example.app.ai.clients.VertexAIClientImpl // Added import
 import com.google.ai.client.generativeai.GenerativeModel // Added import
 // import com.google.cloud.vertexai.VertexAI // Example if using official Vertex AI SDK
 import dagger.Module
@@ -29,7 +29,7 @@ object VertexAIModule {
         // TODO: Load actual config values from a secure source or build config.
         return VertexAIConfig(
             endpoint = "generativelanguage.googleapis.com", // Example endpoint
-            projectId = "TODO_load_project_id", 
+            projectId = "TODO_load_project_id",
             apiKey = "TODO_load_api_key",
             modelName = "gemini-pro" // Example model
         )
@@ -57,14 +57,17 @@ object VertexAIModule {
      */
     @Provides
     @Singleton
-    fun provideGenerativeModel(_vertexAIClient: Any?, _config: VertexAIConfig?): GenerativeModel? { // Changed return type from Any?
+    fun provideGenerativeModel(
+        _vertexAIClient: Any?,
+        _config: VertexAIConfig?,
+    ): GenerativeModel? { // Changed return type from Any?
         // TODO: Parameters _vertexAIClient, _config reported as unused (Hilt will provide them).
         // Example using official SDK:
         // if (_vertexAIClient == null || _config == null || _config.modelName == null || _config.apiKey == null) return null
         // return GenerativeModel(modelName = _config.modelName, apiKey = _config.apiKey) // Simplified
         return null // Placeholder
     }
-    
+
     /**
      * Placeholder for VertexAIManager - Name taken from error report list for this Module.
      * TODO: Method reported as unused. Define VertexAIManager and implement.
@@ -72,7 +75,7 @@ object VertexAIModule {
     @Provides
     @Singleton
     fun provideVertexAIManager(): Any? { // Using Any as VertexAIManager type placeholder
-         // TODO: Define VertexAIManager class and return an instance.
+        // TODO: Define VertexAIManager class and return an instance.
         return null
     }
 }

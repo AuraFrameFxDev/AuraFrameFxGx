@@ -1,6 +1,6 @@
-package com.genesis.ai.app.ai.task
+package com.example.app.ai.task
 
-import com.genesis.ai.app.model.AgentType
+import com.example.app.model.AgentType
 import kotlinx.datetime.Clock
 import kotlinx.datetime.Instant
 import kotlinx.serialization.Serializable
@@ -20,7 +20,7 @@ data class Task(
     val requiredAgents: Set<AgentType> = emptySet(),
     val completionTime: Instant? = null,
     val estimatedDuration: Long = 0,
-    val dependencies: Set<String> = emptySet()
+    val dependencies: Set<String> = emptySet(),
 )
 
 @Serializable
@@ -29,14 +29,14 @@ data class TaskDependency(
     val dependencyId: String,
     val type: DependencyType,
     val priority: TaskPriority,
-    val metadata: Map<String, Any> = emptyMap()
+    val metadata: Map<String, Any> = emptyMap(),
 )
 
 @Serializable
 data class TaskPriority(
     val value: Float,
     val reason: String,
-    val metadata: Map<String, Any> = emptyMap()
+    val metadata: Map<String, Any> = emptyMap(),
 ) {
     companion object {
         val CRITICAL = TaskPriority(1.0f, "Critical system task")
@@ -51,7 +51,7 @@ data class TaskPriority(
 data class TaskUrgency(
     val value: Float,
     val reason: String,
-    val metadata: Map<String, Any> = emptyMap()
+    val metadata: Map<String, Any> = emptyMap(),
 ) {
     companion object {
         val IMMEDIATE = TaskUrgency(1.0f, "Immediate attention required")
@@ -66,7 +66,7 @@ data class TaskUrgency(
 data class TaskImportance(
     val value: Float,
     val reason: String,
-    val metadata: Map<String, Any> = emptyMap()
+    val metadata: Map<String, Any> = emptyMap(),
 ) {
     companion object {
         val CRITICAL = TaskImportance(1.0f, "Critical system task")

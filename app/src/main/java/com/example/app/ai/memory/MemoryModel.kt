@@ -1,6 +1,6 @@
-package com.genesis.ai.app.ai.memory
+package com.example.app.ai.memory
 
-import com.genesis.ai.app.model.AgentType
+import com.example.app.model.AgentType
 import kotlinx.datetime.Clock
 import kotlinx.datetime.Instant
 import kotlinx.serialization.Serializable
@@ -14,7 +14,7 @@ data class MemoryItem(
     val context: String? = null,
     val priority: Float = 0.5f,
     val tags: List<String> = emptyList(),
-    val metadata: Map<String, Any> = emptyMap()
+    val metadata: Map<String, Any> = emptyMap(),
 )
 
 @Serializable
@@ -25,12 +25,12 @@ data class MemoryQuery(
     val minSimilarity: Float = 0.7f,
     val tags: List<String> = emptyList(),
     val timeRange: Pair<Instant, Instant>? = null,
-    val agentFilter: List<AgentType> = emptyList()
+    val agentFilter: List<AgentType> = emptyList(),
 )
 
 @Serializable
 data class MemoryRetrievalResult(
     val items: List<MemoryItem>,
     val total: Int,
-    val query: MemoryQuery
+    val query: MemoryQuery,
 )

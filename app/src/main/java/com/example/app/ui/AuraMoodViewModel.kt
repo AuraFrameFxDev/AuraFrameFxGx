@@ -1,9 +1,9 @@
-package com.genesis.ai.app.ui
+package com.example.app.ui
 
 // import android.app.Application // Add if injecting Application
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope // Already present, but good to confirm
-import com.genesis.ai.app.model.Emotion
+import com.example.app.model.Emotion
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -21,6 +21,7 @@ class AuraMoodViewModel @Inject constructor(
 
     // Private MutableStateFlow that can be updated from this ViewModel
     private val _moodState = MutableStateFlow<Emotion>(Emotion.NEUTRAL) // Default value
+
     // Public StateFlow that is read-only from the UI
     // TODO: Property moodState reported as unused. Implement or remove.
     val moodState: StateFlow<Emotion> = _moodState

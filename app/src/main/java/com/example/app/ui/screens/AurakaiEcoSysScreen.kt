@@ -1,4 +1,4 @@
-package com.genesis.ai.app.ui.screens
+package com.example.app.ui.screens
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -16,7 +16,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
-import com.genesis.ai.app.ui.AuraMoodViewModel // Adjust import if AuraMoodViewModel is elsewhere
+import com.example.app.ui.AuraMoodViewModel // Adjust import if AuraMoodViewModel is elsewhere
 
 // TODO: Function reported as unused or needs implementation.
 @Composable
@@ -61,7 +61,7 @@ fun AurakaiEcoSysScreenPreview() {
         // For a simple preview, you might pass a mocked/stubbed ViewModel instance
         // or use a simpler Composable that doesn't rely on the ViewModel for basic layout checks.
         // AurakaiEcoSysScreen() // This will error in preview if hiltViewModel() is directly called
-        
+
         // Simple preview of the text part:
         Column(horizontalAlignment = Alignment.CenterHorizontally) {
             Text(text = "Aurakai Ecosystem Screen (Placeholder)")

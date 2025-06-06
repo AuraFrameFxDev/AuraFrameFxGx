@@ -1,11 +1,11 @@
-package com.genesis.ai.app.ai.pipeline
+package com.example.app.ai.pipeline
 
-import com.genesis.ai.app.ai.agents.GenesisAgent
-import com.genesis.ai.app.ai.services.AuraAIService
-import com.genesis.ai.app.ai.services.KaiAIService
-import com.genesis.ai.app.ai.services.CascadeAIService
-import com.genesis.ai.app.model.AgentMessage
-import com.genesis.ai.app.model.AgentType
+import com.example.app.ai.agents.GenesisAgent
+import com.example.app.ai.services.AuraAIService
+import com.example.app.ai.services.CascadeAIService
+import com.example.app.ai.services.KaiAIService
+import com.example.app.model.AgentMessage
+import com.example.app.model.AgentType
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.update
@@ -17,7 +17,7 @@ class AIPipelineProcessor @Inject constructor(
     private val genesisAgent: GenesisAgent,
     private val auraService: AuraAIService,
     private val kaiService: KaiAIService,
-    private val cascadeService: CascadeAIService
+    private val cascadeService: CascadeAIService,
 ) {
     private val _pipelineState = MutableStateFlow(PipelineState.Idle)
     val pipelineState: StateFlow<PipelineState> = _pipelineState
@@ -30,7 +30,7 @@ class AIPipelineProcessor @Inject constructor(
 
     suspend fun processTask(task: String): List<AgentMessage> {
         _pipelineState.update { PipelineState.Processing(task) }
-        
+
         // Step 1: Context Retrieval
         val context = retrieveContext(task)
         _processingContext.update { context }
@@ -44,7 +44,7 @@ class AIPipelineProcessor @Inject constructor(
 
         // Step 4: Process through selected agents
         val responses = mutableListOf<AgentMessage>()
-        
+
         // Process through Cascade first for state management
         val cascadeResponse = cascadeService.processRequest(AiRequest(task, "context"))
         responses.add(
@@ -95,7 +95,7 @@ class AIPipelineProcessor @Inject constructor(
 
         // Step 6: Update context and memory
         updateContext(task, responses)
-        
+
         _pipelineState.update { PipelineState.Completed(task) }
         return responses
     }

@@ -1,4 +1,4 @@
-package com.genesis.ai.app.ai
+package com.example.app.ai
 
 // TODO: Define VertexAIConfig properly. This is a placeholder for KDoc resolution & DI.
 // TODO: Class reported as unused or needs proper implementation.
@@ -9,6 +9,6 @@ data class VertexAIConfig(
     val publisher: String? = null, // TODO: Needs implementation. Example: "google"
     val modelName: String? = null, // TODO: Needs implementation. Example: "gemini-pro"
     val apiKey: String? = null, // TODO: Needs implementation. For API key auth.
-    val timeoutSeconds: Long = 60L // TODO: Needs implementation.
+    val timeoutSeconds: Long = 60L, // TODO: Needs implementation.
     // Add other necessary fields e.g. serviceAccountPath, credentials etc.
 )

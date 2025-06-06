@@ -1,4 +1,4 @@
-package com.genesis.ai.app.di
+package com.example.app.di
 
 import android.content.Context
 import androidx.datastore.core.DataStore // Added import

@@ -1,19 +1,17 @@
-package com.genesis.ai.app.ui.theme
+package com.example.app.ui.theme
 
 import android.os.Build
-import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.background
+import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.darkColorScheme
-import androidx.compose.material3.dynamicDarkColorScheme
 import androidx.compose.material3.dynamicLightColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.graphics.Brush
-import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 
 // Dark Color Scheme - Cyberpunk Neon Noir
 private val AuraDarkColorScheme = darkColorScheme(
@@ -53,7 +51,7 @@ private val AuraDarkColorScheme = darkColorScheme(
     onError = OnPrimary,
     errorContainer = ErrorColor,
     onErrorContainer = OnPrimary,
-    
+
     // Additional Colors
     inversePrimary = NeonTeal,
     inverseOnPrimary = OnPrimary,
@@ -98,7 +96,7 @@ private val AuraLightColorScheme = lightColorScheme(
     onError = LightOnError,
     errorContainer = LightError,
     onErrorContainer = LightOnError,
-    
+
     // Additional Colors
     inversePrimary = LightPrimary,
     inverseOnPrimary = LightOnPrimary,
@@ -109,7 +107,7 @@ private val AuraLightColorScheme = lightColorScheme(
 fun AuraFrameFXTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
     dynamicColor: Boolean = false,
-    content: @Composable () -> Unit
+    content: @Composable () -> Unit,
 ) {
     val colorScheme = when {
         darkTheme -> AuraDarkColorScheme
@@ -117,6 +115,7 @@ fun AuraFrameFXTheme(
             val context = LocalContext.current
             dynamicLightColorScheme(context)
         }
+
         else -> AuraLightColorScheme
     }
 
@@ -141,4 +140,11 @@ fun AuraFrameFXTheme(
             }
         }
     )
+}
+MaterialTheme(
+colorScheme = colorScheme,
+typography = AppTypography, // From Typography.kt
+// shapes = AppShapes, // TODO: Define AppShapes in Shapes.kt if custom shapes are needed
+content = content
+)
 }

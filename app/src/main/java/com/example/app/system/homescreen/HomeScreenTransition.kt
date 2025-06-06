@@ -1,6 +1,6 @@
-package com.genesis.ai.app.system.homescreen
+package com.example.app.system.homescreen
 
-import com.genesis.ai.app.system.overlay.*
+import com.example.app.system.overlay.*
 import kotlinx.serialization.Serializable
 
 @Serializable
@@ -8,14 +8,14 @@ data class HomeScreenTransitionConfig(
     val type: HomeScreenTransitionType,
     val duration: Int = 500,
     val easing: String = "easeInOut",
-    val properties: Map<String, Any> = emptyMap()
+    val properties: Map<String, Any> = emptyMap(),
 )
 
 @Serializable
 data class HomeScreenTransitionEffect(
     val id: String,
     val type: HomeScreenTransitionType,
-    val properties: Map<String, Any>
+    val properties: Map<String, Any>,
 )
 
 enum class HomeScreenTransitionType {
@@ -30,7 +30,7 @@ enum class HomeScreenTransitionType {
     SCALE_OUT,
     ROTATE_IN,
     ROTATE_OUT,
-    
+
     // Card Stack Transitions
     STACK_SLIDE,
     STACK_FADE,
@@ -40,7 +40,7 @@ enum class HomeScreenTransitionType {
     STACK_WAVE,
     STACK_PULSE,
     STACK_GLOW,
-    
+
     // 3D Transitions
     STACK_ROTATE_3D,
     STACK_SCALE_3D,
@@ -48,7 +48,7 @@ enum class HomeScreenTransitionType {
     STACK_WAVE_3D,
     STACK_PULSE_3D,
     STACK_GLOW_3D,
-    
+
     // Globe Transitions
     GLOBE_ROTATE,
     GLOBE_SCALE,
@@ -56,7 +56,7 @@ enum class HomeScreenTransitionType {
     GLOBE_GLOW,
     GLOBE_WAVE,
     GLOBE_SHUFFLE,
-    
+
     // Fan Transitions
     FAN_IN,
     FAN_OUT,
@@ -65,7 +65,7 @@ enum class HomeScreenTransitionType {
     FAN_WAVE,
     FAN_PULSE,
     FAN_GLOW,
-    
+
     // Spread Transitions
     SPREAD_IN,
     SPREAD_OUT,
@@ -74,7 +74,12 @@ enum class HomeScreenTransitionType {
     SPREAD_WAVE,
     SPREAD_PULSE,
     SPREAD_GLOW,
-    
+
+    // Digital/Deconstruct/Hologram Transitions
+    DIGITAL_DECONSTRUCT,
+    DIGITAL_RECONSTRUCT,
+    HOLOGRAM_FORMING,
+
     // Custom Transitions
     CUSTOM_1,
     CUSTOM_2,
@@ -92,5 +97,5 @@ data class TransitionProperties(
     val frequency: Float = 0f,
     val color: String = "#00FFCC",
     val blur: Float = 0f,
-    val spread: Float = 0f
+    val spread: Float = 0f,
 )

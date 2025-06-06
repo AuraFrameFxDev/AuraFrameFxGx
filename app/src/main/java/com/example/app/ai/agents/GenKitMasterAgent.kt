@@ -1,7 +1,8 @@
-package com.genesis.ai.app.ai.agents
+package com.example.app.ai.agents
 
 import android.content.Context
-import com.genesis.ai.app.model.agent_states.GenKitUiState // Added import
+import com.example.app.model.agent_states.GenKitUiState // Added import
+
 // Assuming other agent classes (GenesisAgent, AuraAgent, KaiAgent) are in this package or imported correctly
 // For this example, direct reference if they are in the same 'agents' package is fine.
 
@@ -16,7 +17,7 @@ class GenKitMasterAgent(
     _context: Context, // TODO: Parameter _context reported as unused. Utilize or remove.
     private val _genesisAgent: GenesisAgent?, // Changed type from Any, made private val for example
     private val _auraAgent: AuraAgent?,    // Changed type from Any, made private val for example
-    private val _kaiAgent: KaiAgent?       // Changed type from Any, made private val for example
+    private val _kaiAgent: KaiAgent?,       // Changed type from Any, made private val for example
     // TODO: Parameters _genesisAgent, _auraAgent, _kaiAgent reported as unused. Utilize or remove.
 ) {
 

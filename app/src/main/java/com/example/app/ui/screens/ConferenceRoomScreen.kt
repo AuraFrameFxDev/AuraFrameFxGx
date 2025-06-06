@@ -1,24 +1,17 @@
-package com.genesis.ai.app.ui.screens
+package com.example.app.ui.screens
 
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.*
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
-import com.genesis.ai.app.ui.theme.NeonTeal
-import com.genesis.ai.app.ui.theme.NeonPurple
-import com.genesis.ai.app.ui.theme.NeonBlue
-import com.genesis.ai.app.ui.theme.NeonPink
-import com.genesis.ai.app.ui.theme.GlowOverlay
-import com.genesis.ai.app.ui.theme.PulseOverlay
-import com.genesis.ai.app.ui.theme.HoverOverlay
-import com.genesis.ai.app.ui.theme.PressOverlay
+import com.example.app.ui.theme.NeonBlue
+import com.example.app.ui.theme.NeonPurple
+import com.example.app.ui.theme.NeonTeal
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -45,7 +38,7 @@ fun ConferenceRoomScreen() {
                 style = MaterialTheme.typography.headlineMedium,
                 color = NeonTeal
             )
-            
+
             IconButton(
                 onClick = { /* TODO: Open settings */ }
             ) {
@@ -92,7 +85,7 @@ fun ConferenceRoomScreen() {
                 isRecording = isRecording,
                 onClick = { isRecording = !isRecording }
             )
-            
+
             TranscribeButton(
                 isTranscribing = isTranscribing,
                 onClick = { isTranscribing = !isTranscribing }
@@ -128,7 +121,7 @@ fun ConferenceRoomScreen() {
                     unfocusedContainerColor = NeonTeal.copy(alpha = 0.1f)
                 )
             )
-            
+
             IconButton(
                 onClick = { /* TODO: Send message */ }
             ) {
@@ -146,7 +139,7 @@ fun ConferenceRoomScreen() {
 fun AgentButton(
     agent: String,
     isSelected: Boolean,
-    onClick: () -> Unit
+    onClick: () -> Unit,
 ) {
     val backgroundColor = if (isSelected) NeonTeal else Color.Black
     val contentColor = if (isSelected) Color.White else NeonTeal
@@ -171,7 +164,7 @@ fun AgentButton(
 @Composable
 fun RecordingButton(
     isRecording: Boolean,
-    onClick: () -> Unit
+    onClick: () -> Unit,
 ) {
     val icon = if (isRecording) Icons.Default.Stop else Icons.Default.FiberManualRecord
     val color = if (isRecording) Color.Red else NeonPurple
@@ -191,7 +184,7 @@ fun RecordingButton(
 @Composable
 fun TranscribeButton(
     isTranscribing: Boolean,
-    onClick: () -> Unit
+    onClick: () -> Unit,
 ) {
     val icon = if (isTranscribing) Icons.Default.Stop else Icons.Default.VoiceChat
     val color = if (isTranscribing) Color.Red else NeonBlue

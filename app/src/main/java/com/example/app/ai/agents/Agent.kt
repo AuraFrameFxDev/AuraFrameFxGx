@@ -1,6 +1,6 @@
-package com.genesis.ai.app.ai.agents
+package com.example.app.ai.agents
 
-import com.genesis.ai.app.model.AgentType // Added import
+import com.example.app.model.AgentType // Added import
 
 /**
  * Interface representing an AI agent.

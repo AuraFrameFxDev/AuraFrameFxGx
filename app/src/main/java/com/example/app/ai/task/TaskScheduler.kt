@@ -1,8 +1,8 @@
-package com.genesis.ai.app.ai.task
+package com.example.app.ai.task
 
-import com.genesis.ai.app.ai.error.ErrorHandler
-import com.genesis.ai.app.ai.pipeline.AIPipelineConfig
-import com.genesis.ai.app.model.AgentType
+import com.example.app.ai.error.ErrorHandler
+import com.example.app.ai.pipeline.AIPipelineConfig
+import com.example.app.model.AgentType
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.update
@@ -14,7 +14,7 @@ import javax.inject.Singleton
 @Singleton
 class TaskScheduler @Inject constructor(
     private val errorHandler: ErrorHandler,
-    private val config: AIPipelineConfig
+    private val config: AIPipelineConfig,
 ) {
     private val _tasks = MutableStateFlow(mapOf<String, Task>())
     val tasks: StateFlow<Map<String, Task>> = _tasks
@@ -34,7 +34,7 @@ class TaskScheduler @Inject constructor(
         importance: TaskImportance = TaskImportance.MEDIUM,
         requiredAgents: Set<AgentType> = emptySet(),
         dependencies: Set<String> = emptySet(),
-        metadata: Map<String, Any> = emptyMap()
+        metadata: Map<String, Any> = emptyMap(),
     ): Task {
         val task = Task(
             content = content,
@@ -66,12 +66,16 @@ class TaskScheduler @Inject constructor(
                     (urgencyScore * 0.3f) +
                     (importanceScore * 0.3f)
 
-            _taskQueue.add(task.copy(metadata = task.metadata + mapOf(
-                "priority_score" to priorityScore,
-                "urgency_score" to urgencyScore,
-                "importance_score" to importanceScore,
-                "total_score" to totalScore
-            )))
+            _taskQueue.add(
+                task.copy(
+                    metadata = task.metadata + mapOf(
+                        "priority_score" to priorityScore,
+                        "urgency_score" to urgencyScore,
+                        "importance_score" to importanceScore,
+                        "total_score" to totalScore
+                    )
+                )
+            )
 
             _taskQueue.sortByDescending { it.metadata["total_score"] as Float }
             processQueue()
@@ -135,6 +139,7 @@ class TaskScheduler @Inject constructor(
                 _activeTasks.remove(taskId)
                 _completedTasks[taskId] = updatedTask
             }
+
             TaskStatus.FAILED -> {
                 _activeTasks.remove(taskId)
                 errorHandler.handleError(
@@ -144,6 +149,7 @@ class TaskScheduler @Inject constructor(
                     metadata = mapOf("taskId" to taskId)
                 )
             }
+
             else -> {}
         }
 
@@ -174,7 +180,8 @@ class TaskScheduler @Inject constructor(
                 completedTasks = _completedTasks.size,
                 pendingTasks = _taskQueue.size,
                 lastUpdated = Clock.System.now(),
-                taskCounts = current.taskCounts + (task.status to (current.taskCounts[task.status] ?: 0) + 1)
+                taskCounts = current.taskCounts + (task.status to (current.taskCounts[task.status]
+                    ?: 0) + 1)
             )
         }
     }
@@ -186,5 +193,5 @@ data class TaskStats(
     val completedTasks: Int = 0,
     val pendingTasks: Int = 0,
     val taskCounts: Map<TaskStatus, Int> = emptyMap(),
-    val lastUpdated: Instant = Clock.System.now()
+    val lastUpdated: Instant = Clock.System.now(),
 )

@@ -1,10 +1,8 @@
-package com.genesis.ai.app.system.overlay
+package com.example.app.system.overlay
 
-import com.genesis.ai.app.ai.services.AuraAIService
-import com.genesis.ai.app.ui.theme.Color
-import com.highcapable.yukihookapi.hook.xposed.XposedModule
+import com.example.app.ai.services.AuraAIService
+import com.example.app.ui.theme.Color
 import com.highcapable.yukihookapi.hook.xposed.prefs.data.YukiHookModulePrefs
-import com.highcapable.yukihookapi.hook.xposed.service.YukiHookService
 import com.highcapable.yukihookapi.hook.xposed.service.YukiHookServiceManager
 import javax.inject.Inject
 import javax.inject.Singleton
@@ -13,7 +11,7 @@ import javax.inject.Singleton
 class SystemOverlayManagerImpl @Inject constructor(
     private val prefs: YukiHookModulePrefs,
     private val overlayService: YukiHookServiceManager,
-    private val auraService: AuraAIService
+    private val auraService: AuraAIService,
 ) : SystemOverlayManager {
     private val activeElements = mutableMapOf<String, OverlayElement>()
     private val activeAnimations = mutableMapOf<String, OverlayAnimation>()
@@ -32,7 +30,7 @@ class SystemOverlayManagerImpl @Inject constructor(
         }
 
         // Apply theme shapes
-        theme.shapes.forEach { (key, shape) ->
+        theme.shapes.forEach { (_, shape) ->
             applyShape(shape)
         }
     }

@@ -1,7 +1,7 @@
-package com.genesis.ai.app.di
+package com.example.app.di
 
 import android.content.Context
-import com.genesis.ai.app.data.UserPreferences // Assuming path from previous creation
+import com.example.app.data.UserPreferences // Assuming path from previous creation
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

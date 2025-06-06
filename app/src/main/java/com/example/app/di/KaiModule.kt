@@ -1,11 +1,12 @@
-package com.genesis.ai.app.di
+package com.example.app.di
 
-import com.genesis.ai.app.ui.KaiController // Assuming path from previous creation
+import com.example.app.ui.KaiController // Assuming path from previous creation
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import javax.inject.Singleton
+
 // import android.content.Context // If KaiController needs context
 
 /**

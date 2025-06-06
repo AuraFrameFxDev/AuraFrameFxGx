@@ -1,22 +1,19 @@
-package com.genesis.ai.app.ui.screens
+package com.example.app.ui.screens
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.*
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
-import com.genesis.ai.app.system.quicksettings.QuickSettingsCustomizer
-import com.genesis.ai.app.system.lockscreen.LockScreenCustomizer
-import com.genesis.ai.app.ui.theme.Color
+import com.example.app.ui.theme.Color
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun SystemCustomizationScreen(
-    viewModel: SystemCustomizationViewModel = hiltViewModel()
+    viewModel: SystemCustomizationViewModel = hiltViewModel(),
 ) {
     val quickSettingsConfig by viewModel.quickSettingsConfig.collectAsState()
     val lockScreenConfig by viewModel.lockScreenConfig.collectAsState()
@@ -119,7 +116,7 @@ fun QuickSettingsCustomization(
     config: QuickSettingsConfig?,
     onTileShapeChange: (String, OverlayShape) -> Unit,
     onTileAnimationChange: (String, QuickSettingsAnimation) -> Unit,
-    onBackgroundChange: (ImageResource?) -> Unit
+    onBackgroundChange: (ImageResource?) -> Unit,
 ) {
     config?.let { current ->
         Column(
@@ -159,7 +156,7 @@ fun LockScreenCustomization(
     config: LockScreenConfig?,
     onElementShapeChange: (LockScreenElementType, OverlayShape) -> Unit,
     onElementAnimationChange: (LockScreenElementType, LockScreenAnimation) -> Unit,
-    onBackgroundChange: (ImageResource?) -> Unit
+    onBackgroundChange: (ImageResource?) -> Unit,
 ) {
     config?.let { current ->
         Column(
@@ -177,7 +174,12 @@ fun LockScreenCustomization(
                 ElementCustomization(
                     element = element,
                     onShapeChange = { shape -> onElementShapeChange(element.type, shape) },
-                    onAnimationChange = { animation -> onElementAnimationChange(element.type, animation) }
+                    onAnimationChange = { animation ->
+                        onElementAnimationChange(
+                            element.type,
+                            animation
+                        )
+                    }
                 )
             }
 
@@ -198,7 +200,7 @@ fun LockScreenCustomization(
 fun TileCustomization(
     tile: QuickSettingsTileConfig,
     onShapeChange: (OverlayShape) -> Unit,
-    onAnimationChange: (QuickSettingsAnimation) -> Unit
+    onAnimationChange: (QuickSettingsAnimation) -> Unit,
 ) {
     Card(
         modifier = Modifier.fillMaxWidth(),
@@ -216,7 +218,7 @@ fun TileCustomization(
                 style = MaterialTheme.typography.bodyLarge
             )
             Spacer(modifier = Modifier.height(8.dp))
-            
+
             // Shape Picker
             Text(
                 text = "Shape",
@@ -226,7 +228,7 @@ fun TileCustomization(
                 currentShape = tile.shape,
                 onShapeSelected = onShapeChange
             )
-            
+
             // Animation Picker
             Text(
                 text = "Animation",
@@ -244,7 +246,7 @@ fun TileCustomization(
 fun ElementCustomization(
     element: LockScreenElementConfig,
     onShapeChange: (OverlayShape) -> Unit,
-    onAnimationChange: (LockScreenAnimation) -> Unit
+    onAnimationChange: (LockScreenAnimation) -> Unit,
 ) {
     Card(
         modifier = Modifier.fillMaxWidth(),
@@ -262,7 +264,7 @@ fun ElementCustomization(
                 style = MaterialTheme.typography.bodyLarge
             )
             Spacer(modifier = Modifier.height(8.dp))
-            
+
             // Shape Picker
             Text(
                 text = "Shape",
@@ -272,7 +274,7 @@ fun ElementCustomization(
                 currentShape = element.shape,
                 onShapeSelected = onShapeChange
             )
-            
+
             // Animation Picker
             Text(
                 text = "Animation",
@@ -289,7 +291,7 @@ fun ElementCustomization(
 @Composable
 fun BackgroundCustomization(
     background: ImageResource?,
-    onChange: (ImageResource?) -> Unit
+    onChange: (ImageResource?) -> Unit,
 ) {
     Card(
         modifier = Modifier.fillMaxWidth(),
@@ -307,7 +309,7 @@ fun BackgroundCustomization(
                 style = MaterialTheme.typography.bodyLarge
             )
             Spacer(modifier = Modifier.height(8.dp))
-            
+
             // Image Picker
             ImagePicker(
                 currentImage = background,
@@ -320,7 +322,7 @@ fun BackgroundCustomization(
 @Composable
 fun ShapePicker(
     currentShape: OverlayShape,
-    onShapeSelected: (OverlayShape) -> Unit
+    onShapeSelected: (OverlayShape) -> Unit,
 ) {
     // TODO: Implement shape picker UI
 }
@@ -328,7 +330,7 @@ fun ShapePicker(
 @Composable
 fun AnimationPicker(
     currentAnimation: QuickSettingsAnimation,
-    onAnimationSelected: (QuickSettingsAnimation) -> Unit
+    onAnimationSelected: (QuickSettingsAnimation) -> Unit,
 ) {
     // TODO: Implement animation picker UI
 }
@@ -336,7 +338,7 @@ fun AnimationPicker(
 @Composable
 fun ImagePicker(
     currentImage: ImageResource?,
-    onImageSelected: (ImageResource?) -> Unit
+    onImageSelected: (ImageResource?) -> Unit,
 ) {
     // TODO: Implement image picker UI
 }

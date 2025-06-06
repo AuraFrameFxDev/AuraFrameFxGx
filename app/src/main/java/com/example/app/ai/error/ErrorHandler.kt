@@ -1,8 +1,8 @@
-package com.genesis.ai.app.ai.error
+package com.example.app.ai.error
 
-import com.genesis.ai.app.ai.context.ContextManager
-import com.genesis.ai.app.ai.pipeline.AIPipelineConfig
-import com.genesis.ai.app.model.AgentType
+import com.example.app.ai.context.ContextManager
+import com.example.app.ai.pipeline.AIPipelineConfig
+import com.example.app.model.AgentType
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.update
@@ -14,7 +14,7 @@ import javax.inject.Singleton
 @Singleton
 class ErrorHandler @Inject constructor(
     private val contextManager: ContextManager,
-    private val config: AIPipelineConfig
+    private val config: AIPipelineConfig,
 ) {
     private val _errors = MutableStateFlow(mapOf<String, AIError>())
     val errors: StateFlow<Map<String, AIError>> = _errors
@@ -26,7 +26,7 @@ class ErrorHandler @Inject constructor(
         error: Throwable,
         agent: AgentType,
         context: String,
-        metadata: Map<String, Any> = emptyMap()
+        metadata: Map<String, Any> = emptyMap(),
     ): AIError {
         val errorType = determineErrorType(error)
         val errorMessage = error.message ?: "Unknown error"
@@ -60,8 +60,8 @@ class ErrorHandler @Inject constructor(
     }
 
     private fun attemptRecovery(error: AIError) {
-        val recoveryActions = getRecoveryActions(error)
-        
+        getRecoveryActions(error)
+
         error.recoveryActions.forEach { action ->
             when (action.actionType) {
                 RecoveryActionType.RETRY -> attemptRetry(error)
@@ -86,6 +86,7 @@ class ErrorHandler @Inject constructor(
                     description = "Falling back to simpler processing method"
                 )
             )
+
             ErrorType.MEMORY_ERROR -> listOf(
                 RecoveryAction(
                     actionType = RecoveryActionType.RECONFIGURE,
@@ -96,6 +97,7 @@ class ErrorHandler @Inject constructor(
                     description = "Restarting memory system"
                 )
             )
+
             ErrorType.CONTEXT_ERROR -> listOf(
                 RecoveryAction(
                     actionType = RecoveryActionType.RETRY,
@@ -106,6 +108,7 @@ class ErrorHandler @Inject constructor(
                     description = "Reconfiguring context parameters"
                 )
             )
+
             else -> listOf(
                 RecoveryAction(
                     actionType = RecoveryActionType.NOTIFY,
@@ -151,7 +154,8 @@ class ErrorHandler @Inject constructor(
                 totalErrors = current.totalErrors + 1,
                 activeErrors = current.activeErrors + 1,
                 lastError = error,
-                errorTypes = current.errorTypes + (error.type to (current.errorTypes[error.type] ?: 0) + 1),
+                errorTypes = current.errorTypes + (error.type to (current.errorTypes[error.type]
+                    ?: 0) + 1),
                 lastUpdated = Clock.System.now()
             )
         }
@@ -163,7 +167,7 @@ data class ErrorStats(
     val activeErrors: Int = 0,
     val lastError: AIError? = null,
     val errorTypes: Map<ErrorType, Int> = emptyMap(),
-    val lastUpdated: Instant = Clock.System.now()
+    val lastUpdated: Instant = Clock.System.now(),
 )
 
 class ProcessingException(message: String? = null) : Exception(message)

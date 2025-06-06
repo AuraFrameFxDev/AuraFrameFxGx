@@ -1,4 +1,4 @@
-package com.genesis.ai.app.ai.config
+package com.example.app.ai.config
 
 // TODO: Class reported as unused declaration. Ensure this config is used by AI components.
 data class AIConfig(
@@ -6,6 +6,6 @@ data class AIConfig(
     val apiKey: String? = null, // TODO: Reported as unused or needs implementation
     val projectId: String? = null, // TODO: Reported as unused or needs implementation
     val temperature: Float = 0.7f, // TODO: Needs implementation detail if used
-    val maxOutputTokens: Int = 256 // TODO: Needs implementation detail if used
+    val maxOutputTokens: Int = 256, // TODO: Needs implementation detail if used
     // TODO: Define actual properties
 )

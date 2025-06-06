@@ -1,4 +1,4 @@
-package com.genesis.ai.app
+package com.example.app
 
 import android.app.Service
 import android.content.Intent

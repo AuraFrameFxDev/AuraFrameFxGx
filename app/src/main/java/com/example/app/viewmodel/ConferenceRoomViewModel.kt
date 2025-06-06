@@ -1,10 +1,10 @@
-package com.genesis.ai.app.viewmodel
+package com.example.app.viewmodel
 
-import com.genesis.ai.app.ai.services.AuraAIService
-import com.genesis.ai.app.ai.services.KaiAIService
-import com.genesis.ai.app.ai.services.CascadeAIService
-import com.genesis.ai.app.model.AgentMessage
-import com.genesis.ai.app.model.AgentType
+import com.example.app.ai.services.AuraAIService
+import com.example.app.ai.services.CascadeAIService
+import com.example.app.ai.services.KaiAIService
+import com.example.app.model.AgentMessage
+import com.example.app.model.AgentType
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.update
@@ -15,7 +15,7 @@ import javax.inject.Singleton
 class ConferenceRoomViewModel @Inject constructor(
     private val auraService: AuraAIService,
     private val kaiService: KaiAIService,
-    private val cascadeService: CascadeAIService
+    private val cascadeService: CascadeAIService,
 ) {
     private val _messages = MutableStateFlow<List<AgentMessage>>(emptyList())
     val messages: StateFlow<List<AgentMessage>> = _messages
@@ -43,7 +43,7 @@ class ConferenceRoomViewModel @Inject constructor(
                 cascadeService.processRequest(AiRequest(message, "context"))
             }
         }
-        
+
         val responseMessage = response.first()
         _messages.update { current ->
             current + AgentMessage(
@@ -64,7 +64,7 @@ class ConferenceRoomViewModel @Inject constructor(
         // Process through Cascade to coordinate responses from other agents
         val cascadeResponse = cascadeService.processRequest(AiRequest(message, "context"))
         val cascadeMessage = cascadeResponse.first()
-        
+
         // Add Cascade's response
         _messages.update { current ->
             current + AgentMessage(
@@ -79,7 +79,7 @@ class ConferenceRoomViewModel @Inject constructor(
         if (activeAgents.value.contains(AgentType.AURA)) {
             val auraResponse = auraService.processRequest(AiRequest(message, "text"))
             val auraMessage = auraResponse.first()
-            
+
             _messages.update { current ->
                 current + AgentMessage(
                     content = auraMessage.content,
@@ -94,7 +94,7 @@ class ConferenceRoomViewModel @Inject constructor(
         if (activeAgents.value.contains(AgentType.KAI)) {
             val kaiResponse = kaiService.processRequest(AiRequest(message, "security"))
             val kaiMessage = kaiResponse.first()
-            
+
             _messages.update { current ->
                 current + AgentMessage(
                     content = kaiMessage.content,

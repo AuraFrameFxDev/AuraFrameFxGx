@@ -1,9 +1,9 @@
-package com.genesis.ai.app.ui.viewmodel
+package com.example.app.ui.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.genesis.ai.app.system.quicksettings.QuickSettingsCustomizer
-import com.genesis.ai.app.system.lockscreen.LockScreenCustomizer
+import com.example.app.system.lockscreen.LockScreenCustomizer
+import com.example.app.system.quicksettings.QuickSettingsCustomizer
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -13,7 +13,7 @@ import javax.inject.Inject
 @HiltViewModel
 class SystemCustomizationViewModel @Inject constructor(
     private val quickSettingsCustomizer: QuickSettingsCustomizer,
-    private val lockScreenCustomizer: LockScreenCustomizer
+    private val lockScreenCustomizer: LockScreenCustomizer,
 ) : ViewModel() {
     private val _quickSettingsConfig = MutableStateFlow<QuickSettingsConfig?>(null)
     val quickSettingsConfig: StateFlow<QuickSettingsConfig?> = _quickSettingsConfig
@@ -26,7 +26,7 @@ class SystemCustomizationViewModel @Inject constructor(
             quickSettingsCustomizer.currentConfig.collect { config ->
                 _quickSettingsConfig.value = config
             }
-            
+
             lockScreenCustomizer.currentConfig.collect { config ->
                 _lockScreenConfig.value = config
             }
@@ -57,7 +57,10 @@ class SystemCustomizationViewModel @Inject constructor(
         }
     }
 
-    fun updateLockScreenElementAnimation(elementType: LockScreenElementType, animation: LockScreenAnimation) {
+    fun updateLockScreenElementAnimation(
+        elementType: LockScreenElementType,
+        animation: LockScreenAnimation,
+    ) {
         viewModelScope.launch {
             lockScreenCustomizer.updateElementAnimation(elementType, animation)
         }

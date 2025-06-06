@@ -1,4 +1,4 @@
-package com.genesis.ai.app.ai.clients
+package com.example.app.ai.clients
 
 /**
  * Interface for a Vertex AI client.
@@ -12,6 +12,6 @@ interface VertexAIClient {
      * TODO: Needs actual implementation in implementing classes.
      */
     suspend fun generateContent(prompt: String): String?
-    
+
     // Add other methods like startChat, listModels, etc. as needed
 }

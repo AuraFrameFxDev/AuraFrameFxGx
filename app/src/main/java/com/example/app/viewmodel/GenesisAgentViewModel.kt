@@ -1,21 +1,21 @@
-package com.genesis.ai.app.viewmodel
+package com.example.app.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.genesis.ai.app.ai.agents.GenesisAgent
-import com.genesis.ai.app.model.AgentConfig
-import com.genesis.ai.app.model.AgentType
+import com.example.app.ai.agents.GenesisAgent
+import com.example.app.model.AgentConfig
+import com.example.app.model.AgentType
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @Singleton
 class GenesisAgentViewModel @Inject constructor(
-    private val genesisAgent: GenesisAgent
+    private val genesisAgent: GenesisAgent,
 ) : ViewModel() {
-    
+
     val agents: StateFlow<List<AgentConfig>> = genesisAgent.getAgentsByPriority()
-    
+
     fun toggleAgent(agent: AgentType) {
         viewModelScope.launch {
             genesisAgent.toggleAgent(agent)
@@ -24,7 +24,7 @@ class GenesisAgentViewModel @Inject constructor(
 
     fun registerAuxiliaryAgent(
         name: String,
-        capabilities: Set<String>
+        capabilities: Set<String>,
     ): AgentConfig {
         return genesisAgent.registerAuxiliaryAgent(name, capabilities)
     }

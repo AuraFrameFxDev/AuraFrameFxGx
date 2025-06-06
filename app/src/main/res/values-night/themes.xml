@@ -27,7 +27,8 @@
              and night error color is dark, this might need adjustment.
              The day theme (themes.xml) has colorOnError as @color/on_surface (white)
              which should generally work well on a night error color like #CF6679. -->
-        <item name="colorOnError">@color/on_surface</item> <!-- Explicitly setting for clarity for night -->
+        <item name="colorOnError">@color/on_surface
+        </item> <!-- Explicitly setting for clarity for night -->
 
 
         <!-- System UI: Ensure light text/icons on dark system bars -->

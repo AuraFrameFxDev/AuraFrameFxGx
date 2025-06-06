@@ -1,4 +1,4 @@
-package com.genesis.ai.app.di
+package com.example.app.di
 
 import dagger.Module
 import dagger.Provides

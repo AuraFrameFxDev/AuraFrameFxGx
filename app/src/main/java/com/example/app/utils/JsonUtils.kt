@@ -1,6 +1,4 @@
-package com.genesis.ai.app.utils
-
-import kotlinx.serialization.SerializationException // Add this import
+package com.example.app.utils
 
 // For a full implementation, you would typically use a library like Gson or Kotlinx.serialization.
 // import kotlinx.serialization.json.Json

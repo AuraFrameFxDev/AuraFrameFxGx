@@ -1,12 +1,12 @@
-package com.genesis.ai.app.ai.agents
+package com.example.app.ai.agents
 
-import com.genesis.ai.app.model.AgentHierarchy
-import com.genesis.ai.app.model.AgentMessage
-import com.genesis.ai.app.model.AgentType
-import com.genesis.ai.app.model.AgentConfig
-import com.genesis.ai.app.ai.services.AuraAIService
-import com.genesis.ai.app.ai.services.KaiAIService
-import com.genesis.ai.app.ai.services.CascadeAIService
+import com.example.app.ai.services.AuraAIService
+import com.example.app.ai.services.CascadeAIService
+import com.example.app.ai.services.KaiAIService
+import com.example.app.model.AgentConfig
+import com.example.app.model.AgentHierarchy
+import com.example.app.model.AgentMessage
+import com.example.app.model.AgentType
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.update
@@ -17,7 +17,7 @@ import javax.inject.Singleton
 class GenesisAgent @Inject constructor(
     private val auraService: AuraAIService,
     private val kaiService: KaiAIService,
-    private val cascadeService: CascadeAIService
+    private val cascadeService: CascadeAIService,
 ) {
     private val _state = MutableStateFlow("pending_initialization")
     val state: StateFlow<String> = _state
@@ -46,7 +46,7 @@ class GenesisAgent @Inject constructor(
 
     suspend fun processQuery(query: String): List<AgentMessage> {
         _state.update { "processing_query: $query" }
-        
+
         // Update context with new query
         _context.update { current ->
             current + mapOf(
@@ -57,7 +57,7 @@ class GenesisAgent @Inject constructor(
 
         // Get responses from all active agents
         val responses = mutableListOf<AgentMessage>()
-        
+
         // Process through Cascade first for state management
         val cascadeResponse = cascadeService.processRequest(AiRequest(query, "context"))
         val cascadeMessage = cascadeResponse.first()
@@ -136,7 +136,7 @@ class GenesisAgent @Inject constructor(
 
     fun registerAuxiliaryAgent(
         name: String,
-        capabilities: Set<String>
+        capabilities: Set<String>,
     ): AgentConfig {
         return AgentHierarchy.registerAuxiliaryAgent(name, capabilities)
     }

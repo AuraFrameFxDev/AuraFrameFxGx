@@ -1,4 +1,4 @@
-package com.genesis.ai.app.ui.components
+package com.example.app.ui.components
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -10,20 +10,35 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.unit.dp
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 
 @Composable
-fun StaticOrb(modifier: Modifier = Modifier, color: Color = Color.Gray, text: String = "Orb") { // Renamed to staticOrb
+fun StaticOrb(
+    modifier: Modifier = Modifier,
+    color: Color = Color.Gray,
+    text: String = "Orb",
+) { // Renamed to staticOrb
     // TODO: Implement the actual Static Orb UI, potentially with different states or appearances
     Box(
         modifier = modifier
-            .size(80.dp) // Example size
+            .size(80.dp)
             .clip(CircleShape)
-            .background(color),
+            .background(NeonBlue.copy(alpha = 0.8f))
+            .shadow(
+                elevation = 18.dp,
+                shape = CircleShape
+            ),
         contentAlignment = Alignment.Center
     ) {
-        Text(text = text)
+        Text(
+            text = text,
+            color = NeonPink,
+            modifier = Modifier.shadow(
+                elevation = 8.dp,
+                shape = CircleShape
+            )
+        )
     }
 }
 

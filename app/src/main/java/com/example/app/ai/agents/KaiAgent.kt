@@ -1,4 +1,4 @@
-package com.genesis.ai.app.ai.agents
+package com.example.app.ai.agents
 
 /**
  * KaiAgent, another specific implementation of BaseAgent.
@@ -6,7 +6,7 @@ package com.genesis.ai.app.ai.agents
  */
 class KaiAgent(
     agentName: String = "Kai",
-    agentType: String = "SpecializedAgent"
+    agentType: String = "SpecializedAgent",
 ) : BaseAgent(agentName, agentType) {
 
     /**

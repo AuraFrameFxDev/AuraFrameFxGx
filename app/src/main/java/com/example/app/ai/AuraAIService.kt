@@ -1,4 +1,4 @@
-package com.genesis.ai.app.ai
+package com.example.app.ai
 
 // Assuming common types, replace with actual types if different
 import java.io.File
@@ -25,7 +25,10 @@ interface AuraAIService {
         return "Generated text placeholder"
     }
 
-    fun getAIResponse(_prompt: String, _options: Map<String, Any>? = null): String? { // Return type Any -> String?
+    fun getAIResponse(
+        _prompt: String,
+        _options: Map<String, Any>? = null,
+    ): String? { // Return type Any -> String?
         // TODO: Implement AI response retrieval
         return "AI response placeholder"
     }
@@ -59,7 +62,7 @@ interface AuraAIService {
 
     // Add other common AI service methods if needed
 
-    fun getAppConfig(): com.genesis.ai.app.ai.config.AIConfig? {
+    fun getAppConfig(): com.example.app.ai.config.AIConfig? {
         // TODO: Reported as unused or requires implementation.
         // This method should provide the application's AI configuration.
         return null

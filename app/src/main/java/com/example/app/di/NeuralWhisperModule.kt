@@ -1,13 +1,11 @@
-package com.genesis.ai.app.di
+package com.example.app.di
 
-// import com.genesis.ai.app.ai.services.NeuralWhisper // Assuming path from previous creation
+// import com.example.app.ai.services.NeuralWhisper // Assuming path from previous creation
 // import android.content.Context // If NeuralWhisper needs context
-import dagger.Module
-import dagger.Provides
-import dagger.hilt.InstallIn
 // import dagger.hilt.android.qualifiers.ApplicationContext
+import dagger.Module
+import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
-import javax.inject.Singleton
 
 /**
  * Hilt Module for providing NeuralWhisper related dependencies.

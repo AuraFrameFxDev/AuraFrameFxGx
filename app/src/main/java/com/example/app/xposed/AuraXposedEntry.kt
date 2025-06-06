@@ -1,4 +1,4 @@
-package com.genesis.ai.app.xposed
+package com.example.app.xposed
 
 // Basic Xposed Module Entry Point (IXposedHookLoadPackage)
 // This is a common structure. Actual implementation details depend on Xposed API.
@@ -14,14 +14,17 @@ package com.genesis.ai.app.xposed
 // }
 
 // Placeholder if Xposed dependencies are not yet available or to avoid direct dependency if used differently
-class AuraXposedEntry {
-    init {
-        // TODO: Implement Xposed-related initialization or logic
-        // This is a placeholder. The actual Xposed entry point might require
-        // implementing specific interfaces like IXposedHookLoadPackage.
-        // Ensure Xposed API dependencies are correctly set up if this is an Xposed module.
-        val placeholder = "AuraXposedEntry initialized (placeholder)"
-        // Log using android.util.Log if XposedBridge isn't available/used here yet
-        // android.util.Log.d("AuraXposedEntry", placeholder)
+import de.robv.android.xposed.IXposedHookLoadPackage
+import de.robv.android.xposed.XposedBridge
+import de.robv.android.xposed.callbacks.XC_LoadPackage
+
+// LSPosed/Xposed module entry point
+class AuraXposedEntry : IXposedHookLoadPackage {
+    override fun handleLoadPackage(lpparam: XC_LoadPackage.LoadPackageParam) {
+        if (lpparam.packageName == null) return
+        // Example: Log every loaded package (remove or restrict for production)
+        XposedBridge.log("[AuraXposedEntry] Loaded app: ${lpparam.packageName}")
+        // TODO: Add your actual LSPosed/Xposed hooks here
+        // e.g., hook specific methods, modify behavior, etc.
     }
 }

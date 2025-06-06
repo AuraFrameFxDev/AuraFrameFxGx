@@ -1,8 +1,8 @@
-package com.genesis.ai.app.ai.agents
+package com.example.app.ai.agents
 
-import com.genesis.ai.app.model.agent_states.ProcessingState
-import com.genesis.ai.app.model.agent_states.VisionState
-import com.genesis.ai.app.model.AgentType
+import com.example.app.model.AgentType
+import com.example.app.model.agent_states.ProcessingState
+import com.example.app.model.agent_states.VisionState
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -17,7 +17,7 @@ import javax.inject.Singleton
 @Singleton
 class CascadeAgent @Inject constructor(
     private val auraAgent: AuraAgent,
-    private val kaiAgent: KaiAgent
+    private val kaiAgent: KaiAgent,
 ) : BaseAgent("Cascade", "StatefulProcessor") {
 
     private val _visionState = MutableStateFlow(VisionState())
@@ -54,7 +54,7 @@ class CascadeAgent @Inject constructor(
      * @return The processed response.
      */
     override suspend fun processRequest(prompt: String): String {
-        val currentVision = visionState.value
+        visionState.value
         val currentProcessing = processingState.value
 
         // Determine which agent to delegate to based on context
@@ -64,11 +64,13 @@ class CascadeAgent @Inject constructor(
                 updateProcessingState(currentProcessing.copy(lastAction = "Security Check"))
                 response
             }
+
             auraAgent.shouldHandleCreative(prompt) -> {
                 val response = auraAgent.processRequest(prompt)
                 updateProcessingState(currentProcessing.copy(lastAction = "Creative Processing"))
                 response
             }
+
             else -> {
                 val response = "Cascade processing: $prompt"
                 updateProcessingState(currentProcessing.copy(lastAction = "General Processing"))

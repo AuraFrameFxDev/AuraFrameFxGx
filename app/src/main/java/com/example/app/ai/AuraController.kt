@@ -1,7 +1,7 @@
-package com.genesis.ai.app.ai
+package com.example.app.ai
 
-// import com.genesis.ai.app.ai.AuraAIService // Example: If it uses AuraAIService
-// import com.genesis.ai.app.ui.AuraMoodViewModel // Example: If it interacts with a ViewModel
+// import com.example.app.ai.AuraAIService // Example: If it uses AuraAIService
+// import com.example.app.ui.AuraMoodViewModel // Example: If it interacts with a ViewModel
 
 /**
  * Main controller for Aura AI functionalities and interactions.
