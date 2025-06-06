@@ -1,6 +1,6 @@
-package com.example.app.ai.error
+package com.genesis.ai.app.ai.error
 
-import com.example.app.model.AgentType
+import com.genesis.ai.app.model.AgentType
 import kotlinx.datetime.Clock
 import kotlinx.datetime.Instant
 import kotlinx.serialization.Serializable

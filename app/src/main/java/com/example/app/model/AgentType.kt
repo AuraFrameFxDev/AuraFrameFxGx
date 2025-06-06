@@ -1,4 +1,4 @@
-package com.example.app.model
+package com.genesis.ai.app.model
 
 /**
  * Enum representing different types of AI agents in the system.

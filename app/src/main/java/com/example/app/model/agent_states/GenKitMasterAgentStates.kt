@@ -1,4 +1,4 @@
-package com.example.app.model.agent_states
+package com.genesis.ai.app.model.agent_states
 
 // TODO: Define actual properties for this state.
 // TODO: Class reported as unused or needs implementation. Ensure this is utilized by GenKitMasterAgent.

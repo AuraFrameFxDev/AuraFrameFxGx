@@ -1,4 +1,4 @@
-package com.example.app.ui.screens
+package com.genesis.ai.app.ui.screens
 
 // This file can be used to group screen-related utilities or common definitions
 // if needed, or it might be a convention for collecting all screen Composables

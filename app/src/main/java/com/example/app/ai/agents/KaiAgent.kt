@@ -1,4 +1,4 @@
-package com.example.app.ai.agents
+package com.genesis.ai.app.ai.agents
 
 /**
  * KaiAgent, another specific implementation of BaseAgent.

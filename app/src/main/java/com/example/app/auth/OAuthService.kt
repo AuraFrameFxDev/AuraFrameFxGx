@@ -1,4 +1,4 @@
-package com.example.app.auth
+package com.genesis.ai.app.auth
 
 import android.content.Intent
 // import com.google.android.gms.auth.api.signin.GoogleSignInClient // Example

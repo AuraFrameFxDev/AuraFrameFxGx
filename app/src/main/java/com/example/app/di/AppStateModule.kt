@@ -1,4 +1,4 @@
-package com.example.app.di
+package com.genesis.ai.app.di
 
 import android.content.Context
 // import androidx.datastore.core.DataStore // Actual DataStore type

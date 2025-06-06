@@ -1,4 +1,4 @@
-package com.example.app.ui.screens
+package com.genesis.ai.app.ui.screens
 
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement

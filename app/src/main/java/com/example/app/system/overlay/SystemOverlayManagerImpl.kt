@@ -1,7 +1,7 @@
-package com.example.app.system.overlay
+package com.genesis.ai.app.system.overlay
 
-import com.example.app.ai.services.AuraAIService
-import com.example.app.ui.theme.Color
+import com.genesis.ai.app.ai.services.AuraAIService
+import com.genesis.ai.app.ui.theme.Color
 import com.highcapable.yukihookapi.hook.xposed.XposedModule
 import com.highcapable.yukihookapi.hook.xposed.prefs.data.YukiHookModulePrefs
 import com.highcapable.yukihookapi.hook.xposed.service.YukiHookService

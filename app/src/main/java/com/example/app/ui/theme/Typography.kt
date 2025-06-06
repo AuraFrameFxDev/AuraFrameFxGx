@@ -1,4 +1,4 @@
-package com.example.app.ui.theme
+package com.genesis.ai.app.ui.theme
 
 import androidx.compose.material3.Typography
 // Import TextStyles if defining custom ones, e.g.:

@@ -1,4 +1,4 @@
-package com.example.app.ui.components
+package com.genesis.ai.app.ui.components
 
 import androidx.compose.material3.Button
 import androidx.compose.material3.Text

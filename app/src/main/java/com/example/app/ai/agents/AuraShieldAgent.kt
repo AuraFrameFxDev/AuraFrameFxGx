@@ -1,9 +1,9 @@
-package com.example.app.ai.agents
+package com.genesis.ai.app.ai.agents
 
 import android.content.Context
-import com.example.app.model.agent_states.ActiveThreat // Added import
-import com.example.app.model.agent_states.ScanEvent // Added import
-import com.example.app.model.agent_states.SecurityContextState // Added import
+import com.genesis.ai.app.model.agent_states.ActiveThreat // Added import
+import com.genesis.ai.app.model.agent_states.ScanEvent // Added import
+import com.genesis.ai.app.model.agent_states.SecurityContextState // Added import
 
 /**
  * AuraShieldAgent, responsible for security analysis and threat detection.

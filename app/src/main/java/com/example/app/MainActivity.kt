@@ -1,4 +1,4 @@
-package com.example.app
+package com.genesis.ai.app
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -11,7 +11,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.example.app.ui.theme.AuraFrameFXTheme // Added import
+import com.genesis.ai.app.ui.theme.AuraFrameFXTheme // Added import
 
 class MainActivity : ComponentActivity() { // Changed parent
     override fun onCreate(savedInstanceState: Bundle?) {

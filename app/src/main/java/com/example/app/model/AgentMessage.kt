@@ -1,4 +1,4 @@
-package com.example.app.model
+package com.genesis.ai.app.model
 
 import kotlinx.serialization.Serializable
 

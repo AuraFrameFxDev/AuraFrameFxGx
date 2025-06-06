@@ -1,4 +1,4 @@
-package com.example.app.ui.gestures
+package com.genesis.ai.app.ui.gestures
 
 import android.content.Context
 import android.view.GestureDetector

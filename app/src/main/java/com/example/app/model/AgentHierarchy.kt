@@ -1,4 +1,4 @@
-package com.example.app.model
+package com.genesis.ai.app.model
 
 enum class AgentRole {
     HIVE_MIND, // Genesis

@@ -1,6 +1,6 @@
-package com.example.app.di
+package com.genesis.ai.app.di
 
-import com.example.app.ui.KaiController // Assuming path from previous creation
+import com.genesis.ai.app.ui.KaiController // Assuming path from previous creation
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

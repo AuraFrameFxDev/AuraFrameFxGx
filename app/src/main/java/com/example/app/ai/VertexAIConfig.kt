@@ -1,4 +1,4 @@
-package com.example.app.ai
+package com.genesis.ai.app.ai
 
 // TODO: Define VertexAIConfig properly. This is a placeholder for KDoc resolution & DI.
 // TODO: Class reported as unused or needs proper implementation.

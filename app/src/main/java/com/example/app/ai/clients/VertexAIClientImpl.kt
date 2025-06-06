@@ -1,6 +1,6 @@
-package com.example.app.ai.clients
+package com.genesis.ai.app.ai.clients
 
-import com.example.app.ai.VertexAIConfig
+import com.genesis.ai.app.ai.VertexAIConfig
 import com.google.ai.client.generativeai.GenerativeModel
 import javax.inject.Inject
 import javax.inject.Singleton

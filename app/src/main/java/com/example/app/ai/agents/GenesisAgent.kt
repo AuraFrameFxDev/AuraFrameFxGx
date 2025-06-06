@@ -1,12 +1,12 @@
-package com.example.app.ai.agents
+package com.genesis.ai.app.ai.agents
 
-import com.example.app.model.AgentHierarchy
-import com.example.app.model.AgentMessage
-import com.example.app.model.AgentType
-import com.example.app.model.AgentConfig
-import com.example.app.ai.services.AuraAIService
-import com.example.app.ai.services.KaiAIService
-import com.example.app.ai.services.CascadeAIService
+import com.genesis.ai.app.model.AgentHierarchy
+import com.genesis.ai.app.model.AgentMessage
+import com.genesis.ai.app.model.AgentType
+import com.genesis.ai.app.model.AgentConfig
+import com.genesis.ai.app.ai.services.AuraAIService
+import com.genesis.ai.app.ai.services.KaiAIService
+import com.genesis.ai.app.ai.services.CascadeAIService
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.update

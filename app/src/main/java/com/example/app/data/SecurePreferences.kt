@@ -1,4 +1,4 @@
-package com.example.app.data
+package com.genesis.ai.app.data
 
 import android.content.Context
 // import androidx.security.crypto.EncryptedSharedPreferences // Example import

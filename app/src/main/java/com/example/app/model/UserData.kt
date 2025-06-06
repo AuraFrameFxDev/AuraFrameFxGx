@@ -1,4 +1,4 @@
-package com.example.app.model
+package com.genesis.ai.app.model
 
 // TODO: Class reported as unused or needs implementation. Ensure this is utilized by UserPreferences.
 data class UserData(

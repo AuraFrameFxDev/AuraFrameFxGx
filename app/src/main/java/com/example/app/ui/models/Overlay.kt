@@ -1,4 +1,4 @@
-package com.example.app.ui.models
+package com.genesis.ai.app.ui.models
 
 /**
  * Represents an overlay item.

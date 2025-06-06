@@ -1,8 +1,8 @@
-package com.example.app.di
+package com.genesis.ai.app.di
 
-import com.example.app.ai.VertexAIConfig // Assuming path from previous creation
-import com.example.app.ai.clients.VertexAIClient // Added import
-import com.example.app.ai.clients.VertexAIClientImpl // Added import
+import com.genesis.ai.app.ai.VertexAIConfig // Assuming path from previous creation
+import com.genesis.ai.app.ai.clients.VertexAIClient // Added import
+import com.genesis.ai.app.ai.clients.VertexAIClientImpl // Added import
 import com.google.ai.client.generativeai.GenerativeModel // Added import
 // import com.google.cloud.vertexai.VertexAI // Example if using official Vertex AI SDK
 import dagger.Module

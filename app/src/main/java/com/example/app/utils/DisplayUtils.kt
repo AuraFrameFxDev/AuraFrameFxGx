@@ -1,4 +1,4 @@
-package com.example.app.utils
+package com.genesis.ai.app.utils
 
 import android.content.Context
 import android.util.DisplayMetrics

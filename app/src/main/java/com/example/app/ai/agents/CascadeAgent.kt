@@ -1,8 +1,8 @@
-package com.example.app.ai.agents
+package com.genesis.ai.app.ai.agents
 
-import com.example.app.model.agent_states.ProcessingState
-import com.example.app.model.agent_states.VisionState
-import com.example.app.model.AgentType
+import com.genesis.ai.app.model.agent_states.ProcessingState
+import com.genesis.ai.app.model.agent_states.VisionState
+import com.genesis.ai.app.model.AgentType
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow

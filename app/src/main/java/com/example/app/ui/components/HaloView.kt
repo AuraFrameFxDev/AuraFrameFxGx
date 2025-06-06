@@ -1,4 +1,4 @@
-package com.example.app.ui.components
+package com.genesis.ai.app.ui.components
 
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.gestures.*
@@ -15,16 +15,16 @@ import androidx.compose.ui.graphics.drawscope.rotate
 import androidx.compose.ui.graphics.drawscope.translate
 import androidx.compose.ui.input.pointer.*
 import androidx.compose.ui.unit.dp
-import com.example.app.ui.theme.NeonTeal
-import com.example.app.ui.theme.NeonPurple
-import com.example.app.ui.theme.NeonBlue
-import com.example.app.ui.theme.NeonPink
-import com.example.app.ui.theme.GlowOverlay
-import com.example.app.ui.theme.PulseOverlay
-import com.example.app.ui.theme.HoverOverlay
-import com.example.app.ui.theme.PressOverlay
-import com.example.app.model.AgentType
-import com.example.app.viewmodel.GenesisAgentViewModel
+import com.genesis.ai.app.ui.theme.NeonTeal
+import com.genesis.ai.app.ui.theme.NeonPurple
+import com.genesis.ai.app.ui.theme.NeonBlue
+import com.genesis.ai.app.ui.theme.NeonPink
+import com.genesis.ai.app.ui.theme.GlowOverlay
+import com.genesis.ai.app.ui.theme.PulseOverlay
+import com.genesis.ai.app.ui.theme.HoverOverlay
+import com.genesis.ai.app.ui.theme.PressOverlay
+import com.genesis.ai.app.model.AgentType
+import com.genesis.ai.app.viewmodel.GenesisAgentViewModel
 import kotlin.math.cos
 import kotlin.math.sin
 import kotlin.math.PI

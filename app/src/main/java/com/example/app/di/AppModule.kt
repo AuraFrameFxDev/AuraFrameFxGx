@@ -1,12 +1,12 @@
-package com.example.app.di
+package com.genesis.ai.app.di
 
 import android.app.Application
 import android.content.Context
 import android.content.SharedPreferences
-import com.example.app.ai.AuraAIService // Assuming path from previous creation
-import com.example.app.ai.AuraAIServiceImpl // Added import
-import com.example.app.ai.config.AIConfig // Assuming path from previous creation
-import com.example.app.data.SecurePreferences // Assuming path from previous creation
+import com.genesis.ai.app.ai.AuraAIService // Assuming path from previous creation
+import com.genesis.ai.app.ai.AuraAIServiceImpl // Added import
+import com.genesis.ai.app.ai.config.AIConfig // Assuming path from previous creation
+import com.genesis.ai.app.data.SecurePreferences // Assuming path from previous creation
 import com.google.ai.client.generativeai.GenerativeModel // Added import
 import dagger.Module
 import dagger.Provides

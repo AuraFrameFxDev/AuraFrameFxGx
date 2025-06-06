@@ -1,4 +1,4 @@
-package com.example.app.ui
+package com.genesis.ai.app.ui
 
 import android.view.View // Using android.view.View as a placeholder for KaiNotchBar type
 

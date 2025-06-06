@@ -1,7 +1,7 @@
-package com.example.app.ai.agents
+package com.genesis.ai.app.ai.agents
 
 import android.content.Context
-import com.example.app.model.agent_states.GenKitUiState // Added import
+import com.genesis.ai.app.model.agent_states.GenKitUiState // Added import
 // Assuming other agent classes (GenesisAgent, AuraAgent, KaiAgent) are in this package or imported correctly
 // For this example, direct reference if they are in the same 'agents' package is fine.
 
